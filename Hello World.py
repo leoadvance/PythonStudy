@@ -16,20 +16,25 @@ from PyQt5 import QtWidgets
 a = 10
 b = 1.1
 c = True
-d = 'hello'
+d = '221'
 
-#int型
+# int型
 print (type(a))
 
-#float型
+# float型
 print (type(b))
 
-#bool型
+# bool型
 print (type(c))
 
-#str型
+# str型
 print (type(d))
 
+# 字符串变整型
+print(int(d) + a)
+
+# 整型变字符串
+print(str(a) + d)
 
 '''---------------------------------------------------------------------------------------------------------------------
 *
