@@ -37,17 +37,25 @@ print(str(a) + d)
 """----------------------- dir 查看模块，变量属性和方法 -------------------------"""
 print(dir(a))
 
-"""*****************************************************************************
-*                           陆超@2016-09-17
-* Function Name  :  ADDCheck
-* Description    :  累加校验
-* Input          :  unsigned int uiData     待比较数据
-*                   unsigned char *ucsData  源数据地址
-*                   int uiLen               源数据长度
-* Output         :  None
-* Return         :  相同返回0 不同返回-1
-*****************************************************************************"""
+#*******************************************************************************
+#                           陆超@2016-09-17
+# Function Name  :  imax
+# Description    :  比较大小
+# Input          :  a 待比较数据
+#                   b 待比较数据
+# Output         :  None
+# Return         :  max value
+#*******************************************************************************
 
+def imax(a, b):
+    if (a >= b):
+        return a
+    else:
+        return b
+
+# end of def imax (a, b)
+
+print (imax(10, 5))
 
 print('Hello！')
 print('Hi Python this is Leo！')
