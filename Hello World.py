@@ -3,9 +3,13 @@
 # 导入模块 datetime sys 以及Qt
 import datetime
 import sys
+from MathStudy import GrandPa
 
 #from PyQt5 import QtWidgets
 
+
+aa = GrandPa()
+aa.StartTest()
 
 #--------------------------------- 数据类型测试 ----------------------------------
 print ("-------------------------- 数据类型测试演示 ----------------------------")
