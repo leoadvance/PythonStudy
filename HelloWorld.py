@@ -5,9 +5,10 @@ import datetime
 import sys
 from MathStudy import MathStudy
 
-#from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets
 
-
+# 打印系统环境变量
+print(sys.path)
 aa = MathStudy()
 aa.type_study()
 aa.math_study()
@@ -45,11 +46,10 @@ print('Hi Python this is Leo！')
 print('Now is',datetime.datetime.now(),'We Right the first code')
 
 
-"""
+
 app = QtWidgets.QApplication(sys.argv)
 widget = QtWidgets.QWidget()
 widget.resize(360, 360)
 widget.setWindowTitle("Hello, PyQt5!")
 widget.show()
 sys.exit(app.exec_())
-"""
