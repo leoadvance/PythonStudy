@@ -4,6 +4,7 @@
 import datetime
 import sys
 from MathStudy import MathStudy
+from PySerial import PySerial
 
 from PyQt5 import QtWidgets
 
@@ -13,6 +14,11 @@ aa = MathStudy()
 aa.type_study()
 aa.math_study()
 
+UART = PySerial()
+
+ser1 = UART.Init()
+
+ser1.write('123'.encode('ascii'))
 
 
 
@@ -43,7 +49,7 @@ print (imax(10, 5))
 
 print('Hello！')
 print('Hi Python this is Leo！')
-print('Now is',datetime.datetime.now(),'We Right the first code')
+print('Now is', datetime.datetime.now(), 'I Write the first code')
 
 
 
