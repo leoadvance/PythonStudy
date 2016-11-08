@@ -14,11 +14,11 @@ aa = MathStudy()
 aa.type_study()
 aa.math_study()
 
-UART = PySerial()
+#UART = PySerial()
 
-ser1 = UART.Init()
+#ser1 = UART.Init()
 
-ser1.write('123'.encode('ascii'))
+#ser1.write('123'.encode('ascii'))
 
 
 
