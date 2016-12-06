@@ -6,6 +6,9 @@ import sys
 from MathStudy import MathStudy
 from PySerial import PySerial
 
+#shell测试
+from Shell import Shell
+
 from PyQt5 import QtWidgets
 
 # 打印系统环境变量
@@ -19,6 +22,9 @@ aa.math_study()
 #ser1 = UART.Init()
 
 #ser1.write('123'.encode('ascii'))
+
+shellTest = Shell()
+shellTest.Test()
 
 
 
@@ -51,7 +57,8 @@ print('Hello！')
 print('Hi Python this is Leo！')
 print('Now is', datetime.datetime.now(), 'I Write the first code')
 
-
+if __name__ == '__main__':
+    print("主程序")
 
 app = QtWidgets.QApplication(sys.argv)
 widget = QtWidgets.QWidget()
