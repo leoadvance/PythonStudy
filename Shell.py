@@ -24,12 +24,12 @@ class Shell(object):
         print(self.__class__)
 
         # 遍历目录下文件
-        FindPath = "/Users/LEO/Desktop/第一滴血 1080P"
+        FindPath = "/Users/LEO/Desktop"
         FileNames=os.listdir(FindPath)
         print(FileNames)
         for i in FileNames:
             # 判断后缀并输出输出文件名
-            if os.path.splitext(i)[1] == ".mkv":
+            if os.path.splitext(i)[1] == ".mkv" or os.path.splitext(i)[1] == ".mp4":
 
                 # 文件名
                 filename     = os.path.join(i)
@@ -38,16 +38,18 @@ class Shell(object):
                 fullfilename = os.path.join(FindPath, i)
 
                 # 替换空格
+                filename          = filename.replace(' ', '\ ')
                 fullfilenameshell = fullfilename.replace(' ', '\ ')
                 # print(filename)
                 # print(fullfilename)
 
                 # 组合成想要的命名
-                shellcmd = "ffmpeg -i " + fullfilenameshell + " -c:v libx265 -preset medium -crf 28 -c:a aac -b:a 384k " + fullfilenameshell
+                shellcmd = "ffmpeg -i " + fullfilenameshell + " -c:v libx265 -preset medium -crf 28 -c:a aac -b:a 384k " + FindPath + "/H265/" + filename
 
-                # 删除多余.mkv 
-                shellcmd = shellcmd.rstrip(".mkv")
-                shellcmd += ".mp4"
+                if "mkv" in shellcmd:
+                    # 删除多余.mkv
+                    shellcmd = shellcmd.rstrip(".mkv")
+                    shellcmd += ".mp4"
                 print(shellcmd)
                 os.system(shellcmd)
 
