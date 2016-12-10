@@ -53,6 +53,7 @@ class Shell(object):
                 print("文件名：" + filename + " 文件头:" + filenameHead + " 扩展名:" + filenamExt)
 
                 # 替换空格
+                FindPath          = FindPath.replace(' ', '\ ')
                 filename          = filename.replace(' ', '\ ')
                 filenameHead      = filenameHead.replace(' ', '\ ')
                 fullfilenameshell = fullfilename.replace(' ', '\ ')
@@ -64,11 +65,11 @@ class Shell(object):
                 # 组合成想要的命名
                 shellcmd = ("ffmpeg -i " + fullfilenameshell +
                             " -c:v libx265 -preset medium -crf 23 -c:a aac -b:a 384k " +
-                            FindPath + filenameHead + ".H265.mp4")
+                            FindPath + "/" + filenameHead + ".H265.mp4")
 
                 print(shellcmd)
                 os.system(shellcmd)
-                
+
                 '''
                 # 创建该文件
                 newFilePath = FindPath + "/" + filenameHead + ".H265.mp4"
