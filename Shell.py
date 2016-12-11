@@ -64,7 +64,7 @@ class Shell(object):
 
                 # 组合成想要的命名
                 shellcmd = ("ffmpeg -i " + fullfilenameshell +
-                            " -c:v libx265 -preset medium -crf 23 -c:a aac -b:a 384k " +
+                            " -map -c:v libx265 -preset medium -crf 23 " +
                             FindPath + "/" + filenameHead + ".H265.mp4")
 
                 print(shellcmd)
