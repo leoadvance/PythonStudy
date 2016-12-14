@@ -1,13 +1,60 @@
 #coding=utf-8
 
-#导入系统模块
+# 导入系统模块
 import sys
 import os
-
-#引入子进程 管理shell
 import subprocess
 
+
 class Shell(object):
+
+#*******************************************************************************
+#                           陆超@2016-12-06
+# Function Name  :  GetMapCmd
+# Description    :  获取map命令
+# Input          :  要读取的文件名
+# Output         :  None
+# Return         :  map命令
+#*******************************************************************************
+
+    def GetMapCmd(fileName):
+
+        sourceFileTypeCmd = "ffmpeg -i " + fileName
+
+        # 获取文件类型
+        print ("获取文件类型cmd：" + sourceFileTypeCmd)
+        shellFileType = subprocess.getoutput(sourceFileTypeCmd)
+
+        # 默认不包含字幕
+        needVideo    = False
+        needAudio    = False
+        needSubtitle = False
+        for line in shellFileType.split("\n"):
+
+            # 找到Stream 那行
+            if "Stream" in line:
+                if "Video" in line:
+                    needVideo = True
+                    print ("包含视频：" + line)
+
+                elif "Audio" in line:
+                    needAudio = True
+                    print ("包含音频：" + line)
+
+                elif "Subtitle" in line:
+                    needSubtitle = True
+                    print ("包含字幕：" + line)
+
+        mapCmd = ""
+        if needSubtitle == True:
+            mapCmd += " -map 0:s"
+        if needAudio    == True:
+            mapCmd += " -map 0:a"
+        if needVideo    == True:
+            mapCmd += " -map 0:v"
+
+        print ("mapCmd" + mapCmd)
+        return mapCmd
 
 #*******************************************************************************
 #                           陆超@2016-12-10
@@ -25,7 +72,7 @@ class Shell(object):
         H265Directory = FindPath + ChangeDirectory
 
         FileNames     = os.listdir(FindPath)
-        print(FileNames)
+        #print(FileNames)
         for i in FileNames:
 
             # 获取文件路径
@@ -66,11 +113,14 @@ class Shell(object):
                 print("文件名：" + filename + " 文件头:" + filenameHead + " 扩展名:" + filenamExt)
 
                 # 源文件 和 目标文件
-                sourceFile      = '"' + FindPath + "/" + filename + '"'
-                destinationFile = '"' + FindPath + ChangeDirectory + "/" + filenameHead + H265Sign + '"'
+                sourceFile        = '"' + FindPath + "/" + filename + '"'
+                destinationFile   = '"' + FindPath + ChangeDirectory + "/" + filenameHead + H265Sign + '"'
+
+                # 获取map命令
+                mapCmd = Shell.GetMapCmd(sourceFile)
                 # 组合成想要的命名 用""防止空格
                 shellcmd = ("ffmpeg -i " +
-                            sourceFile +
+                            sourceFile + mapCmd +
                             " -c:v libx265 -preset medium -crf 23 " +
                             destinationFile )
 
