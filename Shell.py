@@ -23,6 +23,7 @@ class Shell(object):
         H265Directory = FindPath + "/H265"
 
         FileNames     = os.listdir(FindPath)
+        print(FileNames)
         for i in FileNames:
 
             # 获取文件路径
@@ -38,8 +39,9 @@ class Shell(object):
             elif (os.path.splitext(i)[1] == ".mkv" or
                   os.path.splitext(i)[1] == ".mp4" or
                   os.path.splitext(i)[1] == ".mov" or
+                  os.path.splitext(i)[1] == ".MOV" or
                   os.path.splitext(i)[1] == ".m4v" or
-                  os.path.splitext(i)[1] == ".ts"): 
+                  os.path.splitext(i)[1] == ".ts"):
                 '''
                 # 创建转换后目录
                 if os.path.exists(H265Directory) == False:
@@ -57,7 +59,7 @@ class Shell(object):
                 print("文件名：" + filename + " 文件头:" + filenameHead + " 扩展名:" + filenamExt)
 
                 # 替换空格
-                FindPath          = FindPath.replace(' ', '\ ')
+                FindPathchange    = FindPath.replace(' ', '\ ')
                 filename          = filename.replace(' ', '\ ')
                 filenameHead      = filenameHead.replace(' ', '\ ')
                 fullfilenameshell = fullfilename.replace(' ', '\ ')
@@ -69,7 +71,7 @@ class Shell(object):
                 # 组合成想要的命名
                 shellcmd = ("ffmpeg -i " + fullfilenameshell +
                             " -c:v libx265 -preset medium -crf 23 " +
-                            FindPath + "/" + filenameHead + ".H265.mp4")
+                            FindPathchange + "/" + filenameHead + ".H265.mp4")
 
                 print(shellcmd)
                 os.system(shellcmd)
