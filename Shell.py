@@ -21,6 +21,7 @@ class Shell(object):
 
         # 目标目录
         ChangeDirectory = "/H265"
+        H265Sign        = ".H265.mp4"
         H265Directory = FindPath + ChangeDirectory
 
         FileNames     = os.listdir(FindPath)
@@ -28,13 +29,13 @@ class Shell(object):
         for i in FileNames:
 
             # 获取文件路径
-            Path = os.path.join(FindPath, i)
+            sonDirectoryPath = os.path.join(FindPath, i)
 
             # 是目录
-            if os.path.isdir(Path):
+            if os.path.isdir(sonDirectoryPath):
 
-                print("文件夹：" + Path);
-                Shell.turnToH265(Path)
+                print("发现子文件夹：" + sonDirectoryPath);
+                Shell.turnToH265(sonDirectoryPath)
 
             # 判断后缀并输出输出文件名
             elif (os.path.splitext(i)[1] == ".mkv" or
@@ -44,35 +45,34 @@ class Shell(object):
                   os.path.splitext(i)[1] == ".m4v" or
                   os.path.splitext(i)[1] == ".ts"):
 
+                # 文件名
+                filename     = os.path.join(i)
+
+                # 带路径文件名
+                fullfilename = os.path.join(FindPath, i)
+
+                # 判断是否为转换后文件
+                if H265Sign in filename:
+                    print ("该文件已经转换过，跳过……")
+                    continue
+
                 # 创建转换后目录
                 if os.path.exists(H265Directory) == False:
                     os.mkdir(H265Directory)
                     print("创建目录：" + H265Directory)
 
-                # 文件名
-                filename     = os.path.join(i)
-
-                # 文件与路径名
-                fullfilename = os.path.join(FindPath, i)
-
                 # 分离文件名和扩展
                 filenameHead, filenamExt = os.path.splitext(filename)
                 print("文件名：" + filename + " 文件头:" + filenameHead + " 扩展名:" + filenamExt)
 
-                # 替换空格
-                FindPathchange    = FindPath.replace(' ', '\ ')
-                filename          = filename.replace(' ', '\ ')
-                filenameHead      = filenameHead.replace(' ', '\ ')
-                fullfilenameshell = fullfilename.replace(' ', '\ ')
-                # print(filename)
-                # print(fullfilename)
-
-
-
-                # 组合成想要的命名
-                shellcmd = ("ffmpeg -i " + fullfilenameshell +
+                # 源文件 和 目标文件
+                sourceFile      = '"' + FindPath + "/" + filename + '"'
+                destinationFile = '"' + FindPath + ChangeDirectory + "/" + filenameHead + H265Sign + '"'
+                # 组合成想要的命名 用""防止空格
+                shellcmd = ("ffmpeg -i " +
+                            sourceFile +
                             " -c:v libx265 -preset medium -crf 23 " +
-                            FindPathchange + ChangeDirectory + "/" + filenameHead + ".H265.mp4")
+                            destinationFile )
 
                 print(shellcmd)
                 os.system(shellcmd)
