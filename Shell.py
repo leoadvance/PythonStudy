@@ -35,7 +35,11 @@ class Shell(object):
                 Shell.turnToH265(Path)
 
             # 判断后缀并输出输出文件名
-            elif os.path.splitext(i)[1] == ".mkv" or os.path.splitext(i)[1] == ".mp4" or os.path.splitext(i)[1] == ".mov" or os.path.splitext(i)[1] == ".ts":
+            elif (os.path.splitext(i)[1] == ".mkv" or
+                  os.path.splitext(i)[1] == ".mp4" or
+                  os.path.splitext(i)[1] == ".mov" or
+                  os.path.splitext(i)[1] == ".m4v" or
+                  os.path.splitext(i)[1] == ".ts"): 
                 '''
                 # 创建转换后目录
                 if os.path.exists(H265Directory) == False:
@@ -64,7 +68,7 @@ class Shell(object):
 
                 # 组合成想要的命名
                 shellcmd = ("ffmpeg -i " + fullfilenameshell +
-                            " -map -c:v libx265 -preset medium -crf 23 " +
+                            " -c:v libx265 -preset medium -crf 23 " +
                             FindPath + "/" + filenameHead + ".H265.mp4")
 
                 print(shellcmd)
