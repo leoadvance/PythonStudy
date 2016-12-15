@@ -85,11 +85,14 @@ class Shell(object):
                 Shell.turnToH265(sonDirectoryPath)
 
             # 判断后缀并输出输出文件名
-            elif (os.path.splitext(i)[1] == ".mkv" or
-                  os.path.splitext(i)[1] == ".mp4" or
-                  os.path.splitext(i)[1] == ".mov" or
-                  os.path.splitext(i)[1] == ".MOV" or
-                  os.path.splitext(i)[1] == ".m4v" or
+            elif (os.path.splitext(i)[1] == ".mkv"  or
+                  os.path.splitext(i)[1] == ".mp4"  or
+                  os.path.splitext(i)[1] == ".mov"  or
+                  os.path.splitext(i)[1] == ".MOV"  or
+                  os.path.splitext(i)[1] == ".m4v"  or
+                  os.path.splitext(i)[1] == ".wmv"  or
+                  os.path.splitext(i)[1] == ".rm"   or
+                  os.path.splitext(i)[1] == ".rmvb" or
                   os.path.splitext(i)[1] == ".ts"):
 
                 # 文件名
