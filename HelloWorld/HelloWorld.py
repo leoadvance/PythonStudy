@@ -23,8 +23,8 @@ aa.math_study()
 
 #ser1.write('123'.encode('ascii'))
 
-#shellTest = Shell()
-#shellTest.Test()
+shellTest = Shell()
+shellTest.Test()
 
 
 

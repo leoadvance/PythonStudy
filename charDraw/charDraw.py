@@ -34,7 +34,7 @@ ascii_char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI
 
 
 # 将256灰度映射到70个字符上
-def get_char(r, g, b, alpha=256):
+def get_char(r, g, b, alpha = 256):
     if alpha == 0:
         return ' '
     length = len(ascii_char)
@@ -43,9 +43,10 @@ def get_char(r, g, b, alpha=256):
     unit = (256.0 + 1) / length
     return ascii_char[int(gray / unit)]
 
-
+# 判断主执行函数
 if __name__ == '__main__':
 
+    # 打开文件 输出长宽
     im = Image.open(IMG)
     print (im.size)
 
