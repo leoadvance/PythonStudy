@@ -45,10 +45,10 @@ def isFileExist(filePath, keyWord):
 def isSerialExist(serialFindPath, serialFindKeyword):
 
     # 阻止命令
-    serialFindPath = 'ls ' + serialFindPath
-    serialPath     = isFileExist(serialFindPath, serialFindKeyword)
+    serialFindPathLs = 'ls ' + serialFindPath
+    serialPath       = isFileExist(serialFindPathLs, serialFindKeyword)
     if ( serialPath != 0):
-        return serialPath
+        return serialFindPath + '/' + serialPath
     else :
         print("没找到串口，程序结束！")
         sys.exit(0)
@@ -60,6 +60,7 @@ print('Get Sensor Data and upload')
 # 判断串口是否存在
 serialPath = isSerialExist(serialFindPath, serialFindKeyword)
 print(serialPath)
+
 
 while 1 :
     print('Now is', datetime.datetime.now())
