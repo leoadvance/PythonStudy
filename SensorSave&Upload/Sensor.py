@@ -4,8 +4,9 @@
 import datetime
 import time
 
-import os;
-import sys;
+import os
+import sys
+import serial
 
 
 #------------------------------ 宏定义 -----------------------------------------#
@@ -61,6 +62,17 @@ print('Get Sensor Data and upload')
 serialPath = isSerialExist(serialFindPath, serialFindKeyword)
 print(serialPath)
 
+# 打开串口
+ser = serial.Serial(serialPath, 115200)
+ser.close()
+ser.open()
+if ser.isOpen() == False:
+    print("串口 " + serialPath + " 打开失败")
+else :
+    print("串口 " + serialPath + " 打开成功")
+
+
+ser.close()
 
 while 1 :
     print('Now is', datetime.datetime.now())
