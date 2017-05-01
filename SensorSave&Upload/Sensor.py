@@ -71,6 +71,14 @@ if ser.isOpen() == False:
 else :
     print("串口 " + serialPath + " 打开成功")
 
+# 发送字符
+ser.write(b'Hello Pyserial\r\n')
+
+# 等待发送完成
+ser.flush()
+
+receive = ser.readline()
+print(receive)
 
 ser.close()
 
