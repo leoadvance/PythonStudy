@@ -72,13 +72,13 @@ else :
     print("串口 " + serialPath + " 打开成功")
 
 # 发送字符
-ser.write(b'Hello Pyserial\r\n')
-
+#ser.write(b'Hello Pyserial')
+ser.write('this is a string\n'.encode('utf-8'))
 # 等待发送完成
 ser.flush()
-
+print("串口发送完毕！")
 receive = ser.readline()
-print(receive)
+print(time.strftime("%Y-%m-%d %X"), receive)
 
 ser.close()
 
