@@ -47,5 +47,8 @@ def VariableTest():
     print("print (l)")
     print(l)
 
+    print("\r\n实现列表插入功能：l.insert(1, 7878), 表示在原有位置1前插入数字7878")
+    l.insert(1, 7878)
+    print(l)
 
     return
