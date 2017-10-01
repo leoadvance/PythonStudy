@@ -9,6 +9,7 @@
 
 # 通过import文件名引入其他文件内函数
 import Print
+import time
 
 
 
@@ -16,3 +17,7 @@ via1 = 1
 # print必须带括号
 print (via1)
 Print.Print_Fun()
+
+
+# 打印时间
+print ("程序启动时间：" + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
