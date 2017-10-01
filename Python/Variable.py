@@ -30,4 +30,16 @@ def VariableTest():
     print("print (list)")
     print(list)
 
+    print ("list内部成员除了可以改变数值，还是改变类型！")
+    print("list[1] = \"abc\"")
+    print("list[2] = 123.45")
+    list[1] = "abc"
+    list[2] = 123.45
+    print("print (list)")
+    print(list)
+
+    #b = list(s[0])
+
+    #print (b)
+
     return
