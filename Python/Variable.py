@@ -14,32 +14,38 @@ def VariableTest():
     print(s)
 
     # 变量可以通过乘法倍增
-    s *= 3
+    s *= 2
     print(s)
+
+    print("\r\n替换字符串中某个字节")
+    print("第一步，l1 = list(s), 转换字符串内容为list")
+    l1 = list(s)
+    print("第二步，l1[0] = 'a', 修改想要替换内容")
+    l1[0] = 'a'
+    print("第三步，s = "".join(11), 列表数据转存入字符串")
+    s = "".join(l1)
+    print(s)
+
 
 
     # 列表
     print ("\r\nlist列表测试:")
-    list = ["234", 768476, 12.3, "Test"]
-    print("print (list)")
-    print (list)
-    print("print (list[1:3])")
-    print (list[1:3])
-    print("list *= 2")
-    list *= 2
-    print("print (list)")
-    print(list)
-
+    l = ["234", 768476, 12.3, "Test"]
+    print("print (l)")
+    print (l)
+    print("print (l[1:3])")
+    print (l[1:3])
+    print("l *= 2")
+    l *= 2
+    print("print (l)")
+    print(l)
     print ("list内部成员除了可以改变数值，还是改变类型！")
-    print("list[1] = \"abc\"")
-    print("list[2] = 123.45")
-    list[1] = "abc"
-    list[2] = 123.45
-    print("print (list)")
-    print(list)
+    print("l[1] = \"abc\"")
+    print("l[2] = 123.45")
+    l[1] = "abc"
+    l[2] = 123.45
+    print("print (l)")
+    print(l)
 
-    #b = list(s[0])
-
-    #print (b)
 
     return
