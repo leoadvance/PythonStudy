@@ -11,13 +11,30 @@
 import Print
 import time
 import Variable
+import sys
+
+MULTIPLE = 1
+timestart = time.time() * MULTIPLE
 
 
 # 打印时间
 print ("程序启动时间：" + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+
+print (sys.platform)
+
+
 
 # print必须带括号
 Print.Print_Fun()
 
 # 变量测试
 Variable.VariableTest()
+timeend = time.time() * MULTIPLE
+
+print ("开始时间" + str(timestart))
+print ("结束时间" + str(timeend))
+print ("运行时间" + str(timeend - timestart))
+
+
+if __name__ == "__main__":
+    print ("主程序")
