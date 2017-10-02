@@ -60,6 +60,17 @@ def VariableTest():
     l.extend([1,2,3])
     print (l)
 
+    # 获取列表长度
+    lSize = len(l)
+    print (lSize)
+    print ("获取队列长度并删除最后一个列表")
+    del l[12]
+    print (l)
+
+    print ("删除前两个列表，del l[0:2]")
+    del l[0:2]
+    print (l)
+
     # dictionary
     print ("\r\ndictionary 学习!")
 
