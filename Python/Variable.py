@@ -55,6 +55,11 @@ def VariableTest():
     l.append("last")
     print (l)
 
+    print("\r\n实现列表追加功能：l.extend([1,2,3]), "
+          "追加列表到列表最后，此处和append有区别，extend追加的只能是列表。")
+    l.extend([1,2,3])
+    print (l)
+
     # dictionary
     print ("\r\ndictionary 学习!")
 
