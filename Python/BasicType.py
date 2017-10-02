@@ -12,6 +12,7 @@ import Print
 import time
 import Variable
 import sys
+import Math
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
@@ -30,6 +31,9 @@ Print.Print_Fun()
 # 变量测试
 Variable.VariableTest()
 timeend = time.time() * MULTIPLE
+
+# 运算符测试
+Math.MathTest()
 
 print ("开始时间" + str(timestart))
 print ("结束时间" + str(timeend))
