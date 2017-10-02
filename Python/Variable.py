@@ -51,6 +51,9 @@ def VariableTest():
     l.insert(1, 7878)
     print(l)
 
+    print("\r\n实现列表追加功能：l.append(\"last\"), 追加内容到列表最后。")
+    l.append("last")
+    print (l)
 
     # dictionary
     print ("\r\ndictionary 学习!")
