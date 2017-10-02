@@ -51,4 +51,18 @@ def VariableTest():
     l.insert(1, 7878)
     print(l)
 
+
+    # dictionary
+    print ("\r\ndictionary 学习!")
+
+    print ("dict = {}   声明字典")
+    dict = {}
+    dict[2] = "This is dict 2"
+
+    tinydict = {1: "test1", "two": 1234}
+    print (dict[2])
+    print (tinydict.keys())
+    print (tinydict.values())
+
+
     return

@@ -19,4 +19,5 @@ print ("程序启动时间：" + time.strftime("%Y-%m-%d %H:%M:%S", time.localti
 # print必须带括号
 Print.Print_Fun()
 
+# 变量测试
 Variable.VariableTest()
