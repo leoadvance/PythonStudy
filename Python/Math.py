@@ -9,4 +9,11 @@ def MathTest():
     print ("a = 0x%x"%(a))
     print ("a = " + hex(a) + " " + "a = " + oct(a) + " " + "a = " + bin(a))
 
+    print ("取余数运算 % （5.1 % 2.1）")
+    a = 5.1
+    b = 2.1
+    print (a % b)
+
+    print("取整运算 % （5.1 // 2.1）")
+    print (a // b)
     return
