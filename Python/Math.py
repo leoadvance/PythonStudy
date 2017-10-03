@@ -27,5 +27,18 @@ def MathTest():
     b = 1
     print ("a & b = %02x, a | b = %02x, a ^ b = %02x, ~a = %02x"%(a & b, a | b,
                                                             a ^ b, ~a))
+    print ("\r\n 学习is == 区别 == 判断值是否相等 is 判断是否是同一地址")
+    a = 222222222222222222222
+    b = 222222222222222222222
+    c = b
+    if a == c:
+        print ("a = c")
+    else:
+        print ("a != c")
+
+    if a is c:
+        print ("a is c")
+    else:
+        print ("a c非同一地址")
 
     return
