@@ -41,4 +41,13 @@ def MathTest():
     else:
         print ("a c非同一地址")
 
+    print ('\r\n学习 in not in的使用')
+    a = 13
+    l = [13, 14, "12312", '4324']
+    print (l)
+
+    if (a in l):
+        print("a in l")
+    else:
+        print("a not in l")
     return
