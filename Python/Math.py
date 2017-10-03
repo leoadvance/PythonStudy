@@ -22,4 +22,10 @@ def MathTest():
     b = 3
     print (a ** b)
 
+    print ("\r\n与或非运算")
+    a = 0b0010
+    b = 1
+    print ("a & b = %02x, a | b = %02x, a ^ b = %02x, ~a = %02x"%(a & b, a | b,
+                                                            a ^ b, ~a))
+
     return
