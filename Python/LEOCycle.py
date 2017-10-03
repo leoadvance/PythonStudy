@@ -12,5 +12,8 @@ def LEOCycleTest():
         for b in 'Python':
             print ('当前字母：', b)
 
+        for j in range(0,5):
+            print (j)
+
 
     return
