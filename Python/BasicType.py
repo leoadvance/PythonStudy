@@ -22,12 +22,17 @@ timestart = time.time() * MULTIPLE
 # 打印时间
 print ("程序启动时间：" + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 
+# 输出系统运行平台
 print (sys.platform)
+
+if (sys.platform == 'win32'):
+    print ('Windows平台运行')
 
 
 
 # print必须带括号
 Print.Print_Fun()
+Print.Print_Var(1,'123', 3)
 
 # 变量测试
 Variable.VariableTest()

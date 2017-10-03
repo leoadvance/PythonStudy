@@ -5,3 +5,9 @@
 def Print_Fun():
     print ("Print 函数测试！")
     return
+
+# 不定参数函数
+def Print_Var(*vartuple):
+    for var in vartuple:
+        print (var)
+    return
