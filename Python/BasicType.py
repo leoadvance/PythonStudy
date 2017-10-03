@@ -14,6 +14,7 @@ import Variable
 import sys
 import Math
 import LEOCycle
+import Draw
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
@@ -34,16 +35,19 @@ if (sys.platform == 'win32'):
 Print.Print_Fun()
 Print.Print_Var(1,'123', 3)
 
-# 变量测试
-Variable.VariableTest()
+# # 变量测试
+# Variable.VariableTest()
+#
+# # 运算符测试
+# Math.MathTest()
+#
+# # 循环测试
+# LEOCycle.LEOCycleTest()
+
+t = Draw
+t.DrawTest()
+
 timeend = time.time() * MULTIPLE
-
-# 运算符测试
-Math.MathTest()
-
-# 循环测试
-LEOCycle.LEOCycleTest()
-
 print ("开始时间" + str(timestart))
 print ("结束时间" + str(timeend))
 print ("运行时间" + str(timeend - timestart))
