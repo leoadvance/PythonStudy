@@ -13,6 +13,7 @@ import time
 import Variable
 import sys
 import Math
+import LEOCycle
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
@@ -34,6 +35,9 @@ timeend = time.time() * MULTIPLE
 
 # 运算符测试
 Math.MathTest()
+
+# 循环测试
+LEOCycle.LEOCycleTest()
 
 print ("开始时间" + str(timestart))
 print ("结束时间" + str(timeend))
