@@ -15,6 +15,7 @@ import sys
 import Math
 import LEOCycle
 import Draw
+import PygalDraw
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
@@ -44,9 +45,9 @@ Print.Print_Var(1,'123', 3)
 # # 循环测试
 # LEOCycle.LEOCycleTest()
 
-t = Draw
-t.DrawTest()
+# Draw.DrawTest()
 
+PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
 print ("开始时间" + str(timestart))
 print ("结束时间" + str(timeend))
