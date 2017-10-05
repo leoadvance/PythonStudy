@@ -41,7 +41,8 @@ def DrawTest():
     )
 
     data = [trace0, trace1, trace2]
-    FileName = "Plotly_Draw_" + "Random"
+    FileName = "Plotly_Draw_" + "Random_" + time.strftime("%Y-%m-%d %H:%M:%S",
+                                                         time.localtime()) + ".html"
     print (FileName)
-    plotly.offline.plot(data, filename=FileName)
+    py.plot(data, filename=FileName)
     return

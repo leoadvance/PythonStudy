@@ -44,10 +44,9 @@ Print.Print_Var(1,'123', 3)
 #
 # # 循环测试
 # LEOCycle.LEOCycleTest()
+Draw.DrawTest()
 
-# Draw.DrawTest()
-
-PygalDraw.DrawTest()
+#PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
 print ("开始时间" + str(timestart))
 print ("结束时间" + str(timeend))
