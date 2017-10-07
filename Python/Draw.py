@@ -11,9 +11,11 @@ def DrawTest():
 
     print ('\r\n绘图测试')
 
+    # 显示库版本
+    print(plotly.__version__)
     # 设置认证信息
     plotly.tools.set_credentials_file(username='leoandlucky', api_key='gsyRblgkJatsjzInUOYf')
-
+    #py.sign_in('leoandlucky', '2qdyfjyr7o')
     N = 100
     random_x = np.linspace(0, 1, N)
     random_y0 = np.random.randn(N) + 5
@@ -46,4 +48,5 @@ def DrawTest():
     print (FileName)
     #plotly.plotly.plot(data, filename=FileName)
     plotly.offline.plot(data, filename=FileName)
+
     return
