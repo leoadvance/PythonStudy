@@ -16,11 +16,18 @@ def DrawTest():
     # 设置认证信息
     plotly.tools.set_credentials_file(username='leoandlucky', api_key='gsyRblgkJatsjzInUOYf')
     #py.sign_in('leoandlucky', '2qdyfjyr7o')
-    N = 100
-    random_x = np.linspace(0, 1, N)
+
+    # 横坐标点数
+    N = 10
+
+    # 把0~N-1平均分成N份
+    random_x = np.linspace(0, N - 1, N)
     random_y0 = np.random.randn(N) + 5
     random_y1 = np.random.randn(N)
     random_y2 = np.random.randn(N) - 5
+
+    print (random_x)
+    print (random_y1)
 
     # Create traces
     trace0 = go.Scatter(
