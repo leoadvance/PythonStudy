@@ -18,10 +18,12 @@ def DrawTest():
     #py.sign_in('leoandlucky', '2qdyfjyr7o')
 
     # 横坐标点数
-    N = 10
+    N = 100
 
     # 把0~N-1平均分成N份
     random_x = np.linspace(0, N - 1, N)
+
+    # 生成正态分布随机数
     random_y0 = np.random.randn(N) + 5
     random_y1 = np.random.randn(N)
     random_y2 = np.random.randn(N) - 5
