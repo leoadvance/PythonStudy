@@ -38,6 +38,8 @@ Print.Print_Fun()
 # 不定参数函数
 Print.Print_Var(1,'123', 3)
 
+Print.Print_Global(100)
+
 # # 变量测试
 # Variable.VariableTest()
 #
