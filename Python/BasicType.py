@@ -34,6 +34,8 @@ if (sys.platform == 'win32'):
 
 # print必须带括号
 Print.Print_Fun()
+
+# 不定参数函数
 Print.Print_Var(1,'123', 3)
 
 # # 变量测试
@@ -44,7 +46,9 @@ Print.Print_Var(1,'123', 3)
 #
 # # 循环测试
 # LEOCycle.LEOCycleTest()
-Draw.DrawTest()
+
+# 绘图测试
+#Draw.DrawTest()
 
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
