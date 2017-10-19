@@ -1,6 +1,9 @@
 #coding=utf-8
 import os
+import sys
 
+# 文件编码格式
+FILE_ENCODE = 'utf-8'
 
 def GetLogFile():
 
@@ -25,8 +28,11 @@ def LogProcess():
     if (filename == 'NULL'):
         return
 
+    print (sys.getdefaultencoding())
     print ('打开log文件 %s', filename)
-    fd = os.open(filename, os.O_RDONLY)
+    fd = open(filename, 'r', encoding = FILE_ENCODE)
+    for line in fd:
+        print (line)
 
-    os.close(fd)
+    fd.close()
     return
