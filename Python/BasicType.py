@@ -65,3 +65,5 @@ print ("运行时间" + str(timeend - timestart))
 
 if __name__ == "__main__":
     print ("主程序")
+
+quit()
