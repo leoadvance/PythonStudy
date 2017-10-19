@@ -15,6 +15,6 @@ def Print_Var(*vartuple):
 
 def Print_Global(num):
     global x
-    print (x)
+    print ("打印全局变量x =", x)
     x = num
     print (x)

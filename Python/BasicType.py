@@ -16,6 +16,7 @@ import Math
 import LEOCycle
 import Draw
 import PygalDraw
+import LogProcess
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
@@ -51,6 +52,9 @@ Print.Print_Global(100)
 
 # 绘图测试
 #Draw.DrawTest()
+
+Log = LogProcess
+Log.LogProcess()
 
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE

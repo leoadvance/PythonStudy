@@ -6,6 +6,8 @@ import time
 # Create random data with numpy
 import numpy as np
 
+from datetime import datetime
+import pandas_datareader.data as web
 
 def DrawTest():
 
@@ -59,3 +61,14 @@ def DrawTest():
     plotly.offline.plot(data, filename=FileName)
 
     return
+
+def Draw_Web():
+    df = web.DataReader("aapl", 'yahoo',
+                        datetime(2015, 1, 1),
+                        datetime(2016, 7, 1))
+
+    data = [go.Scatter(x=df.index, y=df.High)]
+    FileName = "Plotly_Draw_" + "Random_" + time.strftime("%Y_%m_%d_%H_%M_%S",
+                                                          time.localtime()) + ".html"
+    #py.iplot(data)
+    plotly.offline.iplot(data)
