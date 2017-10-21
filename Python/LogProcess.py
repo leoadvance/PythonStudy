@@ -1,6 +1,8 @@
 #coding=utf-8
 import os
 import sys
+import chardet
+
 
 # 文件编码格式
 FILE_ENCODE = 'utf-8'
@@ -28,9 +30,16 @@ def LogProcess():
     if (filename == 'NULL'):
         return
 
-    print (sys.getdefaultencoding())
+    print ('系统默认编码格式 = ' + sys.getdefaultencoding())
     print ('打开log文件 %s', filename)
-    fd = open(filename, 'r', encoding = FILE_ENCODE)
+
+    # 二进制方式读取文件 判断文件格式
+    fd = open(filename, 'rb')
+    result = chardet.detect(fd.read(100))
+    print ("读取的编码格式 = " + result['encoding'])
+    fd.close
+
+    fd = open(filename, 'r', encoding = result['encoding'])
     for line in fd:
         print (line)
 
