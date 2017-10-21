@@ -4,8 +4,6 @@ import sys
 import chardet
 
 
-# 文件编码格式
-FILE_ENCODE = 'utf-8'
 
 def GetLogFile():
 
@@ -21,6 +19,17 @@ def GetLogFile():
             return filename
     return 'NULL'
 
+# 获取编码格式
+def JudgeCodingFormat(filename):
+
+    # 二进制方式读取文件 判断文件格式
+    fd = open(filename, 'rb')
+    result = chardet.detect(fd.read(100))
+    print (filename + "的编码格式 = " + result['encoding'])
+    fd.close()
+
+    return result['encoding']
+
 def LogProcess():
 
     print ('\r\nLog处理学习！处理当前路径下Log')
@@ -33,13 +42,10 @@ def LogProcess():
     print ('系统默认编码格式 = ' + sys.getdefaultencoding())
     print ('打开log文件 %s', filename)
 
-    # 二进制方式读取文件 判断文件格式
-    fd = open(filename, 'rb')
-    result = chardet.detect(fd.read(100))
-    print ("读取的编码格式 = " + result['encoding'])
-    fd.close
+    # 获取编码格式
+    CodeFormat =JudgeCodingFormat(filename)
 
-    fd = open(filename, 'r', encoding = result['encoding'])
+    fd = open(filename, 'r', encoding = CodeFormat)
     for line in fd:
         print (line)
 
