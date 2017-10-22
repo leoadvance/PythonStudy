@@ -45,6 +45,7 @@ def LogProcess():
     # 获取编码格式
     CodeFormat =JudgeCodingFormat(filename)
 
+    # 删除之前建立的.csv文件
     df.DeleteFile(os.path.abspath('.'), '.csv')
 
     # fd = open(filename, 'r', encoding = CodeFormat)

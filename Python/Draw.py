@@ -3,6 +3,9 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 import plotly
 import time
+import os
+import DeleteFile as df
+
 # Create random data with numpy
 import numpy as np
 
@@ -12,7 +15,9 @@ import pandas_datareader.data as web
 def DrawTest():
 
     print ('\r\n绘图测试')
-
+    print ('删除之前生成的html文件')
+    # 删除之前建立的.csv文件
+    df.DeleteFile(os.path.abspath('.'), '.html')
     # 显示库版本
     print(plotly.__version__)
     # 设置认证信息
