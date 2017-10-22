@@ -51,7 +51,7 @@ Print.Print_Global(100)
 # LEOCycle.LEOCycleTest()
 
 # 绘图测试
-#Draw.DrawTest()
+# Draw.DrawTest()
 
 Log = LogProcess
 Log.LogProcess()
