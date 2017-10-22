@@ -3,7 +3,7 @@ import os
 import sys
 import chardet
 
-
+import DeleteFile as df
 
 def GetLogFile():
 
@@ -45,9 +45,11 @@ def LogProcess():
     # 获取编码格式
     CodeFormat =JudgeCodingFormat(filename)
 
-    fd = open(filename, 'r', encoding = CodeFormat)
-    for line in fd:
-        print (line)
+    df.DeleteFile(os.path.abspath('.'), '.csv')
 
-    fd.close()
+    # fd = open(filename, 'r', encoding = CodeFormat)
+    # for line in fd:
+    #     print (line)
+    #
+    # fd.close()
     return
