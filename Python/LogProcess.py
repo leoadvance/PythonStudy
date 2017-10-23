@@ -51,12 +51,13 @@ def LogProcess():
 
     # CSVWriter = csv.writer(open("log.csv", 'w'))
     CSVWriter = open("log.csv", 'w', encoding='gbk')
-    CSVWriter.write('时间' + '\n')
+    CSVWriter.write('时间,甲醛' + '\n')
     ListTimeX = []
     listy = []
     fd = open(filename, 'r', encoding = CodeFormat)
+    n = 0
     for line in fd:
-        n = 0
+
         print (line)
         if len(line) > 10:
 
@@ -67,12 +68,12 @@ def LogProcess():
 
             # 提取时分秒
             h,m,s = list1[1].__str__().split(':')
-            print (h + m + s)
+            # print (h + m + s)
 
             ms = int(h) * 3600 * 1000 + int(m) * 60 * 1000 + float(s) * 1000
             ms = int(ms)
 
-            if (n == 0):
+            if n == 0:
                 TimsBase = ms
             ms -= TimsBase
 
@@ -80,7 +81,8 @@ def LogProcess():
             ListTimeX.append(ms)
             # print (ListTimeX)
             a = str(ms)
-            CSVWriter.write(a.decode('gbk'))
+            print(ms)
+            CSVWriter.write(a)
             CSVWriter.write('\n')
 
             print (list[1])
