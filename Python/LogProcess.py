@@ -51,9 +51,10 @@ def LogProcess():
 
     # CSVWriter = csv.writer(open("log.csv", 'w'))
     CSVWriter = open("log.csv", 'w', encoding='gbk')
-    CSVWriter.write('时间,甲醛' + '\n')
+    CSVWriter.write('时间,甲醛,原始数据' + '\n')
     ListTimeX = []
-    listy = []
+    ListHCHOY = []
+
     fd = open(filename, 'r', encoding = CodeFormat)
     n = 0
     for line in fd:
@@ -61,10 +62,10 @@ def LogProcess():
         print (line)
         if len(line) > 10:
 
-            list = line.split(']')
+            listLen = line.split(']')
 
             # 删除起始的字符'【'
-            list1 = list[0].__str__().split("[")
+            list1 = listLen[0].__str__().split("[")
 
             # 提取时分秒
             h,m,s = list1[1].__str__().split(':')
@@ -73,20 +74,33 @@ def LogProcess():
             ms = int(h) * 3600 * 1000 + int(m) * 60 * 1000 + float(s) * 1000
             ms = int(ms)
 
+            # 记录首次偏移量
             if n == 0:
                 TimsBase = ms
+            n += 1
             ms -= TimsBase
 
             # 记录时间ms
             ListTimeX.append(ms)
             # print (ListTimeX)
-            a = str(ms)
-            print(ms)
-            CSVWriter.write(a)
-            CSVWriter.write('\n')
+            CSVWriter.write(str(ms))
 
-            print (list[1])
-            n += 1
+            # 提取数值
+            listNum = listLen[1].__str__().split()
+            # print (listNum)
+
+            # 第4第5字节分别是高位和低位
+            HighData = list(bytearray.fromhex(listNum[4]))
+            LowData  = list(bytearray.fromhex(listNum[5]))
+            # print (str(HighData[0]) + " " + str(LowData[0]))
+            # 获取并记录甲醛值
+            HCHOData = HighData[0]* 256 + LowData[0]
+            # print (HCHOData)
+            ListHCHOY.append(HCHOData)
+            StrData = ',' + str(HCHOData)
+            CSVWriter.write(StrData)
+            CSVWriter.write(',' + listLen[1] + '\n')
+
 
     fd.close()
     CSVWriter.close()
