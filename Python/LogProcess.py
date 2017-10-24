@@ -2,9 +2,12 @@
 import os
 import sys
 import chardet
-import time
-import csv
+import plotly.graph_objs as go
 import DeleteFile as df
+import plotly
+import time
+import os
+
 
 def GetLogFile():
 
@@ -79,6 +82,7 @@ def LogProcess():
                 TimsBase = ms
             n += 1
             ms -= TimsBase
+            ms /= 1000
 
             # 记录时间ms
             ListTimeX.append(ms)
@@ -94,7 +98,7 @@ def LogProcess():
             LowData  = list(bytearray.fromhex(listNum[5]))
             # print (str(HighData[0]) + " " + str(LowData[0]))
             # 获取并记录甲醛值
-            HCHOData = HighData[0]* 256 + LowData[0]
+            HCHOData = (HighData[0]* 256 + LowData[0]) / 1000.0
             # print (HCHOData)
             ListHCHOY.append(HCHOData)
             StrData = ',' + str(HCHOData)
@@ -102,6 +106,33 @@ def LogProcess():
             CSVWriter.write(',' + listLen[1] + '\n')
 
 
+
     fd.close()
     CSVWriter.close()
+
+    # 删除之前建立的.html文件
+    df.DeleteFile(os.path.abspath('.'), '.html')
+
+    # 画线+点
+    trace0 = go.Scatter(
+        x     = ListTimeX,
+        y     = ListHCHOY,
+        mode  = 'lines+markers',
+        name  = 'HCHO',
+        line=dict(
+            color = ('rgb(205, 12, 24)'),
+            width = 2)
+
+    )
+
+    data = [trace0]
+    TitleLayout = dict(title='HCHO测试数据',
+                  xaxis=dict(title='时间s'),
+                  yaxis=dict(title='HCHO浓度mg/m3'),
+                  )
+    FileName = "Plotly_Draw_" + "Random_" + time.strftime("%Y_%m_%d_%H_%M_%S",
+                                                          time.localtime()) + ".html"
+    print(FileName)
+    fig = dict(data=data, layout=TitleLayout)
+    plotly.offline.plot(fig, filename=FileName)
     return

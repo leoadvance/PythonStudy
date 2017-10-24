@@ -16,7 +16,7 @@ def DrawTest():
 
     print ('\r\n绘图测试')
     print ('删除之前生成的html文件')
-    # 删除之前建立的.csv文件
+    # 删除之前建立的.html文件
     df.DeleteFile(os.path.abspath('.'), '.html')
     # 显示库版本
     print(plotly.__version__)
