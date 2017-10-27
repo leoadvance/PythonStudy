@@ -10,7 +10,7 @@ import DeleteFile as df
 import numpy as np
 
 from datetime import datetime
-import pandas_datareader.data as web
+# import pandas_datareader.data as web
 
 def DrawTest():
 
@@ -67,13 +67,13 @@ def DrawTest():
 
     return
 
-def Draw_Web():
-    df = web.DataReader("aapl", 'yahoo',
-                        datetime(2015, 1, 1),
-                        datetime(2016, 7, 1))
-
-    data = [go.Scatter(x=df.index, y=df.High)]
-    FileName = "Plotly_Draw_" + "Random_" + time.strftime("%Y_%m_%d_%H_%M_%S",
-                                                          time.localtime()) + ".html"
-    #py.iplot(data)
-    plotly.offline.iplot(data)
+# def Draw_Web():
+#     df = web.DataReader("aapl", 'yahoo',
+#                         datetime(2015, 1, 1),
+#                         datetime(2016, 7, 1))
+#
+#     data = [go.Scatter(x=df.index, y=df.High)]
+#     FileName = "Plotly_Draw_" + "Random_" + time.strftime("%Y_%m_%d_%H_%M_%S",
+#                                                           time.localtime()) + ".html"
+#     #py.iplot(data)
+#     plotly.offline.iplot(data)

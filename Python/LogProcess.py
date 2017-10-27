@@ -37,7 +37,8 @@ def JudgeCodingFormat(filename):
 def LogProcess():
 
     print ('\r\nLog处理学习！处理当前路径下Log')
-
+    # 设置认证信息
+    plotly.tools.set_credentials_file(username='leoandlucky', api_key='gsyRblgkJatsjzInUOYf')
     filename = GetLogFile()
 
     if (filename == 'NULL'):
@@ -103,7 +104,7 @@ def LogProcess():
             ListHCHOY.append(HCHOData)
             StrData = ',' + str(HCHOData)
             CSVWriter.write(StrData)
-            CSVWriter.write(',' + listLen[1] + '\n')
+            CSVWriter.write(',' + listLen[1])
 
 
 
@@ -119,9 +120,9 @@ def LogProcess():
         y     = ListHCHOY,
         mode  = 'lines+markers',
         name  = 'HCHO',
-        line=dict(
-            color = ('rgb(205, 12, 24)'),
-            width = 2)
+        # line=dict(
+        #     color = ('rgb(205, 12, 24)'),
+        #     width = 2)
 
     )
 
@@ -135,4 +136,5 @@ def LogProcess():
     print(FileName)
     fig = dict(data=data, layout=TitleLayout)
     plotly.offline.plot(fig, filename=FileName)
+    # plotly.plotly.plot(fig, filename=FileName)
     return
