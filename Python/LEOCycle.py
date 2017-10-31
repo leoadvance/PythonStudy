@@ -15,5 +15,6 @@ def LEOCycleTest():
         for j in range(0,5):
             print (j)
 
-
+    for i in range(10):
+        print ('i = ' + str(i))
     return

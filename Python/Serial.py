@@ -7,12 +7,15 @@ def Test():
     print('串口测试!')
 
     ser = serial.Serial('/dev/tty.usbserial-3', 115200)
+    if ser is None:
+        print ('无法打开串口')
+        return
     ser.parity = serial.PARITY_NONE
     print (ser.isOpen())
     # # 设置读取超时时间 0.5s
     # ser.timeout = 2
     # print (n)
-    print(ser)
+
 
     # ser.write("1234554563453".encode('gbk'))
 

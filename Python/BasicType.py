@@ -18,6 +18,7 @@ import Draw
 import PygalDraw
 import LogProcess
 import Serial
+import MultiProcess
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
@@ -48,8 +49,8 @@ Print.Print_Global(100)
 # # 运算符测试
 # Math.MathTest()
 #
-# # 循环测试
-# LEOCycle.LEOCycleTest()
+# 循环测试
+LEOCycle.LEOCycleTest()
 
 # 绘图测试
 # Draw.DrawTest()
@@ -59,7 +60,9 @@ Print.Print_Global(100)
 # Log.LogProcess()
 
 Pyserial = Serial
-Pyserial.Test()
+# Pyserial.Test()
+
+MultiProcess.Test()
 
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
