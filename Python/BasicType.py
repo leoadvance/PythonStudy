@@ -19,6 +19,7 @@ import PygalDraw
 import LogProcess
 import Serial
 import MultiProcess
+import myThread
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
@@ -62,7 +63,10 @@ LEOCycle.LEOCycleTest()
 Pyserial = Serial
 # Pyserial.Test()
 
-MultiProcess.Test()
+# MultiProcess.Test()
+
+thread1 = myThread.myThread(1, "Thread-1", 2)
+thread1.start()
 
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
