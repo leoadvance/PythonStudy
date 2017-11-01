@@ -65,8 +65,7 @@ Pyserial = Serial
 
 # MultiProcess.Test()
 
-thread1 = myThread.myThread(1, "Thread-1", 2)
-thread1.start()
+myThread.threadTest()
 
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
