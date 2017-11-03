@@ -61,7 +61,7 @@ LEOCycle.LEOCycleTest()
 # Log.LogProcess()
 
 Pyserial = Serial
-Pyserial.Test()
+thread = Pyserial.Test()
 
 # MultiProcess.Test()
 
@@ -72,6 +72,7 @@ timeend = time.time() * MULTIPLE
 print ("开始时间" + str(timestart))
 print ("结束时间" + str(timeend))
 print ("运行时间" + str(timeend - timestart))
+thread.join()
 
 
 if __name__ == "__main__":

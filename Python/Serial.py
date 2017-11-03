@@ -9,8 +9,8 @@ def Serial_Rx(ser):
 
     while(1):
         data = ser.readline()
-        print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + str(
-            data))
+        print (time.strftime("%Y-%m-%d %H:%M:%S ", time.localtime()) + str(
+            data.decode("gbk")))
 
     return
 
@@ -47,4 +47,4 @@ def Test():
         print (i)
 
 
-    return
+    return threadRx
