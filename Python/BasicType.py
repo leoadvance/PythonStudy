@@ -61,11 +61,11 @@ LEOCycle.LEOCycleTest()
 # Log.LogProcess()
 
 Pyserial = Serial
-# Pyserial.Test()
+Pyserial.Test()
 
 # MultiProcess.Test()
 
-myThread.threadTest()
+# myThread.threadTest()
 
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
