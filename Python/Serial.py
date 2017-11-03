@@ -7,6 +7,11 @@ import threading
 def Serial_Rx(ser):
     print ('启动串口接收线程')
 
+    while(1):
+        data = ser.readline()
+        print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + str(
+            data))
+
     return
 
 def Test():
