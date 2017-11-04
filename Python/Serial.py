@@ -13,7 +13,8 @@ def Serial_Rx(ser):
     currentPath += '/Serial_Log'
 
     # 创建目录
-    FileProcess.CreatePath(currentPath)
+    FileProcess.DeletePath(currentPath)
+    # FileProcess.CreatePath(currentPath)
 
     print (currentPath)
     while(1):

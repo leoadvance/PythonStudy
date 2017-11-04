@@ -1,6 +1,7 @@
 #coding=utf-8
 
 import os
+import shutil
 
 '''
 删除某类型文件文件
@@ -46,5 +47,25 @@ def CreatePath(Path):
         os.makedirs(Path)
     else:
         print('目录 %s 存在' % (Path,))
+
+    return
+
+'''
+删除目录
+
+Parameters:
+    Path        - 目录路径
+
+
+Returns:
+    None
+
+'''
+def DeletePath(Path):
+    # 删除目录
+    if os.path.exists(Path) is True:
+        print('目录存在，删除目录 ' + Path)
+        shutil.rmtree(Path, True)
+
 
     return
