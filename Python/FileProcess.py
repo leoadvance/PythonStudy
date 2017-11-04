@@ -42,7 +42,7 @@ Returns:
 '''
 def CreatePath(Path):
     # 创建目录
-    if os.path.exists(Path) is False:
+    if os.path.exists(Path) == False:
         print('目录不存在，创建目录 ' + Path)
         os.makedirs(Path)
     else:
@@ -63,9 +63,37 @@ Returns:
 '''
 def DeletePath(Path):
     # 删除目录
-    if os.path.exists(Path) is True:
+    if os.path.exists(Path) == True:
         print('目录存在，删除目录 ' + Path)
         shutil.rmtree(Path, True)
 
 
     return
+
+#
+# 删除目录
+#
+# Parameters:
+#       Path        - 目录路径
+#       KeyWords    - 设备关键字
+#
+# Returns:
+#       设备路径
+#
+#
+def GetDevicePath(Path, KeyWords):
+
+    # 声明返回列表
+    returnPath = []
+
+    # 删除目录
+    listfile = os.listdir(Path)
+
+    # 遍历列表
+    for fileName in listfile:
+        filePath = os.path.join(Path, fileName)
+        if KeyWords in fileName:
+            print ('找到设备第' + str(len(returnPath) + 1) + '个设备 '+ fileName)
+            returnPath.append(filePath)
+
+    return returnPath

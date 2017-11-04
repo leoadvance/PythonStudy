@@ -4,18 +4,30 @@ import time
 import threading
 import os
 import FileProcess
-import chardet
-# 串口接收任务
+
+# mac linux下设备路径
+DEVICE_PATH = '/dev'
+
+
+#
+# 串口接收程序，推荐被单独线程调用
+#
+# Parameters:
+#       ser         - 已经打开的串口
+#
+#
+# Returns:
+#       None
+#
 def Serial_Rx(ser):
     print ('启动串口接收线程')
 
-    # 获取当前路径
-    currentPath = os.path.abspath('.')
-    currentPath += '/Serial_Log'
+    # 生成log目录路径
+    currentPath = os.path.join(os.path.abspath('.'), 'Serial_Log')
 
     # log文件名
-    logPath = currentPath + time.strftime("/%Y_%m_%d",
-                                          time.localtime()) + '.log'
+    logFileName = time.strftime("%Y_%m_%d", time.localtime()) + '.log'
+    logPath     = os.path.join(currentPath, logFileName)
 
     print (logPath)
 
@@ -28,7 +40,6 @@ def Serial_Rx(ser):
 
     # 定位到文件末尾
     SerialLog.seek(0, 2)
-    print (currentPath)
     while(1):
         data = ser.readline()
         writeData = time.strftime("[%Y-%m-%d %H:%M:%S] ", time.localtime()) + \
@@ -39,11 +50,26 @@ def Serial_Rx(ser):
 
     return
 
+#
+# 串口测试程序
+# 寻找设备列表里第一个串口打开并监听 数据保存在Serial_log文件夹下
+# Parameters:
+#       None
+#
+#
+# Returns:
+#       None
+#
 def Test():
 
     print('串口测试!')
 
-    ser = serial.Serial('/dev/tty.usbserial-2', 115200)
+    # 过滤现有串口
+    SerialPath = FileProcess.GetDevicePath(DEVICE_PATH, 'tty.usb')
+
+    # 打开第一个串口
+    print ('打开串口' + SerialPath[0])
+    ser = serial.Serial(SerialPath[0], 115200)
     if ser is None:
         print ('无法打开串口')
         return
@@ -54,12 +80,7 @@ def Test():
         ser,))
     threadRx.start()
 
-    # # 设置读取超时时间 0.5s
-    # ser.timeout = 2
-    # print (n)
 
-
-    # ser.write("1234554563453".encode('gbk'))
 
     # flush函数有问题，需要靠延时保证发送成功
     ser.write(b"1234567890\n")
@@ -68,7 +89,7 @@ def Test():
     for i in range(10):
         ser.write(b"1234567890\n")
         time.sleep(0.2)
-        i += 1;
+        i += 1
         # print (i)
 
 
