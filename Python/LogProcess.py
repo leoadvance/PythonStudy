@@ -3,7 +3,7 @@ import os
 import sys
 import chardet
 import plotly.graph_objs as go
-import DeleteFile as df
+import FileProcess
 import plotly
 import time
 import os
@@ -51,7 +51,7 @@ def LogProcess():
     CodeFormat =JudgeCodingFormat(filename)
 
     # 删除之前建立的.csv文件
-    df.DeleteFile(os.path.abspath('.'), '.csv')
+    FileProcess.DeleteFile(os.path.abspath('.'), '.csv')
 
     # CSVWriter = csv.writer(open("log.csv", 'w'))
     CSVWriter = open("log.csv", 'w', encoding='gbk')

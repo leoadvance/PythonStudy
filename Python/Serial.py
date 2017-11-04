@@ -2,11 +2,20 @@
 import serial
 import time
 import threading
-
+import os
+import FileProcess
 # 串口接收任务
 def Serial_Rx(ser):
     print ('启动串口接收线程')
 
+    # 获取当前路径
+    currentPath = os.path.abspath('.')
+    currentPath += '/Serial_Log'
+
+    # 创建目录
+    FileProcess.CreatePath(currentPath)
+
+    print (currentPath)
     while(1):
         data = ser.readline()
         print (time.strftime("%Y-%m-%d %H:%M:%S ", time.localtime()) + str(
@@ -44,7 +53,7 @@ def Test():
         ser.write(b"1234567890\n")
         time.sleep(0.2)
         i += 1;
-        print (i)
+        # print (i)
 
 
     return threadRx

@@ -45,13 +45,13 @@ Print.Print_Var(1,'123', 3)
 Print.Print_Global(100)
 
 # # 变量测试
-# Variable.VariableTest()
+Variable.VariableTest()
 #
 # # 运算符测试
 # Math.MathTest()
 #
 # 循环测试
-LEOCycle.LEOCycleTest()
+#LEOCycle.LEOCycleTest()
 
 # 绘图测试
 # Draw.DrawTest()

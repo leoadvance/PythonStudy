@@ -4,7 +4,7 @@ def VariableTest():
 
     # 声明字符串变量s
     s = "123456"
-
+    print ('s = "123456"\n' + "type(s) 获取变量s类型 " + str(type(s)))
     print ("\r\n字符串变量测试:")
     print ("print (s): " + s)
     print ("print (s[1:5]): " + s[1:5])
