@@ -4,6 +4,7 @@ import time
 import threading
 import os
 import FileProcess
+import chardet
 # 串口接收任务
 def Serial_Rx(ser):
     print ('启动串口接收线程')
@@ -12,15 +13,29 @@ def Serial_Rx(ser):
     currentPath = os.path.abspath('.')
     currentPath += '/Serial_Log'
 
-    # 创建目录
-    FileProcess.DeletePath(currentPath)
-    # FileProcess.CreatePath(currentPath)
+    # log文件名
+    logPath = currentPath + time.strftime("/%Y_%m_%d",
+                                          time.localtime()) + '.log'
 
+    print (logPath)
+
+    # 创建目录
+    # FileProcess.DeletePath(currentPath)
+    FileProcess.CreatePath(currentPath)
+
+    # 打开log文件（可读可写）编码格式GBK
+    SerialLog = open(logPath, 'a+', encoding='gbk')
+
+    # 定位到文件末尾
+    SerialLog.seek(0, 2)
     print (currentPath)
     while(1):
         data = ser.readline()
-        print (time.strftime("%Y-%m-%d %H:%M:%S ", time.localtime()) + str(
-            data.decode("gbk")))
+        writeData = time.strftime("[%Y-%m-%d %H:%M:%S] ", time.localtime()) + \
+                    str(data.decode("gbk"))
+        print (writeData)
+        SerialLog.write(writeData)
+        SerialLog.flush()
 
     return
 
@@ -28,7 +43,7 @@ def Test():
 
     print('串口测试!')
 
-    ser = serial.Serial('/dev/tty.usbserial-A50285BI', 115200)
+    ser = serial.Serial('/dev/tty.usbserial-2', 115200)
     if ser is None:
         print ('无法打开串口')
         return
