@@ -60,8 +60,8 @@ Variable.VariableTest()
 # Log = LogProcess
 # Log.LogProcess()
 
-Pyserial = Serial
-thread = Pyserial.Test()
+#Pyserial = Serial
+#thread = Pyserial.Test()
 
 # MultiProcess.Test()
 
