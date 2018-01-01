@@ -5,3 +5,4 @@ Python/.idea/
 *.html
 *.svg
 *.log
+/venv/
