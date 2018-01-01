@@ -6,3 +6,4 @@ Python/.idea/
 *.svg
 *.log
 /venv/
+/venv360/

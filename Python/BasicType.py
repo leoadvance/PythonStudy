@@ -72,7 +72,7 @@ timeend = time.time() * MULTIPLE
 print ("开始时间" + str(timestart))
 print ("结束时间" + str(timeend))
 print ("运行时间" + str(timeend - timestart))
-thread.join()
+
 
 
 if __name__ == "__main__":
