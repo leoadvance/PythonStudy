@@ -37,5 +37,11 @@ def threadTest():
 
     # 等待线程结束 timeout 超时时间
     thread1.join(timeout = 1.5)
+
+    print("线程1超时！")
+
+    # 从运行到join起算超时时间 单位s
     thread2.join(timeout = 2)
+    print("线程2超时！")
+
     return

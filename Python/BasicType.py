@@ -65,7 +65,7 @@ Variable.VariableTest()
 
 # MultiProcess.Test()
 
-# myThread.threadTest()
+myThread.threadTest()
 print ("Good Bye 2017 & Welcome 2018")
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
