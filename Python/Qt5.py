@@ -1,17 +1,25 @@
 #coding=utf-8
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 
-def Qt_Test():
+def Qt_Test(QMainWindow):
+
 
     print("Qt测试")
-    app = QApplication(sys.argv)
 
-    w = QWidget()
-    w.resize(250, 150)
-    w.move(300, 300)
-    w.setWindowTitle('Simple')
-    w.show()
 
-    sys.exit(app.exec_())
-    return
+    def __init__(self):
+
+        #print("Qt测试")
+        app = QApplication(sys.argv)
+        super().__init__()
+        self.statusBar().showMessage('Ready')
+
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Statusbar')
+        self.show()
+        sys.exit(app.exec_())
+
+
+
+

@@ -21,7 +21,7 @@ import Serial
 import MultiProcess
 import myThread
 import Qt5
-
+from PyQt5.QtWidgets import QMainWindow, QApplication
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
 
@@ -65,7 +65,9 @@ Variable.VariableTest()
 #thread = Pyserial.Test()
 
 # MultiProcess.Test()
-Qt5.Qt_Test()
+
+#Qt5.Qt_Test()
+
 myThread.threadTest()
 print ("Good Bye 2017 & Welcome 2018")
 #PygalDraw.DrawTest()
@@ -75,8 +77,24 @@ print ("结束时间" + str(timeend))
 print ("运行时间" + str(timeend - timestart))
 
 
+class Example(QMainWindow):
+
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+    def initUI(self):
+        self.statusBar().showMessage('Ready')
+
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Statusbar')
+        self.show()
+
 
 if __name__ == "__main__":
     print ("主程序")
-
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
 quit()
