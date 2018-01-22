@@ -20,6 +20,7 @@ import LogProcess
 import Serial
 import MultiProcess
 import myThread
+import Qt5
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
@@ -64,7 +65,7 @@ Variable.VariableTest()
 #thread = Pyserial.Test()
 
 # MultiProcess.Test()
-
+Qt5.Qt_Test()
 myThread.threadTest()
 print ("Good Bye 2017 & Welcome 2018")
 #PygalDraw.DrawTest()
