@@ -1,6 +1,7 @@
 #coding=utf-8
 import threading
 import time
+import Qt5
 class myThread(threading.Thread):
 
     # 初始化函数
@@ -27,13 +28,23 @@ def threadLoop(n):
     print ('线程结束!')
     return
 
+def threadqt():
+    i = 0
+    print ('Thread start which name is %s' %(threading.current_thread().name))
+    result = Qt5.Qt_Test()
+
+    print ('线程结束!')
+    return
+
 def threadTest():
 
     # 创建线程
-    thread1 = threading.Thread(target = threadLoop, name= 'Thread_1', args=(5,))
-    thread2 = threading.Thread(target = threadLoop, name= 'Thread_2', args=(5,))
+    thread1  = threading.Thread(target = threadLoop, name= 'Thread_1', args=(5,))
+    thread2  = threading.Thread(target = threadLoop, name= 'Thread_2', args=(5,))
+    threadQt = threading.Thread(target = threadqt, name='Thread_Qt', args=())
     thread1.start()
     thread2.start()
+    threadQt.start()
 
     # 等待线程结束 timeout 超时时间
     thread1.join(timeout = 1.5)

@@ -2,24 +2,24 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 
-def Qt_Test(QMainWindow):
-
-
-    print("Qt测试")
+class Qt_Test(QMainWindow):
 
 
     def __init__(self):
 
-        #print("Qt测试")
+        print("Qt测试")
         app = QApplication(sys.argv)
         super().__init__()
-        self.statusBar().showMessage('Ready')
-
-        self.setGeometry(300, 300, 250, 150)
-        self.setWindowTitle('Statusbar')
-        self.show()
+        self.initUI()
         sys.exit(app.exec_())
+        return
 
+    def initUI(self):
+        self.statusBar().showMessage('Hello World')
+        self.setGeometry(300, 300, 800, 600)
+        self.setWindowTitle('Qt Study')
+        self.show()
+        return
 
 
 
