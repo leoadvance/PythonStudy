@@ -1,5 +1,6 @@
 #coding=utf-8
 import sys
+import QtTest
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 
 class Qt_Test(QMainWindow):
@@ -10,15 +11,16 @@ class Qt_Test(QMainWindow):
         print("Qt测试")
         app = QApplication(sys.argv)
         super().__init__()
-        self.initUI()
+        # self.initUI()
+        MainWindow = QMainWindow()
+        ui = QtTest.Ui_MainWindow()
+        ui.setupUi(MainWindow)
+        MainWindow.show()
         sys.exit(app.exec_())
         return
 
     def initUI(self):
-        self.statusBar().showMessage('Hello World')
-        self.setGeometry(300, 300, 800, 600)
-        self.setWindowTitle('Qt Study')
-        self.show()
+
         return
 
 
