@@ -1,5 +1,13 @@
 #coding=utf-8
 
+
+def tupleTest():
+    # 元组
+    print("\r\ntuple元组测试:")
+    tuple = ("234", 768476, 12.3, "Test")
+    print (tuple)
+    return
+
 def listTest():
     # 列表
     print("\r\nlist列表测试:")
@@ -48,6 +56,11 @@ def listTest():
     print(l)
 
 def VariableTest():
+
+    # 元组测试
+    tupleTest()
+
+    # 列表测试
     listTest()
     # 声明字符串变量s
     s = "123456"
