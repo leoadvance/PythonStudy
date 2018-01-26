@@ -33,6 +33,9 @@ def listTest():
     l.extend([1, 2, 3])
     print(l)
 
+    print("显示l[-1]， 负号表示倒序!")
+    print(l[-1])
+
     # 获取列表长度
     lSize = len(l)
     print(lSize)
