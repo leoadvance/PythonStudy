@@ -1,7 +1,51 @@
 #coding=utf-8
 
-def VariableTest():
+def listTest():
+    # 列表
+    print("\r\nlist列表测试:")
+    l = ["234", 768476, 12.3, "Test"]
+    print("print (l)")
+    print(l)
+    print("print (l[1:3])")
+    print(l[1:3])
+    print("l *= 2")
+    l *= 2
+    print("print (l)")
+    print(l)
+    print("list内部成员除了可以改变数值，还是改变类型！")
+    print("l[1] = \"abc\"")
+    print("l[2] = 123.45")
+    l[1] = "abc"
+    l[2] = 123.45
+    print("print (l)")
+    print(l)
 
+    print("\r\n实现列表插入功能：l.insert(1, 7878), 表示在原有位置1前插入数字7878")
+    l.insert(1, 7878)
+    print(l)
+
+    print("\r\n实现列表追加功能：l.append(\"last\"), 追加内容到列表最后。")
+    l.append("last")
+    print(l)
+
+    print("\r\n实现列表追加功能：l.extend([1,2,3]), "
+          "追加列表到列表最后，此处和append有区别，extend追加的只能是列表。")
+    l.extend([1, 2, 3])
+    print(l)
+
+    # 获取列表长度
+    lSize = len(l)
+    print(lSize)
+    print("获取队列长度并删除最后一个列表")
+    del l[12]
+    print(l)
+
+    print("删除前两个列表，del l[0:2]")
+    del l[0:2]
+    print(l)
+
+def VariableTest():
+    listTest()
     # 声明字符串变量s
     s = "123456"
     print ('s = "123456"\n' + "type(s) 获取变量s类型 " + str(type(s)))
@@ -28,48 +72,7 @@ def VariableTest():
 
 
 
-    # 列表
-    print ("\r\nlist列表测试:")
-    l = ["234", 768476, 12.3, "Test"]
-    print("print (l)")
-    print (l)
-    print("print (l[1:3])")
-    print (l[1:3])
-    print("l *= 2")
-    l *= 2
-    print("print (l)")
-    print(l)
-    print ("list内部成员除了可以改变数值，还是改变类型！")
-    print("l[1] = \"abc\"")
-    print("l[2] = 123.45")
-    l[1] = "abc"
-    l[2] = 123.45
-    print("print (l)")
-    print(l)
 
-    print("\r\n实现列表插入功能：l.insert(1, 7878), 表示在原有位置1前插入数字7878")
-    l.insert(1, 7878)
-    print(l)
-
-    print("\r\n实现列表追加功能：l.append(\"last\"), 追加内容到列表最后。")
-    l.append("last")
-    print (l)
-
-    print("\r\n实现列表追加功能：l.extend([1,2,3]), "
-          "追加列表到列表最后，此处和append有区别，extend追加的只能是列表。")
-    l.extend([1,2,3])
-    print (l)
-
-    # 获取列表长度
-    lSize = len(l)
-    print (lSize)
-    print ("获取队列长度并删除最后一个列表")
-    del l[12]
-    print (l)
-
-    print ("删除前两个列表，del l[0:2]")
-    del l[0:2]
-    print (l)
 
     # dictionary
     print ("\r\ndictionary 学习!")

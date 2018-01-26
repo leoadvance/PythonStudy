@@ -25,8 +25,8 @@ import Qt5
 import itchat
 
 # 登录微信
-itchat.auto_login()
-frends = itchat.get_friends(update=True)[0:]
+# itchat.auto_login()
+# frends = itchat.get_friends(update=True)[0:]
 
 MULTIPLE = 1
 timestart = time.time() * MULTIPLE
