@@ -1,11 +1,17 @@
 #coding=utf-8
 
-
+import timeit
 def tupleTest():
     # 元组
-    print("\r\ntuple元组测试:")
+    print("\r\ntuple元组测试， 元组是只读的list。list用中括号，元组用小括号")
     tuple = ("234", 768476, 12.3, "Test")
     print (tuple)
+
+    # 运行时间测试功能 循环number次耗时，单位 s
+    print(timeit.timeit ("a=(1,2,3,4,5)", number=100000))
+    # 分配空元组
+
+   # print(tupleEmpty)
     return
 
 def listTest():
