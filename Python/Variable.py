@@ -8,10 +8,16 @@ def tupleTest():
     print (tuple)
 
     # 运行时间测试功能 循环number次耗时，单位 s
-    print(timeit.timeit ("a=(1,2,3,4,5)", number=100000))
-    # 分配空元组
+    print("创建元组a=(1,2,3,4,5), 1,000,000次 耗时 =", timeit.timeit ("a=(1,2,3,4,"
+                                                                "5)",
+                                             number=1000000), "s")
 
-   # print(tupleEmpty)
+    print("创建列表a=[1,2,3,4,5], 1,000,000次 耗时 =", timeit.timeit ("a=[1,2,3,4,"
+                                                                "5]",
+                                             number=1000000), "s")
+    print("元组创建比列表高效的多！")
+    print("创建只有一个元素的元组，需要用逗号来与赋值区分。如 tuple = (1,)")
+
     return
 
 def listTest():
