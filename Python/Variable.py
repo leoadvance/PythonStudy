@@ -22,12 +22,10 @@ def tupleTest():
 
 def listTest():
     # 列表
-    print("\r\nlist列表测试:")
+
     l = ["234", 768476, 12.3, "Test"]
-    print("print (l)")
-    print(l)
-    print("print (l[1:3])")
-    print(l[1:3])
+    print("\r\nlist列表测试:","print (l)\r\n", l)
+    print("print (l[1:3])", l[1:3])
     print("l *= 2")
     l *= 2
     print("print (l)")
@@ -40,9 +38,9 @@ def listTest():
     print("print (l)")
     print(l)
 
-    print("\r\n实现列表插入功能：l.insert(1, 7878), 表示在原有位置1前插入数字7878")
     l.insert(1, 7878)
-    print(l)
+    print("\r\n实现列表插入功能：l.insert(1, 7878), 表示在原有位置1前插入数字7878\r\n", l)
+
 
     print("\r\n实现列表追加功能：l.append(\"last\"), 追加内容到列表最后。")
     l.append("last")
