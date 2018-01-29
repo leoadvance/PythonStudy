@@ -7,19 +7,38 @@ class Algorithm:
         listReturn = [99, 99]
         start =time.time()
         listLen = len(nums)
+
+
+        # for i in range(0, listLen - 1):
+        #     for j in range (i + 1, listLen):
+        #
+        #         if (nums[i] + nums[j] == target):
+        #
+        #             listReturn[0] = i
+        #             listReturn[1] = j
+        #             print (i, j)
+        #             stop = time.time()
+        #             print("函数运行时间：",stop-start)
+        #             return listReturn
+        # 声明空字典
+        mydict = {}
+
+        # 遍历
         for i in range(0, listLen - 1):
-            for j in range (i + 1, listLen):
 
-                if (nums[i] + nums[j] == target):
+            # 判断该值是否在字典中出现过
+            if nums[i] in mydict:
+                stop = time.time()
+                print("函数运行时间：", stop - start)
+                print (mydict[nums[i]], i, nums[mydict[nums[i]]], nums[i])
+                return [mydict[nums[i]], i]
 
-                    listReturn[0] = i
-                    listReturn[1] = j
-                    print (i, j)
-                    stop = time.time()
-                    print("函数运行时间：",stop-start)
-                    return listReturn
+            else:
 
-        return listReturn
+                # 记录需要获取的相反数 用序号做值
+                mydict[target-nums[i]] = i
+
+
 
     def twoSumTest(self):
 
