@@ -29,7 +29,7 @@ class Algorithm:
             # 判断该值是否在字典中出现过
             if nums[i] in mydict:
                 stop = time.time()
-                print("函数运行时间：", stop - start)
+                print("函数运行时间：", stop - start, "s")
                 print (mydict[nums[i]], i, nums[mydict[nums[i]]], nums[i])
                 return [mydict[nums[i]], i]
 
@@ -38,7 +38,36 @@ class Algorithm:
                 # 记录需要获取的相反数 用序号做值
                 mydict[target-nums[i]] = i
 
+    def addTwoNumbers(self, l1, l2):
 
+        start = time.time()
+        stop  = time.time()
+        print("函数运行时间：", stop - start, "s")
+        l3 = []
+        l1Len = len(l1)
+        l2Len = len(l2)
+        l1Sun = 0
+        l2Sun = 0
+        j = -1
+        for i in range(0, l1Len):
+            l1Sun *= 10
+            l1Sun += l1[j]
+            j -= 1
+        print("l1Sun =", l1Sun)
+        j = -1
+        for i in range(0, l2Len):
+            l2Sun *= 10
+            l2Sun += l2[j]
+            j -= 1
+        print("l2Sun =", l2Sun)
+        l3Sun = l1Sun + l2Sun
+        print("l3Sun =", l3Sun)
+        while(l3Sun > 0):
+            a = l3Sun % 10
+            l3Sun //= 10
+            l3.append(a)
+            print (l3Sun)
+        return l3
 
     def twoSumTest(self):
 
@@ -52,6 +81,9 @@ class Algorithm:
 
         print("初始化Algorithm类")
 
-        self.twoSumTest()
+        #self.twoSumTest()
+        l1 = [1,2,3]
+        l2 = [3,2,1]
+        self.addTwoNumbers(l1, l2)
 
         return
