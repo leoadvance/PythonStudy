@@ -21,6 +21,7 @@ import Serial
 import MultiProcess
 import myThread
 import Qt5
+import Algorithm
 
 import itchat
 
@@ -72,7 +73,7 @@ Variable.VariableTest()
 
 # MultiProcess.Test()
 
-
+classAlgorithm = Algorithm.Algorithm()
 
 
 myThread.threadTest()
