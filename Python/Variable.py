@@ -65,6 +65,10 @@ def listTest():
     del l[0:2]
     print(l)
 
+def copyTest(nums):
+    tuple = nums[:]
+    print (tuple)
+
 def VariableTest():
 
     # 元组测试
@@ -72,6 +76,11 @@ def VariableTest():
 
     # 列表测试
     listTest()
+
+    # 列表复制
+    lCopyTest = [1,2,3]
+    copyTest(lCopyTest)
+
     # 声明字符串变量s
     s = "123456"
     print ('s = "123456"\n' + "type(s) 获取变量s类型 " + str(type(s)))
