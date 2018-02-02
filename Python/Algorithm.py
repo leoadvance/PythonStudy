@@ -1,5 +1,11 @@
 #coding=utf-8
 import time
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = Non
+
 class Algorithm:
 
 
@@ -38,13 +44,6 @@ class Algorithm:
                 # 记录需要获取的相反数 用序号做值
                 mydict[target-nums[i]] = i
 
-    def addTwoNumbers(self, l1, l2):
-
-        start = time.time()
-        stop  = time.time()
-        print("函数运行时间：", stop - start, "s")
-
-        return
 
     def twoSumTest(self):
 
@@ -59,8 +58,7 @@ class Algorithm:
         print("初始化Algorithm类")
 
         self.twoSumTest()
-        l1 = [1,2,3]
-        l2 = [3,2,1]
-        self.addTwoNumbers(l1, l2)
+
+
 
         return
