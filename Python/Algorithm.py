@@ -45,13 +45,22 @@ class Algorithm:
                 mydict[target-nums[i]] = i
 
     def reverse(self, x):
-        print("数据逆序&取反,原数值 =", x)
+        print("数据逆序&取反,超过32位有符号int算溢出，溢出输出0,原数值 =", x)
         output = 0
+        sign   = 0
+
+        if x < 0 :
+            x = 0 - x
+            sign = 1
         while(x > 0):
             output *= 10
             output += x % 10
             x //= 10
-        output = 0 - output
+        if sign == 1:
+            output = 0 - output
+
+        if output < -2147483648 or output > 2147483647:
+            output = 0
         print ("逆序值 =", output)
         return output
 
