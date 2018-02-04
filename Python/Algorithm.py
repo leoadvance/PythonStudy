@@ -44,6 +44,17 @@ class Algorithm:
                 # 记录需要获取的相反数 用序号做值
                 mydict[target-nums[i]] = i
 
+    def reverse(self, x):
+        print("数据逆序&取反,原数值 =", x)
+        output = 0
+        while(x > 0):
+            output *= 10
+            output += x % 10
+            x //= 10
+        output = 0 - output
+        print ("逆序值 =", output)
+        return output
+
 
     def twoSumTest(self):
 
@@ -58,7 +69,7 @@ class Algorithm:
         print("初始化Algorithm类")
 
         self.twoSumTest()
-
+        self.reverse(100)
 
 
         return
