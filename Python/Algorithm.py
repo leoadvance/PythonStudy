@@ -68,16 +68,23 @@ class Algorithm:
     def isPalindrome(self, x):
         print("判断是否回文数字！x = ", x)
         out = 0
-        x = abs(x)
-        while(out < x):
+        if x < 0:
+            return False
+        if x < 10:
+            return True
+        if x % 10 == 0:
+            return False
+        while (out <= x):
             out *= 10
             out += x % 10
-            x  //= 10
+            x //= 10
             if (out == x):
-                print("是回文")
+                # print("是回文")
+                return True
+            elif (x > 9) and (out == x // 10):
                 return True
 
-        print("不是回文")
+        # print("不是回文")
         return False
 
     def twoSumTest(self):
