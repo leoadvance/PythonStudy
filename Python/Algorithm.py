@@ -64,6 +64,21 @@ class Algorithm:
         print ("逆序值 =", output)
         return output
 
+    # 判断是否回文数字
+    def isPalindrome(self, x):
+        print("判断是否回文数字！x = ", x)
+        out = 0
+        x = abs(x)
+        while(out < x):
+            out *= 10
+            out += x % 10
+            x  //= 10
+            if (out == x):
+                print("是回文")
+                return True
+
+        print("不是回文")
+        return False
 
     def twoSumTest(self):
 
@@ -80,5 +95,5 @@ class Algorithm:
         self.twoSumTest()
         self.reverse(100)
 
-
+        self.isPalindrome(-2147483648)
         return
