@@ -87,6 +87,27 @@ class Algorithm:
         # print("不是回文")
         return False
 
+    # roman数字转整型
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        print("1~3999roman数字转整型，原始值 s = ", s)
+        # 初始化字典
+        r_sum = 0
+        temp = 0
+        rul = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        for ch in s:
+            ch_val = int(rul[ch])
+            r_sum = r_sum + ch_val
+            if temp < ch_val:
+                r_sum -= temp * 2
+            temp = ch_val
+        print("r_sum =", r_sum)
+        return r_sum
+
+
     def twoSumTest(self):
 
         print ("")
@@ -103,4 +124,5 @@ class Algorithm:
         self.reverse(100)
 
         self.isPalindrome(-2147483648)
+        self.romanToInt("XXDCI")
         return
