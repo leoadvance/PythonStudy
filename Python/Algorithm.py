@@ -1,11 +1,6 @@
 #coding=utf-8
 import time
-
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = Non
-
+from ListNode import ListNode
 class Algorithm:
 
 
@@ -107,6 +102,38 @@ class Algorithm:
         print("r_sum =", r_sum)
         return r_sum
 
+    # 链表求和
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        print("两链表求和")
+
+        # 声明链表
+        listOut = nextList = ListNode(0)
+        carry = 0
+
+        # 判断链表和进位位非空
+        while (l1 or l2 or carry):
+            if (l1):
+                carry += l1.val
+                # print("l1.val =", l1.val)
+                l1 = l1.next
+
+            if (l2):
+                carry += l2.val
+                # print("l2.val =", l2.val)
+                l2 = l2.next
+
+            nextList.next = ListNode(carry % 10)
+            nextList = nextList.next
+            carry //= 10
+
+        return listOut.next
+
+
 
     def twoSumTest(self):
 
@@ -125,4 +152,12 @@ class Algorithm:
 
         self.isPalindrome(-2147483648)
         self.romanToInt("XXDCI")
+        a = ListNode(2)
+        a.next = a1 = ListNode(4)
+        a1.next = ListNode(3)
+        b = ListNode(5)
+        b.next = b1 = ListNode(6)
+        b1.next = b2 = ListNode(4)
+
+        self.addTwoNumbers(a, b)
         return
