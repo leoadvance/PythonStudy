@@ -119,12 +119,12 @@ class Algorithm:
         while (l1 or l2 or carry):
             if (l1):
                 carry += l1.val
-                # print("l1.val =", l1.val)
+                #print("l1.val =", l1.val)
                 l1 = l1.next
 
             if (l2):
                 carry += l2.val
-                # print("l2.val =", l2.val)
+                #print("l2.val =", l2.val)
                 l2 = l2.next
 
             nextList.next = ListNode(carry % 10)
@@ -133,7 +133,80 @@ class Algorithm:
 
         return listOut.next
 
+    # 最长数值
+    def isInListNode(self, l1, s):
+        if l1.val == s:
+            return
 
+
+    # 最长数值
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        print("求连续不同字符长度 ", s)
+
+
+        if (len(s) == 0):
+            return 0
+        maxLen = returnLen = 1
+
+        # 记录首个链表
+        listHead = listReal = ListNode(s[0])
+
+
+        for str in s[1:]:
+            # 遍历列表
+            lenSize = 0
+            sign = 0
+
+
+            # print("Current list = ")
+            # listTemp = listHead
+            # while(listTemp):
+            #     print(listTemp.val)
+            #     listTemp = listTemp.next
+
+
+            # 判断当前链表中是否有相同数据
+            listTemp = listHead
+            while(listTemp):
+               # print("链表当前值", listTemp.val, "待对比值", str)
+                # 有相同值
+                if (listTemp.val == str):
+                    sign = 1
+                    # 非最后一位（即非连续）
+                    if (listTemp.next != None):
+                        listHead = listTemp.next
+                        returnLen -= lenSize
+                        listReal.next = ListNode(str)
+                        listReal = listReal.next
+                        break
+                    # 最后一位 长度归0
+                    else:
+                        listHead = listReal = ListNode(str)
+                        #print("listHead.val =", listHead.val)
+                        returnLen = 1
+                        break
+                # 未找到相同值
+                else:
+                    lenSize += 1
+                    listTemp = listTemp.next
+            # 未找下相同数据 记录新长度
+            if (sign == 0):
+
+                listReal.next = ListNode(str)
+                listReal = listReal.next
+                returnLen += 1
+                #print("未找到相同数，追加值 = ", str, "长度 =", returnLen)
+            if (returnLen > maxLen):
+                maxLen = returnLen
+               # print("当前最大长度 =", maxLen)
+        print("不同数据长度 =", maxLen)
+
+
+        return maxLen
 
     def twoSumTest(self):
 
@@ -157,7 +230,8 @@ class Algorithm:
         a1.next = ListNode(3)
         b = ListNode(5)
         b.next = b1 = ListNode(6)
-        b1.next = b2 = ListNode(4)
+        b1.next=ListNode(4)
 
         self.addTwoNumbers(a, b)
+        self.lengthOfLongestSubstring("cckilbkkd")
         return
