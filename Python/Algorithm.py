@@ -216,22 +216,73 @@ class Algorithm:
         self.twoSum(list1, 16021)
         return
 
+    # 字符排序
+    def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        print("字符排序")
+        sOut = ""
+        sLen = len(s)
+        # 防止出现单行
+        if ((numRows == 1) or (sLen <= numRows)):
+            return s
+
+        print("字符总长度 = ",sLen, "分 ", numRows, "行")
+        row = sLen // (2 * (numRows - 1))
+        row *= 2
+        remainder = sLen % (2 * (numRows - 1))
+
+        # 第一行
+        i = 0
+        while(i < row):
+            sOut += s[i*(numRows - 1)]
+            i += 2
+        if ((i*(numRows - 1)) < sLen):
+            sOut += s[i * (numRows - 1)]
+
+        j = 0
+        while (j < numRows - 2):
+            j += 1
+            i = 0
+            while(i < row):
+                sOut += s[i*(numRows - 1) + j]
+                i += 1
+            addr =  i*(numRows - 1) + j
+            if (addr < sLen):
+                sOut += s[addr]
+
+        # 最后一行
+        i = 0
+        while (i < row):
+            sOut += s[(i + 1) * (numRows - 1)]
+            i += 2
+        if (((i + 1) * (numRows - 1)) < sLen):
+            sOut += s[(i + 1) * (numRows - 1)]
+        print(sOut)
+        return sOut
+
+
+
     def __init__(self):
 
         print("初始化Algorithm类")
 
-        self.twoSumTest()
-        self.reverse(100)
-
-        self.isPalindrome(-2147483648)
-        self.romanToInt("XXDCI")
-        a = ListNode(2)
-        a.next = a1 = ListNode(4)
-        a1.next = ListNode(3)
-        b = ListNode(5)
-        b.next = b1 = ListNode(6)
-        b1.next=ListNode(4)
-
-        self.addTwoNumbers(a, b)
-        self.lengthOfLongestSubstring("cckilbkkd")
+        # self.twoSumTest()
+        # self.reverse(100)
+        #
+        # self.isPalindrome(-2147483648)
+        # self.romanToInt("XXDCI")
+        # a = ListNode(2)
+        # a.next = a1 = ListNode(4)
+        # a1.next = ListNode(3)
+        # b = ListNode(5)
+        # b.next = b1 = ListNode(6)
+        # b1.next=ListNode(4)
+        #
+        # self.addTwoNumbers(a, b)
+        # self.lengthOfLongestSubstring("cckilbkkd")
+        self.convert("PAYPALISHIRING", 3)
         return
