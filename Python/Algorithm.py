@@ -224,45 +224,33 @@ class Algorithm:
         :rtype: str
         """
         print("字符排序")
-        sOut = ""
-        sLen = len(s)
-        # 防止出现单行
-        if ((numRows == 1) or (sLen <= numRows)):
+        if numRows == 1:
             return s
 
-        print("字符总长度 = ",sLen, "分 ", numRows, "行")
-        row = sLen // (2 * (numRows - 1))
-        row *= 2
-        remainder = sLen % (2 * (numRows - 1))
 
-        # 第一行
-        i = 0
-        while(i < row):
-            sOut += s[i*(numRows - 1)]
-            i += 2
-        if ((i*(numRows - 1)) < sLen):
-            sOut += s[i * (numRows - 1)]
+        period = 2 * (numRows - 1)
 
-        j = 0
-        while (j < numRows - 2):
-            j += 1
-            i = 0
-            while(i < row):
-                sOut += s[i*(numRows - 1) + j]
-                i += 1
-            addr =  i*(numRows - 1) + j
-            if (addr < sLen):
-                sOut += s[addr]
+        # 声明list缓存
+        lines = ["" for i in range(numRows)]
 
-        # 最后一行
-        i = 0
-        while (i < row):
-            sOut += s[(i + 1) * (numRows - 1)]
-            i += 2
-        if (((i + 1) * (numRows - 1)) < sLen):
-            sOut += s[(i + 1) * (numRows - 1)]
-        print(sOut)
-        return sOut
+        # 字典保存余数
+        d = {}
+
+        # 下标余数对应到行
+        for i in range(period):
+            if i < numRows:
+                d[i] = i
+            else:
+                d[i] = period - i
+
+        for i in range(len(s)):
+            lines[d[i % period]] += s[i]
+
+        print(lines)
+
+        # list变字符串
+        print("".join(lines))
+        return "".join(lines)
 
 
 
@@ -284,5 +272,5 @@ class Algorithm:
         #
         # self.addTwoNumbers(a, b)
         # self.lengthOfLongestSubstring("cckilbkkd")
-        self.convert("PAYPALISHIRING", 3)
+        self.convert("PAYPALISHIRING", 4)
         return
