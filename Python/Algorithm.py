@@ -272,7 +272,24 @@ class Algorithm:
             c >>= 1
         print (len)
         return len
-    
+
+
+    # 原点判断
+    def judgeCircle(self, moves):
+        """
+        :type moves: str
+        :rtype: bool
+        """
+        print("原点回归")
+        dict = {"U":0, "D":1, "L":2, "R":3 }
+        list = [0] * 4
+        for s in moves:
+            list[dict[s]] +=1
+        if (list[0] == list[1]) and (list[2] == list[3]):
+            return True
+
+        return False
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -294,4 +311,5 @@ class Algorithm:
         self.convert("PAYPALISHIRING", 4)
 
         self.hammingDistance(1, 4)
+        self.judgeCircle("LLLL")
         return
