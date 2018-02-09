@@ -252,8 +252,27 @@ class Algorithm:
         print("".join(lines))
         return "".join(lines)
 
+    # 计算汉明长度
+    def hammingDistance(self, x, y):
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
+        print("计算汉明长度")
 
+        # 先异或 相同为0 不同为1
+        c  = x^y
+        len = 0
 
+        # 统计异或值1的个数
+        while(c):
+            if (c % 2):
+                len += 1
+            c >>= 1
+        print (len)
+        return len
+    
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -273,4 +292,6 @@ class Algorithm:
         # self.addTwoNumbers(a, b)
         # self.lengthOfLongestSubstring("cckilbkkd")
         self.convert("PAYPALISHIRING", 4)
+
+        self.hammingDistance(1, 4)
         return
