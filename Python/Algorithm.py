@@ -290,6 +290,41 @@ class Algorithm:
 
         return False
 
+    # 自除数
+    def selfDividingNumbers(self, left, right):
+        """
+        :type left: int
+        :type right: int
+        :rtype: List[int]
+        """
+        list = []
+        # print("自除数 list长度 = ", len(list))
+        i = left
+        Sign = 0
+        while (i <= right):
+            num = i
+            #print ("i=", i)
+            if (num > 9):
+                while (num):
+                    remainder = num % 10
+                    # 余数不能为0
+                    if (remainder == 0):
+                        i += 1
+                        Sign = 1
+                        break
+                    if ((i % remainder) == 0):
+                        num //= 10
+                    else:
+                        i += 1
+                        Sign = 1
+                        break
+            if (Sign == 0):
+                list.append(i)
+                i += 1
+            else:
+                Sign = 0
+        print(list)
+        return list
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -312,4 +347,5 @@ class Algorithm:
 
         self.hammingDistance(1, 4)
         self.judgeCircle("LLLL")
+        self.selfDividingNumbers(1, 22)
         return
