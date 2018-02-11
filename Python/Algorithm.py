@@ -360,6 +360,25 @@ class Algorithm:
         for x in str(num):
             ret += (str(int(x)**2))
         print(ret)
+
+    def get_sum(self, a, b):
+        print("求ab之和")
+
+        # 变量交换，保证a<=b
+        if (a > b):
+             a,b = b,a
+
+        sum = 0
+        i   = a
+
+        while(i <= b):
+            sum += i
+            i += 1
+        print(sum)
+        return sum
+
+
+    # good luck!
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -385,4 +404,5 @@ class Algorithm:
         self.selfDividingNumbers(1, 22)
         self.printer_error("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
         self.square_digits(9129)
+        self.get_sum(3,3)
         return
