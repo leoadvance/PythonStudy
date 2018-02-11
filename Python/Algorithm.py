@@ -325,6 +325,17 @@ class Algorithm:
                 Sign = 0
         print(list)
         return list
+
+    def printer_error(self, s):
+        # your code
+        badLen = 0
+        totalLen = len(s)
+        for strS in s:
+            if strS > "m":
+                badLen += 1
+
+        return (str(badLen) + "/" + str(totalLen))
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -348,4 +359,5 @@ class Algorithm:
         self.hammingDistance(1, 4)
         self.judgeCircle("LLLL")
         self.selfDividingNumbers(1, 22)
+        self.printer_error("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
         return
