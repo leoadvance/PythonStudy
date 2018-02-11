@@ -399,8 +399,19 @@ class Algorithm:
             if (ord(chars[i + 1]) - ord(chars[i]) != 1):
                 print(chr(ord(chars[i]) + 1))
 
-        return
 
+
+    def sumDigits(self, number):
+
+        print("求数值各位之和")
+        number = abs(number)
+
+        sum = 0
+        while(number):
+            number, remainder = divmod(number, 10)
+            sum += remainder
+
+        print(sum)
 
     def __init__(self):
 
@@ -430,4 +441,5 @@ class Algorithm:
         self.get_sum(3,3)
         self.tribonacci([0.5,0.5,0.5], 10)
         self.find_missing_letter(['O','Q','R','S'])
+        self.sumDigits(-32)
         return
