@@ -413,6 +413,15 @@ class Algorithm:
 
         print(sum)
 
+    def disemvowel(self, string):
+        dict = {"a","e","i","o","u","A","E","I","O","U"}
+        sOut = ""
+        for x in string:
+            if (x in dict) is False:
+                sOut += x
+        #print(sOut)
+        return sOut
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -442,4 +451,5 @@ class Algorithm:
         self.tribonacci([0.5,0.5,0.5], 10)
         self.find_missing_letter(['O','Q','R','S'])
         self.sumDigits(-32)
+        self.disemvowel("This website is for losers LOL!")
         return
