@@ -391,6 +391,16 @@ class Algorithm:
                 i += 1
         print(listOut[:n])
 
+    def find_missing_letter(self, chars):
+
+        for i in range(len(chars) - 1):
+
+            # ord 字符串转ASCII chr ascii 转字符串
+            if (ord(chars[i + 1]) - ord(chars[i]) != 1):
+                print(chr(ord(chars[i]) + 1))
+
+        return
+
 
     def __init__(self):
 
@@ -419,4 +429,5 @@ class Algorithm:
         self.square_digits(9129)
         self.get_sum(3,3)
         self.tribonacci([0.5,0.5,0.5], 10)
+        self.find_missing_letter(['O','Q','R','S'])
         return
