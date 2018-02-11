@@ -336,6 +336,30 @@ class Algorithm:
 
         return (str(badLen) + "/" + str(totalLen))
 
+    def square_digits(self, num):
+        # my solutions
+        # returnNum = 0
+        # listNum = []
+        #
+        # while(num):
+        #     num, remainder = divmod(num, 10)
+        #     listNum.append(remainder * remainder)
+        #
+        # for intnum in listNum[::-1]:
+        #     if intnum > 10:
+        #         returnNum *= 100
+        #     else:
+        #         returnNum *= 10
+        #     returnNum += intnum
+        #
+        # print(listNum, returnNum)
+        # return (returnNum)
+
+        # best solutions
+        ret = ""
+        for x in str(num):
+            ret += (str(int(x)**2))
+        print(ret)
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -360,4 +384,5 @@ class Algorithm:
         self.judgeCircle("LLLL")
         self.selfDividingNumbers(1, 22)
         self.printer_error("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
+        self.square_digits(9129)
         return
