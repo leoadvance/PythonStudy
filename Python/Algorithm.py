@@ -377,8 +377,21 @@ class Algorithm:
         print(sum)
         return sum
 
+    def tribonacci(self, signature, n):
 
-    # good luck!
+        print("费波那契数列")
+        listOut = signature[:]
+        sum = listOut[0] + listOut[1]
+        i = 3
+        if n > 3:
+            while(i < n):
+                sum += listOut[i - 1]
+                listOut.append(sum)
+                sum -=listOut[i - 3]
+                i += 1
+        print(listOut[:n])
+
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -405,4 +418,5 @@ class Algorithm:
         self.printer_error("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
         self.square_digits(9129)
         self.get_sum(3,3)
+        self.tribonacci([0.5,0.5,0.5], 10)
         return
