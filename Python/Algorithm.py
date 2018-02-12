@@ -422,6 +422,18 @@ class Algorithm:
         #print(sOut)
         return sOut
 
+    # 字符倒序
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        strOut = ""
+        for x in s.split(" "):
+            strOut += x[:: -1]
+            strOut += " "
+        print(strOut[:-1])
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -452,4 +464,5 @@ class Algorithm:
         self.find_missing_letter(['O','Q','R','S'])
         self.sumDigits(-32)
         self.disemvowel("This website is for losers LOL!")
+        self.reverseWords("Let's take LeetCode contest")
         return
