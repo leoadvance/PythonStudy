@@ -434,6 +434,15 @@ class Algorithm:
             strOut += " "
         print(strOut[:-1])
 
+    # 排序+求最小值
+    def arrayPairSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        # 降序排列
+        a = sorted(nums, reverse=False)
+
     def __init__(self):
 
         print("初始化Algorithm类")
