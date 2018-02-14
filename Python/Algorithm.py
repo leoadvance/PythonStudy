@@ -442,7 +442,11 @@ class Algorithm:
         """
         # 降序排列
         a = sorted(nums, reverse=False)
-
+        print(a)
+        # for i in a:
+        #     print (sum(a[::2]))
+        # print(sum(sorted(nums)[::3]))
+        print(sum(a[::3]))
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -474,4 +478,5 @@ class Algorithm:
         self.sumDigits(-32)
         self.disemvowel("This website is for losers LOL!")
         self.reverseWords("Let's take LeetCode contest")
+        self.arrayPairSum([5,7,6,3,4,1,2,8])
         return
