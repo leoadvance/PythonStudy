@@ -447,6 +447,27 @@ class Algorithm:
         #     print (sum(a[::2]))
         # print(sum(sorted(nums)[::3]))
         print(sum(a[::3]))
+
+    def isToeplitzMatrix(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: bool
+        """
+        print(matrix)
+        print(matrix[2][1])
+
+        line = len(matrix)
+        row  = len(matrix[0])
+        print("数组 = ",row, "x", line)
+        n = 0
+        while (n < line - 1):
+            for i in range (row - 1):
+                print("n =", n, "i = ", i)
+                if (matrix[n][i] != matrix[n+1][i+1]):
+                    return False
+
+            n += 1
+        return True
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -479,4 +500,5 @@ class Algorithm:
         self.disemvowel("This website is for losers LOL!")
         self.reverseWords("Let's take LeetCode contest")
         self.arrayPairSum([5,7,6,3,4,1,2,8])
+        self.isToeplitzMatrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
         return
