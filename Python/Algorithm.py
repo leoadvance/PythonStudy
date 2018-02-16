@@ -468,6 +468,30 @@ class Algorithm:
 
             n += 1
         return True
+
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        print("判断数组里唯一出现一次的数")
+        lenSize = len(nums)
+        if lenSize == 1:
+            return nums[0]
+
+        # 按升序排列
+        listout = sorted(nums)
+        print(listout)
+
+        i = 0
+        while (i < lenSize - 1):
+            if (listout[i] != listout[i + 1]):
+                print(listout[i])
+                return listout[i]
+            i += 2
+        print(listout[i])
+        return listout[i]
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -486,19 +510,20 @@ class Algorithm:
         #
         # self.addTwoNumbers(a, b)
         # self.lengthOfLongestSubstring("cckilbkkd")
-        self.convert("PAYPALISHIRING", 4)
-
-        self.hammingDistance(1, 4)
-        self.judgeCircle("LLLL")
-        self.selfDividingNumbers(1, 22)
-        self.printer_error("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
-        self.square_digits(9129)
-        self.get_sum(3,3)
-        self.tribonacci([0.5,0.5,0.5], 10)
-        self.find_missing_letter(['O','Q','R','S'])
-        self.sumDigits(-32)
-        self.disemvowel("This website is for losers LOL!")
-        self.reverseWords("Let's take LeetCode contest")
-        self.arrayPairSum([5,7,6,3,4,1,2,8])
-        self.isToeplitzMatrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
+        # self.convert("PAYPALISHIRING", 4)
+        #
+        # self.hammingDistance(1, 4)
+        # self.judgeCircle("LLLL")
+        # self.selfDividingNumbers(1, 22)
+        # self.printer_error("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
+        # self.square_digits(9129)
+        # self.get_sum(3,3)
+        # self.tribonacci([0.5,0.5,0.5], 10)
+        # self.find_missing_letter(['O','Q','R','S'])
+        # self.sumDigits(-32)
+        # self.disemvowel("This website is for losers LOL!")
+        # self.reverseWords("Let's take LeetCode contest")
+        # self.arrayPairSum([5,7,6,3,4,1,2,8])
+        # self.isToeplitzMatrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
+        self.singleNumber([2,2,3])
         return
