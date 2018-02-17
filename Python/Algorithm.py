@@ -475,22 +475,35 @@ class Algorithm:
         :rtype: int
         """
         print("判断数组里唯一出现一次的数")
-        lenSize = len(nums)
-        if lenSize == 1:
-            return nums[0]
+        # lenSize = len(nums)
+        # if lenSize == 1:
+        #     return nums[0]
+        #
+        # # 按升序排列
+        # listout = sorted(nums)
+        # print(listout)
+        #
+        # i = 0
+        # while (i < lenSize - 1):
+        #     if (listout[i] != listout[i + 1]):
+        #         print(listout[i])
+        #         return listout[i]
+        #     i += 2
+        # print(listout[i])
+        # return listout[i]
+        # 声明字典
+        dict = {}
 
-        # 按升序排列
-        listout = sorted(nums)
-        print(listout)
+        for i in nums:
+            # 移除指定数，如该数不存在，则写入字典
+            try:
+                dict.pop(i)
+            except:
+                dict[i] = 1
+            print ("dict = ", dict)
 
-        i = 0
-        while (i < lenSize - 1):
-            if (listout[i] != listout[i + 1]):
-                print(listout[i])
-                return listout[i]
-            i += 2
-        print(listout[i])
-        return listout[i]
+        # 返回内容首位
+        return(dict.popitem()[0])
 
     def __init__(self):
 
@@ -525,5 +538,5 @@ class Algorithm:
         # self.reverseWords("Let's take LeetCode contest")
         # self.arrayPairSum([5,7,6,3,4,1,2,8])
         # self.isToeplitzMatrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
-        self.singleNumber([2,2,3])
+        self.singleNumber([2,3,1,5,1,3,2])
         return
