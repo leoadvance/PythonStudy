@@ -505,6 +505,28 @@ class Algorithm:
         # 返回内容首位
         return(dict.popitem()[0])
 
+    def distributeCandies(self, candies):
+        """
+        :type candies: List[int]
+        :rtype: int
+        """
+        # 分糖果本质是求一堆数里面最大不同数据个数（不超过总数一半），所以采用字典方式求解
+        print("分糖果")
+        dict = {}
+        lenMAX = len(candies) >> 1
+        lenCurrent = 0
+        for i in candies:
+            print(i)
+            if (i in dict) is False:
+                dict[i] = 1000000
+                lenCurrent += 1
+                if (lenCurrent == lenMAX):
+                    break
+
+        print(dict)
+        print("lenCurrent = ",lenCurrent)
+        return  lenCurrent
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -539,4 +561,5 @@ class Algorithm:
         # self.arrayPairSum([5,7,6,3,4,1,2,8])
         # self.isToeplitzMatrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
         self.singleNumber([2,3,1,5,1,3,2])
+        self.distributeCandies([1,1,2,3])
         return
