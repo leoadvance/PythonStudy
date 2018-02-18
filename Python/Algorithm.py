@@ -512,20 +512,31 @@ class Algorithm:
         """
         # 分糖果本质是求一堆数里面最大不同数据个数（不超过总数一半），所以采用字典方式求解
         print("分糖果")
-        dict = {}
-        lenMAX = len(candies) >> 1
-        lenCurrent = 0
-        for i in candies:
-            print(i)
-            if (i in dict) is False:
-                dict[i] = 1000000
-                lenCurrent += 1
-                if (lenCurrent == lenMAX):
-                    break
+        # dict = {}
+        # lenMAX = len(candies) >> 1
+        # lenCurrent = 0
+        # for i in candies:
+        #     print(i)
+        #     if (i in dict) is False:
+        #         dict[i] = 1000000
+        #         lenCurrent += 1
+        #         if (lenCurrent == lenMAX):
+        #             break
+        #
+        # print(dict)
+        # print("lenCurrent = ",lenCurrent)
 
-        print(dict)
-        print("lenCurrent = ",lenCurrent)
-        return  lenCurrent
+
+        # 网络解法
+        print("candies", candies)
+        lenMax = len(candies) >> 1
+        candies = set(candies)
+        lenCurrent = len(candies)
+        print(candies)
+        if lenCurrent > lenMax:
+            return lenCurrent
+        else:
+            return lenMax
 
     def __init__(self):
 
