@@ -544,24 +544,40 @@ class Algorithm:
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        lenTotal = len(nums)
-        print("lenTotal =", lenTotal)
-        if lenTotal < 2:
-            return nums
-        lastSign = lenTotal - 1
+        # 我的解法
+        # lenTotal = len(nums)
+        # print("lenTotal =", lenTotal)
+        # if lenTotal < 2:
+        #     return nums
+        # lastSign = lenTotal - 1
+        #
+        # i = lastSign
+        # while(i >= 0):
+        #     if nums[i] == 0:
+        #         j = i
+        #         while(j < lastSign):
+        #             # 相邻交换
+        #             nums[j], nums[j + 1] = nums[j + 1], nums[j]
+        #             j += 1
+        #     i -= 1
+        # print(nums)
 
-        i = lastSign
-        while(i >= 0):
-            if nums[i] == 0:
-                j = i
-                while(j < lastSign):
-                    # 相邻交换
-                    nums[j], nums[j + 1] = nums[j + 1], nums[j]
-                    j += 1
-            i -= 1
-        print(nums)
+        # 官方解法1
+        # for i in range(len(nums)):
+        #     if nums[i] == 0:
+        #         nums.pop(i)
+        #         nums.append(0)
+        # print(nums)
 
-
+        # 官方解法2
+        last0 = 0
+        for i in range(0, len(nums)):
+            if (nums[i] != 0):
+                print("i = ", i, "nums[i] = ", nums[i], "nums[last0] = ",
+                      nums[last0], "last0 =", last0)
+                nums[i], nums[last0] = nums[last0], nums[i]
+                last0 += 1
+            print(nums)
 
     def __init__(self):
 
@@ -598,5 +614,5 @@ class Algorithm:
         # self.isToeplitzMatrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
         # self.singleNumber([2,3,1,5,1,3,2])
         # self.distributeCandies([1,1,2,3])
-        self.moveZeroes([0,1,0,3,12])
+        self.moveZeroes([5,6,0,1,0,3,12])
         return
