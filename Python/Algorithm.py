@@ -1,6 +1,7 @@
 #coding=utf-8
 import time
 from ListNode import ListNode
+from ListNode import TreeNode
 class Algorithm:
 
 
@@ -538,6 +539,14 @@ class Algorithm:
         else:
             return lenMax
 
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        nums = sorted(nums, reverse=True)
+        print(nums)
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -571,6 +580,7 @@ class Algorithm:
         # self.reverseWords("Let's take LeetCode contest")
         # self.arrayPairSum([5,7,6,3,4,1,2,8])
         # self.isToeplitzMatrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
-        self.singleNumber([2,3,1,5,1,3,2])
-        self.distributeCandies([1,1,2,3])
+        # self.singleNumber([2,3,1,5,1,3,2])
+        # self.distributeCandies([1,1,2,3])
+        self.moveZeroes([0,1,0,3,12])
         return
