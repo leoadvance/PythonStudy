@@ -544,8 +544,24 @@ class Algorithm:
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        nums = sorted(nums, reverse=True)
+        lenTotal = len(nums)
+        print("lenTotal =", lenTotal)
+        if lenTotal < 2:
+            return nums
+        lastSign = lenTotal - 1
+
+        i = lastSign
+        while(i >= 0):
+            if nums[i] == 0:
+                j = i
+                while(j < lastSign):
+                    # 相邻交换
+                    nums[j], nums[j + 1] = nums[j + 1], nums[j]
+                    j += 1
+            i -= 1
         print(nums)
+
+
 
     def __init__(self):
 
