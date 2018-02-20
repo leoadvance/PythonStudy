@@ -579,6 +579,38 @@ class Algorithm:
                 last0 += 1
             print(nums)
 
+    def letterCasePermutation(self, S):
+
+        print("把字符串中所有字母变换大小写输出")
+
+        # 声明列表组
+        ans = [[]]
+
+        # 遍历字符串
+        for char in S:
+             # 获取当前list组数
+            n = len(ans)
+            print("n =",n)
+
+            # 如果该字符是字母
+            if char.isalpha():
+
+                # 遍历已有组数
+                for i in range(n):
+                    #复制内容 并分别增加大小写
+                    ans.append(ans[i][:])
+                    ans[i].append(char.lower())
+                    ans[n + i].append(char.upper())
+                    # print("ans =", ans)
+            else:
+                # 如果非字母，则仅添加
+                for i in range(n):
+                    ans[i].append(char)
+                    # print("ans =", ans)
+        # 列表内多个单字符串合并
+        ans = list(map("".join, ans))
+        return (ans)
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -614,5 +646,7 @@ class Algorithm:
         # self.isToeplitzMatrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
         # self.singleNumber([2,3,1,5,1,3,2])
         # self.distributeCandies([1,1,2,3])
-        self.moveZeroes([5,6,0,1,0,3,12])
+        # self.moveZeroes([5,6,0,1,0,3,12])
+        self.letterCasePermutation("a1b2")
+
         return
