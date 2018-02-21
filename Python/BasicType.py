@@ -45,15 +45,15 @@ if (sys.platform == 'win32'):
 
 
 # print必须带括号
-Print.Print_Fun()
+# Print.Print_Fun()
 
 # 不定参数函数
 Print.Print_Var(1,'123', 3)
 
-Print.Print_Global(100)
+# Print.Print_Global(100)
 
 # # 变量测试
-Variable.VariableTest()
+# Variable.VariableTest()
 #
 # # 运算符测试
 # Math.MathTest()
@@ -73,6 +73,7 @@ Variable.VariableTest()
 
 # MultiProcess.Test()
 
+# 算法学习
 classAlgorithm = Algorithm.Algorithm()
 
 
