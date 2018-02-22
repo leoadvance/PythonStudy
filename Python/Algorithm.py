@@ -611,6 +611,18 @@ class Algorithm:
         ans = list(map("".join, ans))
         return (ans)
 
+    def reachNumber(self, target):
+        target = abs(target)
+        k = 0
+        while target > 0:
+            k += 1
+            target -= k
+            print("target =", target)
+        if target % 2 == 0:
+            print (k)
+        else :
+            print(k + 1 + k % 2)
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -648,5 +660,5 @@ class Algorithm:
         # self.distributeCandies([1,1,2,3])
         # self.moveZeroes([5,6,0,1,0,3,12])
         self.letterCasePermutation("a1b2")
-
+        self.reachNumber(100)
         return
