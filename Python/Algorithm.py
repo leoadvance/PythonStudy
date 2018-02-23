@@ -623,6 +623,26 @@ class Algorithm:
         else :
             print(k + 1 + k % 2)
 
+    def containsNearbyDuplicate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: bool
+        """
+        dict = {}
+        # 遍历列表
+        for i in range(len(nums)):
+
+            print(nums[i])
+            # 是否在字典出现过
+            if nums[i] in dict:
+                lenTemp = i - dict[nums[i]]
+                if lenTemp <= k:
+                    print("True")
+            # 更新位置
+            dict[nums[i]] = i
+        return False
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -661,4 +681,5 @@ class Algorithm:
         # self.moveZeroes([5,6,0,1,0,3,12])
         self.letterCasePermutation("a1b2")
         self.reachNumber(100)
+        self.containsNearbyDuplicate([1,2,3,1,5],6)
         return
