@@ -643,6 +643,15 @@ class Algorithm:
             dict[nums[i]] = i
         return False
 
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        nums = list(set(nums))
+        print(nums)
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -679,7 +688,8 @@ class Algorithm:
         # self.singleNumber([2,3,1,5,1,3,2])
         # self.distributeCandies([1,1,2,3])
         # self.moveZeroes([5,6,0,1,0,3,12])
-        self.letterCasePermutation("a1b2")
-        self.reachNumber(100)
-        self.containsNearbyDuplicate([1,2,3,1,5],6)
+        # self.letterCasePermutation("a1b2")
+        # self.reachNumber(100)
+        # self.containsNearbyDuplicate([1,2,3,1,5],6)
+        self.removeDuplicates([1,1,2])
         return
