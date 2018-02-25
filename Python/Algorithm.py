@@ -652,6 +652,31 @@ class Algorithm:
         nums = list(set(nums))
         print(nums)
 
+    def rotate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        print("move list by k steps")
+
+        # get list length
+        numsLen = len(nums)
+        if (k == 0) or (numsLen == 1):
+            return
+        # get remainder
+        k %= numsLen
+
+        k = numsLen - k
+
+        print("k =", k)
+
+        while (k > 0):
+            x = nums.pop(0)
+            nums.append(x)
+            k -= 1
+        print(nums)
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -692,4 +717,5 @@ class Algorithm:
         # self.reachNumber(100)
         # self.containsNearbyDuplicate([1,2,3,1,5],6)
         self.removeDuplicates([1,1,2])
+        self.rotate([1,2,3,4,5,6,7], 10)
         return
