@@ -677,6 +677,20 @@ class Algorithm:
             k -= 1
         print(nums)
 
+    def findDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        dict = {}
+        outList = []
+        for x in nums:
+            if x in dict:
+                outList.append(x)
+            else:
+                dict[x] = -1
+        return outList
+
     def __init__(self):
 
         print("初始化Algorithm类")
