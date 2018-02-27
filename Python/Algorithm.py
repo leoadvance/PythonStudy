@@ -691,6 +691,14 @@ class Algorithm:
                 dict[x] = -1
         return outList
 
+    def optimalDivision(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: str
+        """
+        nums = sorted(nums, reversed=True)
+        print(nums)
+
     def __init__(self):
 
         print("初始化Algorithm类")
@@ -730,6 +738,7 @@ class Algorithm:
         # self.letterCasePermutation("a1b2")
         # self.reachNumber(100)
         # self.containsNearbyDuplicate([1,2,3,1,5],6)
-        self.removeDuplicates([1,1,2])
-        self.rotate([1,2,3,4,5,6,7], 10)
+        # self.removeDuplicates([1,1,2])
+        # self.rotate([1,2,3,4,5,6,7], 10)
+        self.optimalDivision([1000,100,10,2])
         return
