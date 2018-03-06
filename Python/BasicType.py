@@ -26,6 +26,7 @@ import re
 import itchat
 import urllib3
 import requests
+import cv2
 # 登录微信
 # itchat.auto_login()
 # frends = itchat.get_friends(update=True)[0:]
@@ -77,17 +78,24 @@ Print.Print_Var(1,'123', 3)
 # 算法学习
 # classAlgorithm = Algorithm.Algorithm()
 
-page = 3300
-while 1:
-    url = "http://api.wallstreetcn.com/v2/livenews"
-    # get参数
-    data = {
-        "page": page
-    }
-    content = requests.get(url=url, params=data).content
+# page = 3300
+# while 1:
+#     url = "http://api.wallstreetcn.com/v2/livenews"
+#     # get参数
+#     data = {
+#         "page": page
+#     }
+#     content = requests.get(url=url, params=data).content
+#
+#     print(content)
 
-    print(content)
-
+cv2.namedWindow("Image")
+# read image
+image = cv2.imread('IMG_0296.jpg')
+# show image
+cv2.imshow("Image", image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 #myThread.threadTest()
 print ("Good Bye 2017 & Welcome 2018")
 #PygalDraw.DrawTest()
