@@ -96,8 +96,9 @@ image = cv2.imread('IMG_0296.jpg')
 cv2.imshow("Image", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
 #myThread.threadTest()
-print ("Good Bye 2017 & Welcome 2018")
+
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
 print ("开始时间" + str(timestart))
