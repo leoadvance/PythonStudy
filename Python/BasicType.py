@@ -92,6 +92,13 @@ Print.Print_Var(1,'123', 3)
 cv2.namedWindow("Image")
 # read image
 image = cv2.imread('IMG_0296.jpg')
+
+
+gray_img = cv2.imread('IMG_0296.jpg', cv2.IMREAD_GRAYSCALE)
+
+# 输出图片尺寸
+print(gray_img.shape)
+
 # show image
 cv2.imshow("Image", image)
 cv2.waitKey(0)
