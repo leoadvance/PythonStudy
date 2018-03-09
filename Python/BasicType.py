@@ -93,15 +93,16 @@ cv2.namedWindow("Image")
 # read image
 image = cv2.imread('IMG_0296.jpg')
 
-
+# 以灰度模式提取图像数据
 gray_img = cv2.imread('IMG_0296.jpg', cv2.IMREAD_GRAYSCALE)
 
 # 输出图片尺寸
 print(gray_img.shape)
 
-# show image
-cv2.imshow("Image", image)
-cv2.waitKey(0)
+# 保存成新文件 这样就得到一张灰度图片
+cv2.imwrite('test_grayscale.jpg', gray_img)
+
+
 cv2.destroyAllWindows()
 
 #myThread.threadTest()
