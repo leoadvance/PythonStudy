@@ -105,6 +105,9 @@ cv2.imwrite('test_grayscale.jpg', gray_img)
 # cv2.IMWRITE_JPEG_QUALITY指定jpg质量，范围0到100，默认95，越高画质越好，文件越大
 cv2.imwrite('test_grayscale_80.jpg', gray_img, (cv2.IMWRITE_JPEG_QUALITY, 80))
 
+# cv2.IMWRITE_PNG_COMPRESSION指定png质量，范围0到9，默认3，越高文件越小，画质越差
+cv2.imwrite('test_grayscale.png', gray_img, (cv2.IMWRITE_PNG_COMPRESSION, 2))
+
 cv2.destroyAllWindows()
 
 #myThread.threadTest()
