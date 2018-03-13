@@ -8,6 +8,7 @@
 #Dictionary（字典）
 
 # 通过import文件名引入其他文件内函数
+import datetime
 import Print
 import time
 import Variable
@@ -115,6 +116,9 @@ cv2.imwrite('test_grayscale_2.png', imgResize, (cv2.IMWRITE_PNG_COMPRESSION, 2))
 cv2.destroyAllWindows()
 
 #myThread.threadTest()
+
+with open("humpty.txt", 'a') as f:
+    f.write("\nTest "+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
