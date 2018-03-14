@@ -117,8 +117,9 @@ cv2.destroyAllWindows()
 
 #myThread.threadTest()
 
-with open("humpty.txt", 'a') as f:
-    f.write("\nTest "+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+# 打开文件时要指定文件编码 否则可能不支持中文
+with open("humpty.txt", 'a', encoding='utf8') as f:
+    f.write("\n测试 "+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 #PygalDraw.DrawTest()
 timeend = time.time() * MULTIPLE
