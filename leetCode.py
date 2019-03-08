@@ -91,12 +91,30 @@ class Sloution():
 
         pass
 
+    # 字符识别
     def uniqueMorseRepresentations(self, words:list) -> int:
+        print("func uniqueMorseRepresentations")
+        print("    Sloution1:")
+        print("        Runtime: 40 ms, faster than 57.57% of Python3 online submissions for Unique Morse Code Words.")
+        print("        Memory Usage: 13.2 MB, less than 5.36% of Python3 online submissions for Unique Morse Code Words.")
+        # 创建字典
         dictMorse = {"a":".-","b":"-...","c":"-.-.","d":"-..","e":".","f":"..-.","g":"--.",
                      "h":"....","i":"..","j":".---","k":"-.-","l":".-..","m":"--","n":"-.",
                      "o":"---","p":".--.","q":"--.-","r":".-.","s":"...","t":"-",
                      "u":"..-","v":"...-","w":".--","x":"-..-","y":"-.--","z":"--.."}
-        print(dictMorse)
+
+        # 创建集合
+        result = set()
+        for strWord in words:
+            strTemp = ""
+            for char in strWord:
+                strTemp += dictMorse[char]
+            # print(strTemp)
+
+            # 利用集合不会有重复元素的特性
+            result.add(strTemp)
+
+        return len(result)
 
     def run(self):
         # self.numJewelsInStones("aA", "aAAbbbb")
