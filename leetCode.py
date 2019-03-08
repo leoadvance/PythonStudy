@@ -233,6 +233,57 @@ class Sloution():
         print (listTemp)
         return listTemp
 
+    # 多维数组变换排序 重点在于 1 如何声明多维数组 2 多维数组不能直接append
+    def flipAndInvertImage(self, A):
+
+        # print("func flipAndInvertImage")
+        # print("    Sloution1:")
+        # print("        Runtime: 52 ms, faster than 48.58% of Python3 online submissions for Flipping an Image.")
+        # print("        Memory Usage: 13.3 MB, less than 5.63% of Python3 online submissions for Flipping an Image.")
+        # # result = [[0 for i in range(len(A[0]))] for j in range(len(A))]
+        # result = [[] for j in range(len(A))]
+        # j = 0
+        # for listFirst in A:
+        #     i = -1
+        #     # print(listFirst)
+        #     for listFinal in listFirst:
+        #         # result[j][i] = 1 - listFinal
+        #         result[j].append(1 - listFirst[i])
+        #         # print("listTemp[i]", listTemp[i], listFinal, i)
+        #         i -= 1
+        #     j += 1
+        #     print("result after: ", result)
+        # print(result)
+        # return result
+
+        # print("    Sloution2:")
+        # print("        Runtime: 68 ms, faster than 22.15% of Python3 online submissions for Flipping an Image.")
+        # print("        Memory Usage: 13.3 MB, less than 5.63% of Python3 online submissions for Flipping an Image.")
+        # result = [[0 for i in range(len(A[0]))] for j in range(len(A))]
+        # j = 0
+        # for listFirst in A:
+        #     i = -1
+        #     # print(listFirst)
+        #     for listFinal in listFirst:
+        #         result[j][i] = 1 - listFinal
+        #         i -= 1
+        #     j += 1
+        # print(result)
+        # return result
+
+        # 方法3主要用到reverse list内部反向排序  map 函数序列映射 以及 lambda功能
+        print("    Sloution3:")
+        print("        Runtime: 52 ms, faster than 48.58% of Python3 online submissions for Flipping an Image.")
+        print("        Memory Usage: 13.2 MB, less than 5.63% of Python3 online submissions for Flipping an Image.")
+        for i in range(len(A)):
+            # list组内元素交换
+            A[i].reverse()
+            A[i] = list(map(lambda x:1-x, A[i]))
+
+        print(A)
+        return A
+
+        pass
     def run(self):
         # self.numJewelsInStones("aA", "aAAbbbb")
         # self.toLowerCase("ABYebcd")
@@ -240,5 +291,7 @@ class Sloution():
         # self.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
         # self.repeatedNTimes([5,1,5,2,5,3,5,4])
         # self.sortArrayByParity([3,1,2,4])
-        self.sortedSquares([-4,-1,0,3,10])
+        # self.sortedSquares([-4,-1,0,3,10])
+        self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
         pass
+
