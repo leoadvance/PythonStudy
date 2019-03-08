@@ -23,16 +23,25 @@ class VariableClass():
         print("                floatA Type: ", type(floatA), " value: ", floatA)
         return floatA
 
-    def run(self):
-
-        intA = self.intStudy()
-
-        floatA = self.floatStufy(intA)
-
+    def strStufy(self, floatA: float = 1) -> str:
+        print("\n\nstr型学习")
         strA = (str)(floatA)
         strB = "asdasd"
         strC = strA + strB
 
 
         print("                strA Type: ", type(strA), " value: ", strA, "strB = \"asdasd\"", "strC = (strA + strB) =  ", strC, "strC[2:5] = ", strC[2:5])
+        return strC
+
+
+
+    def run(self):
+
+        intA = self.intStudy()
+
+        floatA = self.floatStufy(intA)
+
+        self.strStufy(floatA)
+
+
         pass
