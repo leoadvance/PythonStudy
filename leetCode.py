@@ -132,10 +132,87 @@ class Sloution():
                 dict[char] = 1
         pass
 
+    # 奇偶排序
+    def sortArrayByParity(self, A:list) -> list:
+        print("func sortArrayByParity")
+        # print("    Sloution1:")
+        # print("        Runtime: 76 ms, faster than 54.04% of Python3 online submissions for Sort Array By Parity.")
+        # print("        Memory Usage: 13.8 MB, less than 5.69% of Python3 online submissions for Sort Array By Parity.")
+        # # 声明固定大小list
+        # listTemp = list(range(len(A)))
+        # evenSign = 0
+        # oddSign  = -1
+        #
+        # # 遍历
+        # for char in A:
+        #     if (char % 2) == 0:
+        #         listTemp[evenSign] = char
+        #         evenSign += 1
+        #     else:
+        #         listTemp[oddSign] = char
+        #         oddSign -= 1
+        # print(listTemp)
+        # return listTemp
+
+        # print("    Sloution2:")
+        #         # print("        Runtime: 72 ms, faster than 68.22% of Python3 online submissions for Sort Array By Parity.")
+        #         # print("        Memory Usage: 13.7 MB, less than 5.69% of Python3 online submissions for Sort Array By Parity.")
+        #         # # 声明固定大小list
+        #         # oddSign  = len(A) - 1
+        #         # listTemp = list(range(oddSign + 1))
+        #         # evenSign = 0
+        #         #
+        #         # # 遍历
+        #         # for char in A:
+        #         #     if (char % 2) == 0:
+        #         #         listTemp[evenSign] = char
+        #         #         evenSign += 1
+        #         #     else:
+        #         #         listTemp[oddSign] = char
+        #         #         oddSign -= 1
+        #         # print(listTemp)
+        #         # return listTemp
+        #
+        # print("    Sloution3:")
+        # print("        Runtime: 100 ms, faster than 25.70% of Python3 online submissions for Sort Array By Parity.")
+        # print("        Memory Usage: 13.8 MB, less than 5.69% of Python3 online submissions for Sort Array By Parity.")
+        # # 声明固定大小list
+        # listTemp = []
+        #
+        # # 遍历
+        # for char in A:
+        #     if (char % 2) == 0:
+        #         listTemp.insert(0, char)
+        #
+        #     else:
+        #         listTemp.append(char)
+        #
+        # print(listTemp)
+        # return listTemp
+
+
+        print("    Sloution4:")
+        print("        Runtime: 72 ms, faster than 68.22% of Python3 online submissions for Sort Array By Parity.")
+        print("        Memory Usage: 13.7 MB, less than 5.69% of Python3 online submissions for Sort Array By Parity.")
+        # 声明空list
+        listEven = []
+        listOdd  = []
+        # 遍历
+        for char in A:
+            if (char % 2) == 0:
+                listEven.append(char)
+
+            else:
+                listOdd.append(char)
+
+        print(listEven + listOdd)
+        return listEven + listOdd
+
     def run(self):
         # self.numJewelsInStones("aA", "aAAbbbb")
         # self.toLowerCase("ABYebcd")
         # self.numUniqueEmails(["fg.r.u.uzj+o.pw@kziczvh.com","r.cyo.g+d.h+b.ja@tgsg.z.com","fg.r.u.uzj+o.f.d@kziczvh.com","r.cyo.g+ng.r.iq@tgsg.z.com","fg.r.u.uzj+lp.k@kziczvh.com","r.cyo.g+n.h.e+n.g@tgsg.z.com","fg.r.u.uzj+k+p.j@kziczvh.com","fg.r.u.uzj+w.y+b@kziczvh.com","r.cyo.g+x+d.c+f.t@tgsg.z.com","r.cyo.g+x+t.y.l.i@tgsg.z.com","r.cyo.g+brxxi@tgsg.z.com","r.cyo.g+z+dr.k.u@tgsg.z.com","r.cyo.g+d+l.c.n+g@tgsg.z.com","fg.r.u.uzj+vq.o@kziczvh.com","fg.r.u.uzj+uzq@kziczvh.com","fg.r.u.uzj+mvz@kziczvh.com","fg.r.u.uzj+taj@kziczvh.com","fg.r.u.uzj+fek@kziczvh.com"])
         # self.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
-        self.repeatedNTimes([5,1,5,2,5,3,5,4])
+        # self.repeatedNTimes([5,1,5,2,5,3,5,4])
+        self.sortArrayByParity([3,1,2,4])
         pass
