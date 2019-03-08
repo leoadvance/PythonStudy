@@ -1,6 +1,6 @@
 # coding=utf-8
 
-
+import string
 class VariableClass():
 
     def __init__(self):
@@ -29,7 +29,8 @@ class VariableClass():
         strB = "asdasd"
         strC = strA + strB
 
-
+        # 字符串转数字
+        print(ord("A"))
         print("                strA Type: ", type(strA), " value: ", strA, "strB = \"asdasd\"", "strC = (strA + strB) =  ", strC, "strC[2:5] = ", strC[2:5])
         return strC
 
