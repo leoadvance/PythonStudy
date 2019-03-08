@@ -116,9 +116,26 @@ class Sloution():
 
         return len(result)
 
+    # 找到重复数据
+    def repeatedNTimes(self, A:list) -> int:
+
+        print("func repeatedNTimes")
+        print("    Sloution1:")
+        print("        Runtime: 48 ms, faster than 85.07% of Python3 online submissions for N-Repeated Element in Size 2N Array.")
+        print("        Memory Usage: 14.1 MB, less than 5.12% of Python3 online submissions for N-Repeated Element in Size 2N Array.")
+        dict = {}
+        for char in A:
+            if char in dict:
+                print(char)
+                return char
+            else:
+                dict[char] = 1
+        pass
+
     def run(self):
         # self.numJewelsInStones("aA", "aAAbbbb")
         # self.toLowerCase("ABYebcd")
         # self.numUniqueEmails(["fg.r.u.uzj+o.pw@kziczvh.com","r.cyo.g+d.h+b.ja@tgsg.z.com","fg.r.u.uzj+o.f.d@kziczvh.com","r.cyo.g+ng.r.iq@tgsg.z.com","fg.r.u.uzj+lp.k@kziczvh.com","r.cyo.g+n.h.e+n.g@tgsg.z.com","fg.r.u.uzj+k+p.j@kziczvh.com","fg.r.u.uzj+w.y+b@kziczvh.com","r.cyo.g+x+d.c+f.t@tgsg.z.com","r.cyo.g+x+t.y.l.i@tgsg.z.com","r.cyo.g+brxxi@tgsg.z.com","r.cyo.g+z+dr.k.u@tgsg.z.com","r.cyo.g+d+l.c.n+g@tgsg.z.com","fg.r.u.uzj+vq.o@kziczvh.com","fg.r.u.uzj+uzq@kziczvh.com","fg.r.u.uzj+mvz@kziczvh.com","fg.r.u.uzj+taj@kziczvh.com","fg.r.u.uzj+fek@kziczvh.com"])
-        self.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
+        # self.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
+        self.repeatedNTimes([5,1,5,2,5,3,5,4])
         pass
