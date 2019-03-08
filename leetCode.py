@@ -208,11 +208,37 @@ class Sloution():
         print(listEven + listOdd)
         return listEven + listOdd
 
+    # 数字乘法+排序
+    def sortedSquares(self, A:list) -> list:
+        print("func sortedSquares")
+        # print("    Sloution1:")
+        # print("        Runtime: 184 ms, faster than 32.21% of Python3 online submissions for Squares of a Sorted Array.")
+        # print("        Memory Usage: 14.4 MB, less than 30.06% of Python3 online submissions for Squares of a Sorted Array.")
+        # i = 0
+        # for temp in A:
+        #     A[i] = temp * temp
+        #     i += 1
+        # A.sort()
+        # print (A)
+        # return A
+
+
+        print("    Sloution2:")
+        print("        Runtime: 164 ms, faster than 60.46% of Python3 online submissions for Squares of a Sorted Array.")
+        print("        Memory Usage: 15.2 MB, less than 5.22% of Python3 online submissions for Squares of a Sorted Array.")
+        listTemp = []
+        for temp in A:
+            listTemp.append(temp * temp)
+        listTemp.sort()
+        print (listTemp)
+        return listTemp
+
     def run(self):
         # self.numJewelsInStones("aA", "aAAbbbb")
         # self.toLowerCase("ABYebcd")
         # self.numUniqueEmails(["fg.r.u.uzj+o.pw@kziczvh.com","r.cyo.g+d.h+b.ja@tgsg.z.com","fg.r.u.uzj+o.f.d@kziczvh.com","r.cyo.g+ng.r.iq@tgsg.z.com","fg.r.u.uzj+lp.k@kziczvh.com","r.cyo.g+n.h.e+n.g@tgsg.z.com","fg.r.u.uzj+k+p.j@kziczvh.com","fg.r.u.uzj+w.y+b@kziczvh.com","r.cyo.g+x+d.c+f.t@tgsg.z.com","r.cyo.g+x+t.y.l.i@tgsg.z.com","r.cyo.g+brxxi@tgsg.z.com","r.cyo.g+z+dr.k.u@tgsg.z.com","r.cyo.g+d+l.c.n+g@tgsg.z.com","fg.r.u.uzj+vq.o@kziczvh.com","fg.r.u.uzj+uzq@kziczvh.com","fg.r.u.uzj+mvz@kziczvh.com","fg.r.u.uzj+taj@kziczvh.com","fg.r.u.uzj+fek@kziczvh.com"])
         # self.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
         # self.repeatedNTimes([5,1,5,2,5,3,5,4])
-        self.sortArrayByParity([3,1,2,4])
+        # self.sortArrayByParity([3,1,2,4])
+        self.sortedSquares([-4,-1,0,3,10])
         pass
