@@ -1,7 +1,9 @@
 # coding=utf-8
 
 from varStudy import *
-from leetCode.easy1.easy1 import *
+
+# 相对路径导入私有库
+import leetCode.easy1.easy1 as leetcode
 
 
 
@@ -11,5 +13,5 @@ if __name__ == "__main__":
     # varStudy = VariableClass()
     # varStudy.run()
 
-    leetCode = SloutionEasy1()
+    leetCode = leetcode.SloutionEasy1()
     leetCode.run()
