@@ -1,6 +1,6 @@
 # couding=utf-8
 import re
-class Sloution():
+class SloutionEasy1():
 
     def __init__(self):
         print("class leetCode sloution init!")
@@ -284,6 +284,27 @@ class Sloution():
         return A
 
         pass
+
+
+    def numRookCaptures(self, board) -> int:
+
+        # 遍历得到"R"
+        for y in range(8):
+            for x in range(8):
+                if board[x][y] == "R":
+                    up   = y
+                    left = x
+                    print("x = ", x, "y = ", y)
+        rount = 0
+        # 遍历上下左右
+        temp = 0
+        for x in range(left + 1):
+            temp += 1
+            if board[up][x - temp] == "B":
+                print("遇到B，退出循环 x =", x - temp, "y =", up)
+                break
+
+        pass
     def run(self):
         # self.numJewelsInStones("aA", "aAAbbbb")
         # self.toLowerCase("ABYebcd")
@@ -292,6 +313,7 @@ class Sloution():
         # self.repeatedNTimes([5,1,5,2,5,3,5,4])
         # self.sortArrayByParity([3,1,2,4])
         # self.sortedSquares([-4,-1,0,3,10])
-        self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
+        # self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
+        self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".","B",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
         pass
 

@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from varStudy import *
-from leetCode import *
+from leetCode.easy1.easy1 import *
 
 
 
@@ -11,5 +11,5 @@ if __name__ == "__main__":
     # varStudy = VariableClass()
     # varStudy.run()
 
-    leetCode = Sloution()
+    leetCode = SloutionEasy1()
     leetCode.run()
