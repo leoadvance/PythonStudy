@@ -41,8 +41,15 @@
  
  
         
-* [# 905. Sort Array By Parity (sortedSquares)](sortArrayByParity)  
+* [# 905. Sort Array By Parity (sortedSquares)](https://leetcode.com/problems/sort-array-by-parity/)  
 题目需求按奇偶排序。  
 重点：  
     1. list的append是O(1)时间复杂度的。
     2. 两个list可以直接用"+"号连接成一个。
+    
+            
+* [# 832. Flipping an Image (flipAndInvertImage)](https://leetcode.com/problems/flipping-an-image/)  
+题目需求对多维list内每个list逆序并数值取反
+重点：  
+    1. 利用list的reverse逆序。
+    2. 利用map和lambda取反

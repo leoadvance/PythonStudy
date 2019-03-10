@@ -283,7 +283,7 @@ class SloutionEasy1():
         for i in range(len(A)):
             # list组内元素交换
             A[i].reverse()
-            A[i] = list(map(lambda x:1-x, A[i]))
+            A[i] = (list)(map(lambda x:1-x, A[i]))
 
         print(A)
         return A
@@ -319,8 +319,8 @@ class SloutionEasy1():
         # self.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
         # self.repeatedNTimes([5,1,5,2,5,3,5,4])
         # self.sortArrayByParity([3,1,2,4])
-        self.sortedSquares([-4,-1,0,3,10])
-        # self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
+        # self.sortedSquares([-4,-1,0,3,10])
+        self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
         # self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".","B",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
 
         endTime = time.time()
