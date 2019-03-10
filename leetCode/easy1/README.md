@@ -27,3 +27,11 @@
     1. 利用dict完成字符替换。
     2. 利用set()元素不重复特性统计不同字符串个数。
     
+    
+        
+* [# 961. N-Repeated Element in Size 2N Array (repeatedNTimes)](https://leetcode.com/problems/n-repeated-element-in-size-2n-array/)  
+题目核心判断list里重复出现的字符
+思路： 
+    1. 遍历list，并存入dict，遇到重复key停止。
+
+    
