@@ -20,3 +20,10 @@
     2. 利用set()元素不重复特性统计不同字符串个数。（也可以用dict实现）
     
  
+    
+* [# 804. Unique Morse Code Words (uniqueMorseRepresentations)](https://leetcode.com/problems/unique-morse-code-words/)  
+题目核心依然是字符串替换，并且判断字符串唯一性。  
+思路： 
+    1. 利用dict完成字符替换。
+    2. 利用set()元素不重复特性统计不同字符串个数。
+    
