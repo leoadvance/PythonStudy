@@ -38,3 +38,11 @@
 * [# 977. Squares of a Sorted Array (sortedSquares)](https://leetcode.com/problems/squares-of-a-sorted-array/)  
 题目核心乘法以及排序 学习利用<font color=blue>*sort*</font>排序
  
+ 
+ 
+        
+* [# 905. Sort Array By Parity (sortedSquares)](sortArrayByParity)  
+题目需求按奇偶排序。  
+重点：  
+    1. list的append是O(1)时间复杂度的。
+    2. 两个list可以直接用"+"号连接成一个。
