@@ -1,6 +1,7 @@
 # coding=utf-8
 
 import string
+
 class VariableClass():
 
     def __init__(self):

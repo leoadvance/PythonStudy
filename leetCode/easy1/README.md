@@ -1,8 +1,18 @@
 ## 部分Easy题目
 
-* [Jewels and Stones (numJewelsInStones)](https://leetcode.com/problems/jewels-and-stones/)  
+* [# 771题 Jewels and Stones (numJewelsInStones)](https://leetcode.com/problems/jewels-and-stones/)  
 题目是求解两个字符串中相同字符串的个数。可以暴力求解。  
 采用dict求解效率较高。dict查找key的平均消耗是O(1).  
     1. 用dict统计目标str中不同字符出现的次数,字符为key，次数为value。
     2. 遍历源str，找出dict中对应key的value相加。
+ 
+* [# 709题 To Lower Case (toLowerCase)](https://leetcode.com/problems/to-lower-case/)  
+题目是把输入字符串中大写字母（注意，只能是字母，&%这些特殊符号不算）转化成小写并返回。  
+两种做法： 
+    1. 建立26个字母的dict，大写字母为key，对应的小写字母为value。遍历字符串，匹配key，并用value里小写字符替换。
+    2. 在ascii表里大写字符=对应小写字符-32.所以遍历字符串，发现有大写字符通过ord转成数字+32，再通过chr还原回字符格式。（这里C语言比较有优势，不用转换，直接char型相加减）  
+
+按直觉，方案二要经过两次字符转换并且做加法，应该比dict对比key取值要慢。实际我做测试进行2千万个数据（大小写各一半）转换，方法1比方法2快10%，但是LeetCode的测评确是方案2时间得分更高。    
+    
+    
  

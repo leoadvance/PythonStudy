@@ -1,5 +1,7 @@
 # couding=utf-8
 import re
+import time
+
 class SloutionEasy1():
 
     def __init__(self):
@@ -45,22 +47,26 @@ class SloutionEasy1():
         # # print(liststr)
         # return "".join(liststr)
         # print("    Sloution2:")
-        # print("        Runtime: 40 ms, faster than 34.23% of Python3 online submissions for To Lower Case.")
-        # print("        Memory Usage: 13.4 MB, less than 5.45% of Python3 online submissions for To Lower Case.")
+        # print("        Runtime: 52 ms, faster than 15.24% of Python3 online submissions for To Lower Case.")
+        # print("        Memory Usage: 13.2 MB, less than 5.45% of Python3 online submissions for To Lower Case.")
+
         # dictStr = {"A":"a","B":"b","C":"c","D":"d","E":"e","F":"f","G":"g"
         #            ,"H":"h","I":"i","J":"j","K":"k","L":"l","M":"m","N":"n"
         #            ,"O":"o","P":"p","Q":"q","R":"r","S":"s","T":"t"
         #            ,"U":"u","V":"v","W":"w","X":"x","Y":"y","Z":"z"}
-        # liststr = list(str)
-        # for i in range(len(liststr)):
-        #     if liststr[i] in dictStr:
-        #         liststr[i] = dictStr[liststr[i]]
+        # result = ""
+        # for s in str:
+        #     if s in dictStr:
+        #         result += dictStr[s]
+        #     else:
+        #         result += s
         #
-        # print(liststr)
-        # return "".join(liststr)
-        print("    Sloution3:")
-        print("        Runtime: 36 ms, faster than 55.73% of Python3 online submissions for To Lower Case.")
-        print("        Memory Usage: 13.2 MB, less than 5.45% of Python3 online submissions for To Lower Case.")
+        # # print(result)
+        # return result
+
+        # print("    Sloution3:")
+        # print("        Runtime: 36 ms, faster than 55.73% of Python3 online submissions for To Lower Case.")
+        # print("        Memory Usage: 13.2 MB, less than 5.45% of Python3 online submissions for To Lower Case.")
         result = ""
         for s in str:
             if s <= "Z" and s >= "A":
@@ -306,14 +312,21 @@ class SloutionEasy1():
 
         pass
     def run(self):
+
+        startTime = time.time()
         # self.numJewelsInStones("aA", "aAAbbbb")
-        # self.toLowerCase("ABYebcd")
+
+        self.toLowerCase(testStr)
         # self.numUniqueEmails(["fg.r.u.uzj+o.pw@kziczvh.com","r.cyo.g+d.h+b.ja@tgsg.z.com","fg.r.u.uzj+o.f.d@kziczvh.com","r.cyo.g+ng.r.iq@tgsg.z.com","fg.r.u.uzj+lp.k@kziczvh.com","r.cyo.g+n.h.e+n.g@tgsg.z.com","fg.r.u.uzj+k+p.j@kziczvh.com","fg.r.u.uzj+w.y+b@kziczvh.com","r.cyo.g+x+d.c+f.t@tgsg.z.com","r.cyo.g+x+t.y.l.i@tgsg.z.com","r.cyo.g+brxxi@tgsg.z.com","r.cyo.g+z+dr.k.u@tgsg.z.com","r.cyo.g+d+l.c.n+g@tgsg.z.com","fg.r.u.uzj+vq.o@kziczvh.com","fg.r.u.uzj+uzq@kziczvh.com","fg.r.u.uzj+mvz@kziczvh.com","fg.r.u.uzj+taj@kziczvh.com","fg.r.u.uzj+fek@kziczvh.com"])
         # self.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
         # self.repeatedNTimes([5,1,5,2,5,3,5,4])
         # self.sortArrayByParity([3,1,2,4])
         # self.sortedSquares([-4,-1,0,3,10])
         # self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
-        self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".","B",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
+        # self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".","B",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
+
+        endTime = time.time()
+        print("run time: ", (str(endTime - startTime))[:8], "s")
+
         pass
 
