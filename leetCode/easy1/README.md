@@ -34,4 +34,7 @@
 思路： 
     1. 遍历list，并存入dict，遇到重复key停止。
 
-    
+        
+* [# 977. Squares of a Sorted Array (sortedSquares)](https://leetcode.com/problems/squares-of-a-sorted-array/)  
+题目核心乘法以及排序 学习利用<font color=blue>*sort*</font>排序
+ 
