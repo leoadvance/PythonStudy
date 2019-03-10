@@ -80,20 +80,19 @@ class SloutionEasy1():
     def numUniqueEmails(self, emails:list) -> int:
         print("func numUniqueEmails")
         print("    Sloution1:")
-        print("        Runtime: 60 ms, faster than 41.33% of Python3 online submissions for Unique Email Addresses.")
-        print("        Memory Usage: 13.3 MB, less than 5.79% of Python3 online submissions for Unique Email Addresses.")
+        print("        Runtime: 48 ms, faster than 80.59% of Python3 online submissions for Unique Email Addresses.")
+        print("        Memory Usage: 13.2 MB, less than 5.79% of Python3 online submissions for Unique Email Addresses.")
 
-        dictTemp = {}
+        result = set()
         for str in emails:
             name, domain = str.split("@")
             strTemp = name.split("+")[0]
             strFinal = strTemp.replace(".","")
             strFinal += "@" + domain
-            if strFinal not in dictTemp:
-                dictTemp[strFinal] = 1
+            result.add(strFinal)
 
-        print(dictTemp)
-        return len(dictTemp)
+        print(result)
+        return len(result)
 
         pass
 
@@ -315,9 +314,8 @@ class SloutionEasy1():
 
         startTime = time.time()
         # self.numJewelsInStones("aA", "aAAbbbb")
-
-        self.toLowerCase(testStr)
-        # self.numUniqueEmails(["fg.r.u.uzj+o.pw@kziczvh.com","r.cyo.g+d.h+b.ja@tgsg.z.com","fg.r.u.uzj+o.f.d@kziczvh.com","r.cyo.g+ng.r.iq@tgsg.z.com","fg.r.u.uzj+lp.k@kziczvh.com","r.cyo.g+n.h.e+n.g@tgsg.z.com","fg.r.u.uzj+k+p.j@kziczvh.com","fg.r.u.uzj+w.y+b@kziczvh.com","r.cyo.g+x+d.c+f.t@tgsg.z.com","r.cyo.g+x+t.y.l.i@tgsg.z.com","r.cyo.g+brxxi@tgsg.z.com","r.cyo.g+z+dr.k.u@tgsg.z.com","r.cyo.g+d+l.c.n+g@tgsg.z.com","fg.r.u.uzj+vq.o@kziczvh.com","fg.r.u.uzj+uzq@kziczvh.com","fg.r.u.uzj+mvz@kziczvh.com","fg.r.u.uzj+taj@kziczvh.com","fg.r.u.uzj+fek@kziczvh.com"])
+        # self.toLowerCase(testStr)
+        self.numUniqueEmails(["fg.r.u.uzj+o.pw@kziczvh.com","r.cyo.g+d.h+b.ja@tgsg.z.com","fg.r.u.uzj+o.f.d@kziczvh.com","r.cyo.g+ng.r.iq@tgsg.z.com","fg.r.u.uzj+lp.k@kziczvh.com","r.cyo.g+n.h.e+n.g@tgsg.z.com","fg.r.u.uzj+k+p.j@kziczvh.com","fg.r.u.uzj+w.y+b@kziczvh.com","r.cyo.g+x+d.c+f.t@tgsg.z.com","r.cyo.g+x+t.y.l.i@tgsg.z.com","r.cyo.g+brxxi@tgsg.z.com","r.cyo.g+z+dr.k.u@tgsg.z.com","r.cyo.g+d+l.c.n+g@tgsg.z.com","fg.r.u.uzj+vq.o@kziczvh.com","fg.r.u.uzj+uzq@kziczvh.com","fg.r.u.uzj+mvz@kziczvh.com","fg.r.u.uzj+taj@kziczvh.com","fg.r.u.uzj+fek@kziczvh.com"])
         # self.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
         # self.repeatedNTimes([5,1,5,2,5,3,5,4])
         # self.sortArrayByParity([3,1,2,4])
