@@ -53,3 +53,10 @@
 重点：  
     1. 利用list的reverse逆序。
     2. 利用map和lambda取反
+    
+    
+* [# 999. Available Captures for Rook (numRookCaptures)](https://leetcode.com/problems/available-captures-for-rook/)  
+题目核心是求解特定字符出现的次数
+重点：  
+    1. 利用join以及replace，删除原本二维list中断的干扰字符"."并组合成str。
+    2. 遍历查询特征str出现次数。

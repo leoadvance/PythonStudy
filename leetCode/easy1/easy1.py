@@ -293,23 +293,56 @@ class SloutionEasy1():
 
     def numRookCaptures(self, board) -> int:
 
+        print("func numRookCaptures")
+        print("    Sloution1:")
+        print("        Runtime: 36 ms, faster than 99.77% of Python3 online submissions for Available Captures for Rook.")
+        print("        Memory Usage: 13.1 MB, less than 100.00% of Python3 online submissions for Available Captures for Rook.")
+        # result = [[0 for i in range(len(A[0]))] for j in range(len(A))]
+
+        MAX_SIZE = 8
         # 遍历得到"R"
-        for y in range(8):
-            for x in range(8):
-                if board[x][y] == "R":
-                    up   = y
-                    left = x
-                    print("x = ", x, "y = ", y)
-        rount = 0
-        # 遍历上下左右
-        temp = 0
-        for x in range(left + 1):
-            temp += 1
-            if board[up][x - temp] == "B":
-                print("遇到B，退出循环 x =", x - temp, "y =", up)
+        for y in range(MAX_SIZE):
+            for x in range(MAX_SIZE):
+                if board[y][x] == "R":
+                    row  = y
+                    rank = x
+                    # print("rank = ", rank, "row = ", row)
+
+        # 处理横轴
+        strRow = "." + ("".join(board[row])).replace(".", "") + "."
+        # print("listRow:", strRow, board[row])
+        count = 0
+        # 遍历找到R
+        for i in range(len(strRow)):
+            if strRow[i] == "R":
+                if strRow[i]+strRow[i - 1] == "Rp":
+                    count += 1
+                if strRow[i]+strRow[i + 1] == "Rp":
+                    count += 1
                 break
 
-        pass
+        # 处理纵轴
+        # 遍历找到R
+        temp = 0
+        strRank = "."
+        for i in range(MAX_SIZE):
+            # print("board[i][rank]", board[i][rank])
+            if (board[i][rank] == "B") or (board[i][rank] == "p"):
+                strRank += board[i][rank]
+                temp += 1
+            if board[i][rank] == "R":
+                strRank += board[i][rank]
+                temp += 1
+                location = temp
+        strRank += "."
+        # print("strRank", strRank, location)
+        if strRank[location] + strRank[location - 1] == "Rp":
+            count += 1
+        if strRank[location] + strRank[location + 1] == "Rp":
+            count += 1
+        print("count:", count)
+        return count
+
     def run(self):
 
         startTime = time.time()
@@ -320,8 +353,8 @@ class SloutionEasy1():
         # self.repeatedNTimes([5,1,5,2,5,3,5,4])
         # self.sortArrayByParity([3,1,2,4])
         # self.sortedSquares([-4,-1,0,3,10])
-        self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
-        # self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".","B",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
+        # self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
+        self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
 
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
