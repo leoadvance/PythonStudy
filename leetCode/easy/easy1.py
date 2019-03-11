@@ -2,7 +2,7 @@
 import re
 import time
 
-class SolutionEasy1():
+class SolutionEasy():
 
     def __init__(self):
         print("class leetCode SolutionEasy1 init!")

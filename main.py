@@ -3,8 +3,8 @@
 from varStudy import *
 
 # 相对路径导入私有库
-import leetCode.easy1.easy1 as leetcode
-
+import leetCode.easy.easy1
+import leetCode.easy.easy2
 
 
 if __name__ == "__main__":
@@ -13,5 +13,5 @@ if __name__ == "__main__":
     # varStudy = VariableClass()
     # varStudy.run()
 
-    leetCode = leetcode.SolutionEasy1()
+    leetCode = leetCode.easy.easy2.SolutionEasy()
     leetCode.run()
