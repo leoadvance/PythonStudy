@@ -13,5 +13,5 @@ if __name__ == "__main__":
     # varStudy = VariableClass()
     # varStudy.run()
 
-    leetCode = leetcode.SloutionEasy1()
+    leetCode = leetcode.SolutionEasy1()
     leetCode.run()

@@ -2,13 +2,13 @@
 import re
 import time
 
-class SloutionEasy1():
+class SolutionEasy1():
 
     def __init__(self):
-        print("class leetCode sloution init!")
+        print("class leetCode SolutionEasy1 init!")
 
     def __del__(self):
-        print("class leetCode sloution delete!")
+        print("class leetCode SolutionEasy1 delete!")
 
 
     def numJewelsInStones(self, J: str, S: str) -> int:
@@ -343,6 +343,27 @@ class SloutionEasy1():
         print("count:", count)
         return count
 
+    def diStringMatch(self, S: str) -> list:
+        print("func DI String Match")
+        print("    Sloution1:")
+        print("        Runtime: 92 ms, faster than 62.95% of Python3 online submissions for DI String Match.")
+        print("        Memory Usage: 14.2 MB, less than 5.62% of Python3 online submissions for DI String Match.")
+        iIncrease = 0
+        dDecrease = len(S)
+        listReturn = []
+        for s in S:
+            if s == "I":
+                listReturn.append(iIncrease)
+                iIncrease += 1
+            else:
+                listReturn.append(dDecrease)
+                dDecrease -= 1
+
+        listReturn.append(iIncrease)
+        print(listReturn)
+        return listReturn
+
+
     def run(self):
 
         startTime = time.time()
@@ -354,8 +375,8 @@ class SloutionEasy1():
         # self.sortArrayByParity([3,1,2,4])
         # self.sortedSquares([-4,-1,0,3,10])
         # self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
-        self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
-
+        # self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
+        self.diStringMatch("IDID")
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 

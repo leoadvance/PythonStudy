@@ -60,3 +60,8 @@
 重点：  
     1. 利用join以及replace，删除原本二维list中断的干扰字符"."并组合成str。
     2. 遍历查询特征str出现次数。
+    
+    
+* [# 942. DI String Match (diStringMatch)](https://leetcode.com/problems/di-string-match/)  
+题目比较唬人，弄明白核心后比较简单。考察str循环，对比以及list的append使用。
+题目抽象成一组n+1个连续不重复数字的序列。遍历目标字符串，遇到I就提取序列中最小数字，遇到D提取最大数字。  
