@@ -1,7 +1,7 @@
 ## 部分Easy题目
 
-* [# 771. Jewels and Stones (numJewelsInStones)](https://leetcode.com/problems/jewels-and-stones/)  
-题目是求解两个字符串中相同字符串的个数。可以暴力求解。  
-采用dict求解效率较高。dict查找key的平均消耗是O(1).  
-    1. 用dict统计目标str中不同字符出现的次数,字符为key，次数为value。
-    2. 遍历源str，找出dict中对应key的value相加。
+* [# 944. Delete Columns to Make Sorted (minDeletionSize)](https://leetcode.com/problems/delete-columns-to-make-sorted/)  
+题目需求是list内字符横轴轴交换后判断字符是否升序的。  
+要点。
+    1. 用zip进行list横纵轴交换。
+    2. cpoy复制list，sort排序。
