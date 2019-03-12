@@ -99,23 +99,38 @@ class SolutionEasy():
 
         return(t1)
 
-        pass
+    # 求list里数据最大值
+    def peakIndexInMountainArray(self, A: list) -> int:
+        print("func peakIndexInMountainArray")
+        print("    Sloution1:")
+        print("        Runtime: 60 ms, faster than 16.07% of Python3 online submissions for Peak Index in a Mountain Array.")
+        print("        Memory Usage: 14.3 MB, less than 5.42% of Python3 online submissions for Peak Index in a Mountain ")
+        i = 1
+        while(i < len(A) - 1):
+            if A[i] >  A[i - 1] and A[i] < A[i + 1]:
+                return i
+
+            print(A[i])
+            i += 1
+        return 0
+
     def run(self):
 
         startTime = time.time()
         # self.minDeletionSize(["cba","daf","ghi"])
-        t1 = TreeNode(1)
-        t1.left  = TreeNode(3)
-        t1.right = TreeNode(2)
-        t1.left.left = TreeNode(5)
-        t1.left.right = TreeNode(6)
-
-        t2 = TreeNode(1)
-        t2.left  = TreeNode(1)
-        t2.right = TreeNode(3)
-        t2.left.right = TreeNode(4)
-        t2.right.right = TreeNode(7)
-        self.mergeTrees(t1, t2)
+        # t1 = TreeNode(1)
+        # t1.left  = TreeNode(3)
+        # t1.right = TreeNode(2)
+        # t1.left.left = TreeNode(5)
+        # t1.left.right = TreeNode(6)
+        #
+        # t2 = TreeNode(1)
+        # t2.left  = TreeNode(1)
+        # t2.right = TreeNode(3)
+        # t2.left.right = TreeNode(4)
+        # t2.right.right = TreeNode(7)
+        # self.mergeTrees(t1, t2)
+        self.peakIndexInMountainArray([0,2,1,0])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
