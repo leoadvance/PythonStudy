@@ -102,18 +102,23 @@ class SolutionEasy():
     # 求list里数据最大值
     def peakIndexInMountainArray(self, A: list) -> int:
         print("func peakIndexInMountainArray")
-        print("    Sloution1:")
-        print("        Runtime: 60 ms, faster than 16.07% of Python3 online submissions for Peak Index in a Mountain Array.")
-        print("        Memory Usage: 14.3 MB, less than 5.42% of Python3 online submissions for Peak Index in a Mountain ")
-        i = 1
-        while(i < len(A) - 1):
-            if A[i] >  A[i - 1] and A[i] < A[i + 1]:
-                return i
-
-            print(A[i])
-            i += 1
-        return 0
-
+        # print("    Sloution1:")
+        # print("        Runtime: 60 ms, faster than 16.07% of Python3 online submissions for Peak Index in a Mountain Array.")
+        # print("        Memory Usage: 14.3 MB, less than 5.42% of Python3 online submissions for Peak Index in a Mountain ")
+        # i = 1
+        # while(i < len(A) - 1):
+        #     if A[i] >  A[i - 1] and A[i] < A[i + 1]:
+        #         return i
+        #
+        #     print(A[i])
+        #     i += 1
+        # return 0
+        print("    Sloution2:")
+        print("        Runtime: 40 ms, faster than 69.63% of Python3 online submissions for Peak Index in a Mountain Array.")
+        print("        Memory Usage: 14 MB, less than 5.42% of Python3 online submissions for Peak Index in a Mountain Array.")
+        # print(A.index(max(A)))
+        return A.index(max(A))
+    
     def run(self):
 
         startTime = time.time()
