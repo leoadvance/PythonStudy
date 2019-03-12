@@ -1,7 +1,7 @@
 # couding=utf-8
 import re
 import time
-
+import collections
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -18,7 +18,7 @@ class SolutionEasy():
 
     def __init__(self):
         print("class leetCode SolutionEasy init!")
-        self.list = []
+        self.q = collections.deque()
 
     def __del__(self):
         print("class leetCode SolutionEasy delete!")
@@ -121,7 +121,7 @@ class SolutionEasy():
         return A.index(max(A))
 
     def ping(self, t: int) -> int:
-        print("func ping")
+        # print("func ping")
         # print("    Sloution1:")
         # print("        Runtime: 256 ms, faster than 42.04% of Python3 online submissions for Number of Recent Calls.")
         # print("        Memory Usage: 18 MB, less than 5.71% of Python3 online submissions for Number of Recent Calls.")
@@ -140,18 +140,28 @@ class SolutionEasy():
         #         break
         # # print("self.list", self.list, "len :", len(self.list))
         # return len(self.list)
-        # print("    Sloution1:")
+        # print("    Sloution2:")
         # print("        Runtime: 212 ms, faster than 56.99% of Python3 online submissions for Number of Recent Calls.")
         # print("        Memory Usage: 17.6 MB, less than 5.71% of Python3 online submissions for Number of Recent Calls.")
-        self.list.append(t)
+        # self.list.append(t)
+        # t -= 3000
+        # while(self.list[0] < t):
+        #
+        #     self.list.pop(0)
+        #
+        # print("self.list", self.list, "len :", len(self.list))
+        # return len(self.list)
+        # print("    Sloution3:")
+        # print("        Runtime: 200 ms, faster than 71.17% of Python3 online submissions for Number of Recent Calls.")
+        # print("        Memory Usage: 17.9 MB, less than 5.71% of Python3 online submissions for Number of Recent Calls.")
+        self.q.append(t)
         t -= 3000
-        while(self.list[0] < t):
+        while(self.q[0] < t):
 
-            self.list.pop(0)
+            self.q.popleft()
 
-        print("self.list", self.list, "len :", len(self.list))
-        return len(self.list)
-
+        # print("self.q", self.q, "len :", len(self.q))
+        return len(self.q)
     def run(self):
 
         startTime = time.time()

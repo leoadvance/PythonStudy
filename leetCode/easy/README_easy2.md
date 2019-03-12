@@ -15,3 +15,6 @@
 要点：
     1. 利用max函数求list最大值。
     2. 利用list.index得出最大值出现的位置。
+    
+* [# 933. Number of Recent Calls(ping)](https://leetcode.com/problems/number-of-recent-calls/)  
+题目本质是掌握list的appen和pop使用。更高效的做法是使用collections.deque()的popleft来代替list的pop操作。 
