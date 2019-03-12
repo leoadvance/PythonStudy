@@ -118,7 +118,8 @@ class SolutionEasy():
         print("        Memory Usage: 14 MB, less than 5.42% of Python3 online submissions for Peak Index in a Mountain Array.")
         # print(A.index(max(A)))
         return A.index(max(A))
-    
+
+
     def run(self):
 
         startTime = time.time()
