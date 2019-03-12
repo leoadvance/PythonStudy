@@ -2,6 +2,18 @@
 import re
 import time
 
+
+# Definition for a binary tree node.
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+
+
+
 class SolutionEasy():
 
     def __init__(self):
@@ -69,10 +81,41 @@ class SolutionEasy():
         # print(totalCount)
         return totalCount
 
+    # 二叉树迭代
+    def mergeTrees(self, t1:TreeNode, t2:TreeNode) -> TreeNode:
+
+        # print("func mergeTrees")
+        # print("    Sloution1:")
+        # print("        Runtime: 108 ms, faster than 33.36% of Python3 online submissions for Merge Two Binary Trees.")
+        # print("        Memory Usage: 13.7 MB, less than 17.22% of Python3 online submissions for Merge Two Binary Trees.")
+        if t1 == None:
+            return t2
+        if t2 == None:
+            return t1
+
+        t1.val  += t2.val
+        t1.left  = self.mergeTrees(t1.left,  t2.left)
+        t1.right = self.mergeTrees(t1.right, t2.right)
+
+        return(t1)
+
+        pass
     def run(self):
 
         startTime = time.time()
-        self.minDeletionSize(["cba","daf","ghi"])
+        # self.minDeletionSize(["cba","daf","ghi"])
+        t1 = TreeNode(1)
+        t1.left  = TreeNode(3)
+        t1.right = TreeNode(2)
+        t1.left.left = TreeNode(5)
+        t1.left.right = TreeNode(6)
+
+        t2 = TreeNode(1)
+        t2.left  = TreeNode(1)
+        t2.right = TreeNode(3)
+        t2.left.right = TreeNode(4)
+        t2.right.right = TreeNode(7)
+        self.mergeTrees(t1, t2)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 

@@ -5,3 +5,7 @@
 要点。
     1. 用zip进行list横纵轴交换。
     2. cpoy复制list，sort排序。
+
+* [# 617. Merge Two Binary Trees(mergeTrees)](https://leetcode.com/problems/merge-two-binary-trees/)  
+题目需求是二叉树合并
+要点，学会迭代的使用和二叉树的建立。
