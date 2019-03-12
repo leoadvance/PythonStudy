@@ -122,25 +122,35 @@ class SolutionEasy():
 
     def ping(self, t: int) -> int:
         print("func ping")
-        print("    Sloution1:")
-        print("        Runtime: 256 ms, faster than 42.04% of Python3 online submissions for Number of Recent Calls.")
-        print("        Memory Usage: 18 MB, less than 5.71% of Python3 online submissions for Number of Recent Calls.")
+        # print("    Sloution1:")
+        # print("        Runtime: 256 ms, faster than 42.04% of Python3 online submissions for Number of Recent Calls.")
+        # print("        Memory Usage: 18 MB, less than 5.71% of Python3 online submissions for Number of Recent Calls.")
+        # self.list.append(t)
+        # t -= 3000
+        # temp = 0
+        # for data in self.list:
+        #     # print("data = ", data)
+        #     if data < t:
+        #         # print("data = ", data, "list before=", self.list, "t = ",t)
+        #         temp += 1
+        #         # print("data = ", data, "list=", self.list)
+        #     else:
+        #         for i in range(temp):
+        #             self.list.pop(0)
+        #         break
+        # # print("self.list", self.list, "len :", len(self.list))
+        # return len(self.list)
+        # print("    Sloution1:")
+        # print("        Runtime: 212 ms, faster than 56.99% of Python3 online submissions for Number of Recent Calls.")
+        # print("        Memory Usage: 17.6 MB, less than 5.71% of Python3 online submissions for Number of Recent Calls.")
         self.list.append(t)
         t -= 3000
-        temp = 0
-        for data in self.list:
-            # print("data = ", data)
-            if data < t:
-                # print("data = ", data, "list before=", self.list, "t = ",t)
-                temp += 1
-                # print("data = ", data, "list=", self.list)
-            else:
-                for i in range(temp):
-                    self.list.pop(0)
-                break
-        # print("self.list", self.list, "len :", len(self.list))
-        return len(self.list)
+        while(self.list[0] < t):
 
+            self.list.pop(0)
+
+        print("self.list", self.list, "len :", len(self.list))
+        return len(self.list)
 
     def run(self):
 
