@@ -18,6 +18,7 @@ class SolutionEasy():
 
     def __init__(self):
         print("class leetCode SolutionEasy init!")
+        self.list = []
 
     def __del__(self):
         print("class leetCode SolutionEasy delete!")
@@ -119,6 +120,27 @@ class SolutionEasy():
         # print(A.index(max(A)))
         return A.index(max(A))
 
+    def ping(self, t: int) -> int:
+        print("func ping")
+        print("    Sloution1:")
+        print("        Runtime: 256 ms, faster than 42.04% of Python3 online submissions for Number of Recent Calls.")
+        print("        Memory Usage: 18 MB, less than 5.71% of Python3 online submissions for Number of Recent Calls.")
+        self.list.append(t)
+        t -= 3000
+        temp = 0
+        for data in self.list:
+            # print("data = ", data)
+            if data < t:
+                # print("data = ", data, "list before=", self.list, "t = ",t)
+                temp += 1
+                # print("data = ", data, "list=", self.list)
+            else:
+                for i in range(temp):
+                    self.list.pop(0)
+                break
+        # print("self.list", self.list, "len :", len(self.list))
+        return len(self.list)
+
 
     def run(self):
 
@@ -136,7 +158,11 @@ class SolutionEasy():
         # t2.left.right = TreeNode(4)
         # t2.right.right = TreeNode(7)
         # self.mergeTrees(t1, t2)
-        self.peakIndexInMountainArray([0,2,1,0])
+        # self.peakIndexInMountainArray([0,2,1,0])
+        listTemp = [[642],[1849],[4921],[5936],[5957]]
+
+        for i in listTemp:
+            self.ping(i[0])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
