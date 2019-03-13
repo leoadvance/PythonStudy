@@ -162,6 +162,43 @@ class SolutionEasy():
 
         # print("self.q", self.q, "len :", len(self.q))
         return len(self.q)
+
+    def commonChars(self, A: list) -> list:
+
+        print("func commonChars")
+        print("    Sloution1:")
+        print("        Runtime: 60 ms, faster than 79.19% of Python3 online submissions for Find Common Characters.")
+        print("        Memory Usage: 13.3 MB, less than 100.00% of Python3 online submissions for Find Common Characters.")
+        multList = [[0 for i in range(len(A[0]))] for j in range(len(A))]
+        outList = []
+        # print(multList)
+        for i in range(len(A)):
+            multList[i] = list(A[i])
+        # print(multList)
+
+        for char in multList[0]:
+            j = 1
+            mark = 0
+            # print("char = ", char)
+            while j < len(A):
+                if char in multList[j]:
+                    multList[j].remove(char)
+                    # print("multList ", j, multList[j])
+                else:
+                    mark = 1
+                    break
+                j += 1
+            if mark == 0:
+                outList.append(char)
+
+        print(outList)
+        return outList
+
+        #
+        # for s in A:
+        #     for char in s:
+
+
     def run(self):
 
         startTime = time.time()
@@ -179,10 +216,11 @@ class SolutionEasy():
         # t2.right.right = TreeNode(7)
         # self.mergeTrees(t1, t2)
         # self.peakIndexInMountainArray([0,2,1,0])
-        listTemp = [[642],[1849],[4921],[5936],[5957]]
-
-        for i in listTemp:
-            self.ping(i[0])
+        # listTemp = [[642],[1849],[4921],[5936],[5957]]
+        #
+        # for i in listTemp:
+        #     self.ping(i[0])
+        self.commonChars(["bella","label","roller"])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
