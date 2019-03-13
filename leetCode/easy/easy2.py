@@ -218,9 +218,41 @@ class SolutionEasy():
         print(outList)
         return outList
 
+    def sumEvenAfterQueries(self, A: list, queries) -> list:
 
+        print("func sumEvenAfterQueries")
+        print("    Sloution1:")
+        print("        Runtime: 176 ms, faster than 47.81% of Python3 online submissions for Sum of Even Numbers After Queries.")
+        print("        Memory Usage: 17.5 MB, less than 5.56% of Python3 online submissions for Sum of Even Numbers After Queries.")
+        # 算出初始值
+        sum = 0
+        for data in A:
+            if data % 2 == 0:
+                sum += data
 
+        outList = []
+        for v,p in queries:
+            # print(v,p)
 
+            # 待处理是偶数
+            if v % 2 == 0:
+                # 原数也是偶数
+                if A[p] % 2 == 0:
+                    # 更新数据
+                    sum += v
+            else:
+                # 原数是偶数
+                if A[p] % 2 == 0:
+                    # 更新数据
+                    sum -= A[p]
+
+                else:
+                    sum += v+A[p]
+
+            A[p] += v
+            outList.append(sum)
+        print(outList)
+        return outList
 
     def run(self):
 
@@ -243,7 +275,8 @@ class SolutionEasy():
         #
         # for i in listTemp:
         #     self.ping(i[0])
-        self.commonChars(["bella","label","roller"])
+        # self.commonChars(["bella","label","roller"])
+        self.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 

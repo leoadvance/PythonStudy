@@ -25,4 +25,9 @@
     1. 学习用collections.Counter函数统计str中出现每个字符串的数量。并转换成dict。
     2. 遍历list，用min求取相同数量字符最小值。
     3. 用extend添加到list中。 了解extend和append的区别。
-    
+
+* [# 985. Sum of Even Numbers After Queries(sumEvenAfterQueries)](https://leetcode.com/problems/sum-of-even-numbers-after-queries/)  
+题目要求输入list的数据和原list相加，并返回偶数的和。  
+要点:
+    1. 不能直接暴力遍历，效率过低。
+    2. 先算出原始list偶数和，后续每次只对增量做操作。 
