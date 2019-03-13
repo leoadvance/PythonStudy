@@ -166,36 +166,60 @@ class SolutionEasy():
     def commonChars(self, A: list) -> list:
 
         print("func commonChars")
-        print("    Sloution1:")
-        print("        Runtime: 60 ms, faster than 79.19% of Python3 online submissions for Find Common Characters.")
-        print("        Memory Usage: 13.3 MB, less than 100.00% of Python3 online submissions for Find Common Characters.")
-        multList = [[0 for i in range(len(A[0]))] for j in range(len(A))]
+        # print("    Sloution1:")
+        # print("        Runtime: 60 ms, faster than 79.19% of Python3 online submissions for Find Common Characters.")
+        # print("        Memory Usage: 13.3 MB, less than 100.00% of Python3 online submissions for Find Common Characters.")
+        # multList = [[0 for i in range(len(A[0]))] for j in range(len(A))]
+        # outList = []
+        # LISTLEN = len(A)
+        # # print(multList)
+        # for i in range(LISTLEN):
+        #     multList[i] = list(A[i])
+        # # print(multList)
+        #
+        # for char in multList[0]:
+        #     mark = 0
+        #     # print("char = ", char)
+        #     for j in range(1, LISTLEN):
+        #         if char in multList[j]:
+        #             multList[j].remove(char)
+        #             # print("multList ", j, multList[j])
+        #         else:
+        #             mark = 1
+        #             break
+        #     if mark == 0:
+        #         outList.append(char)
+        #
+        # print(outList)
+        # return outList
+
+        print("    Sloution2:")
+        print("        Runtime: 48 ms, faster than 98.53% of Python3 online submissions for Find Common Characters.")
+        print("        Memory Usage: 12.8 MB, less than 100.00% of Python3 online submissions for Find Common Characters.")
         outList = []
-        LISTLEN = len(A)
-        # print(multList)
-        for i in range(LISTLEN):
-            multList[i] = list(A[i])
-        # print(multList)
 
-        for char in multList[0]:
-            mark = 0
-            # print("char = ", char)
-            for j in range(1, LISTLEN):
-                if char in multList[j]:
-                    multList[j].remove(char)
-                    # print("multList ", j, multList[j])
-                else:
-                    mark = 1
+        # collections.Counter 创建dict并对不同元素计数
+        dictTemp = dict(collections.Counter(A[0]))
+        # print(dictTemp)
+
+        for k, v in dictTemp.items():
+            flag     = True
+            minValue = v
+            for i in range(1, len(A)):
+                if k not in A[i]:
+                    flag = False
                     break
-            if mark == 0:
-                outList.append(char)
+                else:
+                    minValue = min(minValue, A[i].count(k))
 
+            if flag:
+                # print([k] * minValue)
+                outList.extend([k] * minValue)
         print(outList)
         return outList
 
-        #
-        # for s in A:
-        #     for char in s:
+
+
 
 
     def run(self):
