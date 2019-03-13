@@ -254,15 +254,37 @@ class SolutionEasy():
         print(outList)
         return outList
 
+    # 典型二叉树遍历
+    def isUnivalTree(self, root: TreeNode) -> bool:
+        print("func isUnivalTree")
+        print("    Sloution1:")
+        print("        Runtime: 52 ms, faster than 9.49% of Python3 online submissions for Univalued Binary Tree.")
+        print("        Memory Usage: 13 MB, less than 5.36% of Python3 online submissions for Univalued Binary Tree.")
+        def loopNode(node:TreeNode, value)-> bool:
+
+            # node非空
+            if node == None:
+                return True
+            if node.val != value:
+                return False
+            if loopNode(node.left, value) == False:
+                return False
+            if loopNode(node.right, value) == False:
+                return False
+            return True
+
+        print(loopNode(root, root.val))
+        return loopNode(root, root.val)
+
     def run(self):
 
         startTime = time.time()
         # self.minDeletionSize(["cba","daf","ghi"])
-        # t1 = TreeNode(1)
-        # t1.left  = TreeNode(3)
-        # t1.right = TreeNode(2)
-        # t1.left.left = TreeNode(5)
-        # t1.left.right = TreeNode(6)
+        t1 = TreeNode(1)
+        t1.left  = TreeNode(1)
+        t1.right = TreeNode(1)
+        t1.left.left = TreeNode(1)
+        t1.left.right = TreeNode(1)
         #
         # t2 = TreeNode(1)
         # t2.left  = TreeNode(1)
@@ -276,7 +298,8 @@ class SolutionEasy():
         # for i in listTemp:
         #     self.ping(i[0])
         # self.commonChars(["bella","label","roller"])
-        self.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
+        # self.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
+        self.isUnivalTree(t1)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
