@@ -171,23 +171,22 @@ class SolutionEasy():
         print("        Memory Usage: 13.3 MB, less than 100.00% of Python3 online submissions for Find Common Characters.")
         multList = [[0 for i in range(len(A[0]))] for j in range(len(A))]
         outList = []
+        LISTLEN = len(A)
         # print(multList)
-        for i in range(len(A)):
+        for i in range(LISTLEN):
             multList[i] = list(A[i])
         # print(multList)
 
         for char in multList[0]:
-            j = 1
             mark = 0
             # print("char = ", char)
-            while j < len(A):
+            for j in range(1, LISTLEN):
                 if char in multList[j]:
                     multList[j].remove(char)
                     # print("multList ", j, multList[j])
                 else:
                     mark = 1
                     break
-                j += 1
             if mark == 0:
                 outList.append(char)
 
