@@ -358,6 +358,13 @@ class SolutionEasy():
         # print(outlist)
         return outlist
         pass
+    # 斐波那契数列
+    def fib(self, N: int) -> int:
+
+        def sum(N: int) -> int:
+            if N = 0:
+                return 0:
+            if N = 1:
 
     def run(self):
 
