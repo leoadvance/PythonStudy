@@ -38,3 +38,6 @@
 * [# 700. Search in a Binary Search Tree(searchBST)](https://leetcode.com/problems/search-in-a-binary-search-tree/)  
 题目需求遍历二叉树返回指定值。  
 要点：可以利用该题二叉树左边值小于右边的特性减少循环次数。
+
+* [# 922. Sort Array By Parity II(sortArrayByParityII)](https://leetcode.com/problems/sort-array-by-parity-ii/)  
+题目需求list奇偶排序没有特别的。（学到了可以直接[0] * len(x)创建list）  

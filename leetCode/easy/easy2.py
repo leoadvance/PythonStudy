@@ -317,6 +317,47 @@ class SolutionEasy():
 
             return self.searchBST(root.right, val)
 
+    # list变换 奇数放奇位置 偶放偶
+    def sortArrayByParityII(self, A: list) -> list:
+        # print("func sortArrayByParityII")
+        # print("    Sloution1:")
+        # print("        Runtime: 160 ms, faster than 43.19% of Python3 online submissions for Sort Array By Parity II.")
+        # print("        Memory Usage: 15.4 MB, less than 5.49% of Python3 online submissions for Sort Array By Parity II.")
+
+        # outlist = list(range(len(A)))
+        # # print(outlist)
+        # even = 0
+        # odd  = 1
+        # for data in A:
+        #     # 偶数
+        #     if data % 2 == 0:
+        #         outlist[even] = data
+        #         even += 2
+        #
+        #     else:
+        #         outlist[odd] = data
+        #         odd += 2
+        #
+        # # print(outlist)
+        # return outlist
+
+        outlist = [0] * len(A)
+        # print(type(outlist))
+        even = 0
+        odd  = 1
+        for data in A:
+            # 偶数
+            if data % 2 == 0:
+                outlist[even] = data
+                even += 2
+
+            else:
+                outlist[odd] = data
+                odd += 2
+
+        # print(outlist)
+        return outlist
+        pass
 
     def run(self):
 
@@ -342,7 +383,8 @@ class SolutionEasy():
         # self.commonChars(["bella","label","roller"])
         # self.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
         # self.isUnivalTree(t1)
-        print(self.searchBST(t1, 3))
+        # print(self.searchBST(t1, 3))
+        self.sortArrayByParityII([4,2,5,7])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
