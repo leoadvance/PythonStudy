@@ -278,29 +278,45 @@ class SolutionEasy():
 
     def searchBST(self, root: TreeNode, val: int) -> TreeNode:
 
-        print("func isUnivalTree")
-        print("    Sloution1:")
-        print("        Runtime: 92 ms, faster than 35.83% of Python3 online submissions for Search in a Binary Search Tree.")
-        print("        Memory Usage: 14.9 MB, less than 5.30% of Python3 online submissions for Search in a Binary Search Tree.")
-        nodeReturn = TreeNode(val)
-        def loopNode(node: TreeNode, value: int) -> bool:
-            if node == None:
-                return False
+        # print("func isUnivalTree")
+        # print("    Sloution1:")
+        # print("        Runtime: 92 ms, faster than 35.83% of Python3 online submissions for Search in a Binary Search Tree.")
+        # print("        Memory Usage: 14.9 MB, less than 5.30% of Python3 online submissions for Search in a Binary Search Tree.")
+        # nodeReturn = TreeNode(val)
+        # def loopNode(node: TreeNode, value: int) -> bool:
+        #     if node == None:
+        #         return False
+        #
+        #     if node.val == value:
+        #         nodeReturn.left = node.left
+        #         nodeReturn.right = node.right
+        #         return True
+        #
+        #     if loopNode(node.left, value) == True:
+        #         return True
+        #     if loopNode(node.right, value)== True:
+        #         return True
+        #     return False
+        # if loopNode(root, val) == False:
+        #     return []
+        # print(nodeReturn)
+        # return nodeReturn
 
-            if node.val == value:
-                nodeReturn.left = node.left
-                nodeReturn.right = node.right
-                return True
+        # print("    Sloution2:")
+        # print("        Runtime: 84 ms, faster than 67.11% of Python3 online submissions for Search in a Binary Search Tree.")
+        # print("        Memory Usage: 15.3 MB, less than 5.30% of Python3 online submissions for Search in a Binary Search Tree.")
+        if root == None:
+            return root
 
-            if loopNode(node.left, value) == True:
-                return True
-            if loopNode(node.right, value)== True:
-                return True
-            return False
-        if loopNode(root, val) == False:
-            return []
-        print(nodeReturn)
-        return nodeReturn
+        if root.val == val:
+            return root
+
+        if root.val > val:
+            return self.searchBST(root.left, val)
+        else:
+
+            return self.searchBST(root.right, val)
+
 
     def run(self):
 
@@ -326,7 +342,7 @@ class SolutionEasy():
         # self.commonChars(["bella","label","roller"])
         # self.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
         # self.isUnivalTree(t1)
-        self.searchBST(t1, 6)
+        print(self.searchBST(t1, 3))
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
