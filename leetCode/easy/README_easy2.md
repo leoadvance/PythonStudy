@@ -31,3 +31,7 @@
 要点:
     1. 不能直接暴力遍历，效率过低。
     2. 先算出原始list偶数和，后续每次只对增量做操作。 
+
+* [# 965. Univalued Binary Tree(isUnivalTree)](https://leetcode.com/problems/univalued-binary-tree/)  
+题目需求是二叉树遍历看是否有不同数值。
+
