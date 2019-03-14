@@ -80,12 +80,36 @@ class SolutionEasy():
         print(outList)
         return outList
 
+    # 多维数组取极值与非零值
+    def projectionArea(self, grid) -> int:
+        print("func projectionArea")
+        # print("    Sloution1:")
+        # print("        Runtime: 44 ms, faster than 73.14% of Python3 online submissions for Projection Area of 3D Shapes.")
+        # print("        Memory Usage: 13.3 MB, less than 7.84% of Python3 online submissions for Projection Area of 3D Shapes. ")
+        sum = 0
+
+        # 遍历 累加最大值和非零值个数
+        for listSub in grid:
+            sum += max(listSub)
+            for data in listSub:
+                if data != 0:
+                    sum += 1
+
+        # 横纵坐标变换 累加最大值
+        for listSub in zip(*grid):
+            sum += max(listSub)
+        print(sum)
+        return sum
+
+        pass
+
     def run(self):
 
         startTime = time.time()
 
         # self.postorder(self.node1)
-        self.preorder(self.node1)
+        # self.preorder(self.node1)
+        self.projectionArea([[2,2,2],[2,1,3],[2,2,2]])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 

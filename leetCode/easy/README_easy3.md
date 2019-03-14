@@ -9,3 +9,9 @@
 题目需求逆序多叉树遍历  
 要点：
     1. 无。
+
+
+* [# 883. Projection Area of 3D Shapes (projectionArea)](https://leetcode.com/problems/projection-area-of-3d-shapes/)  
+题目比较唬人，引入一堆干扰问题，真实需求是三点，1.求list内部非零元素个数。2. 求每组数据最大值。3. 横纵坐标变换后再求一次。
+要点：
+    1. 利用zip(*x)完成矩阵变换。
