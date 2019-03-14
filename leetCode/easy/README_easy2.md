@@ -41,3 +41,10 @@
 
 * [# 922. Sort Array By Parity II(sortArrayByParityII)](https://leetcode.com/problems/sort-array-by-parity-ii/)  
 题目需求list奇偶排序没有特别的。（学到了可以直接[0] * len(x)创建list）  
+
+
+* [# 509. Fibonacci Number(fib)](https://leetcode.com/problems/fibonacci-number/)  
+题目是典型斐波那契数列求值。  
+要点：
+    1. 学习a, b = c ,d使用。
+    2. 注意fib(0)时返回值。

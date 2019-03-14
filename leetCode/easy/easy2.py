@@ -361,10 +361,18 @@ class SolutionEasy():
     # 斐波那契数列
     def fib(self, N: int) -> int:
 
-        def sum(N: int) -> int:
-            if N = 0:
-                return 0:
-            if N = 1:
+        # print("func fib")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 65.38% of Python3 online submissions for Fibonacci Number.")
+        # print("        Memory Usage: 12.7 MB, less than 5.02% of Python3 online submissions for Fibonacci Number.")
+        if N == 0:
+            return 0
+        a, b = 0, 1
+        for i in range(2, N + 1):
+            a, b = b, a + b
+
+        # print(b)
+        return b
 
     def run(self):
 
@@ -391,7 +399,8 @@ class SolutionEasy():
         # self.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
         # self.isUnivalTree(t1)
         # print(self.searchBST(t1, 3))
-        self.sortArrayByParityII([4,2,5,7])
+        # self.sortArrayByParityII([4,2,5,7])
+        self.fib(2)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
