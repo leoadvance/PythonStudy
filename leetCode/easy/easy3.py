@@ -28,8 +28,10 @@ class SolutionEasy():
         self.node1.children[0] = Node(3, [5,6])
         self.node1.children[0].children[0]= Node(5, [])
         self.node1.children[0].children[1] = Node(6, [])
-        self.node1.children[1] = Node(2, [])
+        self.node1.children[1] = Node(2, [9])
+        self.node1.children[1].children[0] = Node(9, [])
         self.node1.children[2] = Node(4, [])
+        self.node2 = Node(44, [])
         print("class leetCode SolutionEasy init!")
 
 
@@ -101,7 +103,33 @@ class SolutionEasy():
         print(sum)
         return sum
 
-        pass
+    # 遍历多叉树最大深度
+    def maxDepth(self, root: Node) -> int:
+        print("func maxDepth")
+        # print("    Sloution1:")
+        # print("        Runtime: 104 ms, faster than 14.93% of Python3 online submissions for Maximum Depth of N-ary Tree.")
+        # print("        Memory Usage: 17.6 MB, less than 5.30% of Python3 online submissions for Maximum Depth of N-ary Tree.")
+        Maxdeep = 0
+
+        if not root:
+            return 0
+        def loop(node:Node, realdeep:int):
+            nonlocal Maxdeep
+            # 每一次loop进入更深以及
+            realdeep += 1
+            Maxdeep = max(realdeep, Maxdeep)
+            # for循环内是同级deep
+            for sub in node.children:
+                # 循环遍历每个分支
+                loop(sub, realdeep)
+
+            # 退出当前层级
+            return
+            # return deep
+        loop(root, Maxdeep)
+        print("Maxdeep =", Maxdeep)
+        return Maxdeep
+
 
     def run(self):
 
@@ -109,7 +137,8 @@ class SolutionEasy():
 
         # self.postorder(self.node1)
         # self.preorder(self.node1)
-        self.projectionArea([[2,2,2],[2,1,3],[2,2,2]])
+        # self.projectionArea([[2,2,2],[2,1,3],[2,2,2]])
+        self.maxDepth(self.node1)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
