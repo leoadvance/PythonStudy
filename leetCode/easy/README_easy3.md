@@ -18,3 +18,5 @@
     
 * [# 559. Maximum Depth of N-ary Tree (maxDepth)](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)  
 题目求多叉树最大深度。迭代求解。
+要点：
+    1. 通过关键字nonlocal可以使用外层变量。

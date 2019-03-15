@@ -114,6 +114,7 @@ class SolutionEasy():
         if not root:
             return 0
         def loop(node:Node, realdeep:int):
+            # nonlocal 表明使用外层变量
             nonlocal Maxdeep
             # 每一次loop进入更深以及
             realdeep += 1
