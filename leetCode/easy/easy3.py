@@ -131,6 +131,27 @@ class SolutionEasy():
         print("Maxdeep =", Maxdeep)
         return Maxdeep
 
+    # 求list最大最小差值
+    def smallestRangeI(self, A: list, K: int) -> int:
+        print("func smallestRangeI")
+        # print("    Sloution1:")
+        # print("        Runtime: 56 ms, faster than 36.08% of Python3 online submissions for Smallest Range I.")
+        # print("        Memory Usage: 14.1 MB, less than 8.33% of Python3 online submissions for Smallest Range I.")
+        if len(A) == 1:
+            return 0
+
+        # 数组升序排序
+        A.sort(reverse = False)
+
+        smallest = A[-1] - A[0] - 2*K
+
+        if (smallest < 0):
+            return 0
+        else:
+            return smallest
+
+
+        pass
 
     def run(self):
 
@@ -139,7 +160,8 @@ class SolutionEasy():
         # self.postorder(self.node1)
         # self.preorder(self.node1)
         # self.projectionArea([[2,2,2],[2,1,3],[2,2,2]])
-        self.maxDepth(self.node1)
+        # self.maxDepth(self.node1)
+        self.smallestRangeI([1,6,3], 2)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
