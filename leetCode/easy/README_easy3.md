@@ -25,3 +25,12 @@
 题目求list内最大值和最小值差值。引入参数k作为调节量。
 要点：
     1. 使用max，min求最大最小值或者用sort对数组排序。    
+    
+    
+    
+* [# 811. Subdomain Visit Count (subdomainVisits)](https://leetcode.com/problems/subdomain-visit-count/)  
+题目求字符串分割，并统计相同字符数量。
+要点：
+    1. 利用split分割字符串。
+    2. 利用dict记录不同字符串出现次数。
+     

@@ -153,6 +153,48 @@ class SolutionEasy():
 
         pass
 
+    # 字符串分割统计
+    def subdomainVisits(self, cpdomains: list) -> list:
+        print("func subdomainVisits")
+        # print("    Sloution1:")
+        # print("        Runtime: 64 ms, faster than 53.80% of Python3 online submissions for Subdomain Visit Count.")
+        # print("        Memory Usage: 13.4 MB, less than 7.07% of Python3 online submissions for Subdomain Visit Count.")
+        # 声明dict
+        dictTemp = {}
+
+        # 遍历 分割
+        for string in cpdomains:
+            # 分割字符串
+            num, value = string.split(" ")
+            num = int(num)
+            listTemp   = value.split(".")
+            # print("listTemp", listTemp,num)
+            strLen = len(listTemp)
+            # 如果有三个子域名 新增key
+            if strLen > 2:
+                dictTemp[value] = num
+            # 增加lowlevel
+            if strLen > 1:
+                lowLevel = listTemp[-2] + "." + listTemp[-1]
+                if lowLevel in dictTemp:
+                    dictTemp[lowLevel] += num
+                else:
+                    dictTemp[lowLevel] = num
+            if listTemp[-1] in dictTemp:
+                dictTemp[listTemp[-1]] += num
+            else:
+                dictTemp[listTemp[-1]] = num
+
+        # 遍历dict 输出list
+        outList = []
+        for key,value in dictTemp.items():
+            outList.append(str(value) + " " + key)
+
+        # print(outList)
+        return outList
+        pass
+
+
     def run(self):
 
         startTime = time.time()
@@ -161,8 +203,9 @@ class SolutionEasy():
         # self.preorder(self.node1)
         # self.projectionArea([[2,2,2],[2,1,3],[2,2,2]])
         # self.maxDepth(self.node1)
-        self.smallestRangeI([1,6,3], 2)
+        # self.smallestRangeI([1,6,3], 2)
         endTime = time.time()
+        self.subdomainVisits(["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"])
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
         pass
