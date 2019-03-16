@@ -28,9 +28,14 @@
     
     
     
-* [# 811. Subdomain Visit Count (subdomainVisits)](https://leetcode.com/problems/subdomain-visit-count/)  
+* [# _811. Subdomain Visit Count_ (subdomainVisits)](https://leetcode.com/problems/subdomain-visit-count/)  
 题目求字符串分割，并统计相同字符数量。
 要点：
     1. 利用split分割字符串。
     2. 利用dict记录不同字符串出现次数。
-     
+    
+* [# _867. Transpose Matrix (transpose)](https://leetcode.com/problems/transpose-matrix/)  
+题目需求list矩阵转换
+要点：
+    1. 利用map，zip完成矩阵转换
+  

@@ -194,7 +194,13 @@ class SolutionEasy():
         return outList
         pass
 
-
+    # list 矩阵转换
+    def transpose(self, A: list) -> list:
+        print("func transpose")
+        # print("    Sloution1:")
+        # print("        Runtime: 76 ms, faster than 26.13% of Python3 online submissions for Transpose Matrix.")
+        # print("        Memory Usage: 13.7 MB, less than 5.45% of Python3 online submissions for Transpose Matrix.")
+        return (list(map(list, zip(*A))))
     def run(self):
 
         startTime = time.time()
@@ -204,8 +210,9 @@ class SolutionEasy():
         # self.projectionArea([[2,2,2],[2,1,3],[2,2,2]])
         # self.maxDepth(self.node1)
         # self.smallestRangeI([1,6,3], 2)
+        self.transpose([[1,2,3],[4,5,6]])
         endTime = time.time()
-        self.subdomainVisits(["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"])
+        # self.subdomainVisits(["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"])
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
         pass
