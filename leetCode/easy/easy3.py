@@ -23,11 +23,15 @@ class Node:
 class SolutionEasy():
 
     def __init__(self):
-        self.t1 = TreeNode(4)
-        self.t1.left = TreeNode(2)
-        self.t1.right = TreeNode(7)
-        self.t1.left.left = TreeNode(1)
-        self.t1.left.right = TreeNode(3)
+        self.t1 = TreeNode(5)
+        self.t1.left = TreeNode(3)
+        self.t1.right = TreeNode(6)
+        self.t1.left.left = TreeNode(2)
+        self.t1.left.right = TreeNode(4)
+        self.t1.left.left.left = TreeNode(1)
+        self.t1.right.right = TreeNode(8)
+        self.t1.right.right.left = TreeNode(7)
+        self.t1.right.right.right = TreeNode(9)
 
         self.node1 = Node(1, [3,2,4])
         self.node1.children[0] = Node(3, [5,6])
@@ -227,6 +231,37 @@ class SolutionEasy():
 
         return slow
 
+    def increasingBST(self, root: TreeNode) -> TreeNode:
+        print("func increasingBST")
+        # print("    Sloution1:")
+        # print("        Runtime: 176 ms, faster than 20.27% of Python3 online submissions for Increasing Order Search Tree.")
+        # print("        Memory Usage: 13.4 MB, less than 5.97% of Python3 online submissions for Increasing Order Search Tree.")
+        outList = []
+        def loopNode(node: TreeNode):
+            if node:
+                loopNode(node.left)
+                # print(node.val)
+                outList.append(node.val)
+                loopNode(node.right)
+        loopNode(root)
+
+        def listToNode(node:TreeNode, listNode):
+            while listNode:
+                node.right = TreeNode(listNode[0])
+                listNode.pop(0)
+                listToNode(node.right, listNode)
+
+
+        lenOutList = len(outList)
+        outNode = TreeNode(outList[0])
+        if lenOutList > 1:
+            outList.pop(0)
+            outNode.right = TreeNode(outList[0])
+            outList.pop(0)
+            listToNode(outNode.right, outList)
+        print(outNode)
+        return outNode
+
     def run(self):
 
         startTime = time.time()
@@ -238,7 +273,8 @@ class SolutionEasy():
         # self.smallestRangeI([1,6,3], 2)
         # self.subdomainVisits(["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"])
         # self.transpose([[1,2,3],[4,5,6]])
-        self.middleNode(self.listNode)
+        # self.middleNode(self.listNode)
+        self.increasingBST(self.t1)
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
