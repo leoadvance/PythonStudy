@@ -39,3 +39,7 @@
 要点：
     1. 利用map，zip完成矩阵转换
   
+* [# _876. Middle of the Linked List (middleNode)](https://leetcode.com/problems/middle-of-the-linked-list/)  
+题目需求后半部分listnode
+要点：
+    1. 利用快慢指针。快指针移动是慢指针两倍。

@@ -10,6 +10,11 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 class Node:
     def __init__(self, val, children):
         self.val = val
@@ -32,6 +37,12 @@ class SolutionEasy():
         self.node1.children[1].children[0] = Node(9, [])
         self.node1.children[2] = Node(4, [])
         self.node2 = Node(44, [])
+
+        self.listNode = ListNode(1)
+        self.listNode.next = ListNode(2)
+        self.listNode.next.next = ListNode(3)
+        self.listNode.next.next.next = ListNode(4)
+        self.listNode.next.next.next.next = ListNode(5)
         print("class leetCode SolutionEasy init!")
 
 
@@ -201,6 +212,21 @@ class SolutionEasy():
         # print("        Runtime: 76 ms, faster than 26.13% of Python3 online submissions for Transpose Matrix.")
         # print("        Memory Usage: 13.7 MB, less than 5.45% of Python3 online submissions for Transpose Matrix.")
         return (list(map(list, zip(*A))))
+
+    def middleNode(self, head: ListNode) -> ListNode:
+        print("func middleNode")
+        # print("    Sloution1:")
+        # print("        Runtime: 48 ms, faster than 20.29% of Python3 online submissions for Middle of the Linked List.")
+        # print("        Memory Usage: 13.2 MB, less than 5.04% of Python3 online submissions for Middle of the Linked List.")
+        # 快慢指针
+        fast = slow = head
+        # 遍历fast指针移动是slow两倍
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
+
     def run(self):
 
         startTime = time.time()
@@ -210,9 +236,11 @@ class SolutionEasy():
         # self.projectionArea([[2,2,2],[2,1,3],[2,2,2]])
         # self.maxDepth(self.node1)
         # self.smallestRangeI([1,6,3], 2)
-        self.transpose([[1,2,3],[4,5,6]])
-        endTime = time.time()
         # self.subdomainVisits(["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"])
+        # self.transpose([[1,2,3],[4,5,6]])
+        self.middleNode(self.listNode)
+        endTime = time.time()
+
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
         pass
