@@ -237,6 +237,8 @@ class SolutionEasy():
         # print("        Runtime: 176 ms, faster than 20.27% of Python3 online submissions for Increasing Order Search Tree.")
         # print("        Memory Usage: 13.4 MB, less than 5.97% of Python3 online submissions for Increasing Order Search Tree.")
         outList = []
+
+        # 中序遍历数据到list
         def loopNode(node: TreeNode):
             if node:
                 loopNode(node.left)
@@ -251,7 +253,7 @@ class SolutionEasy():
                 listNode.pop(0)
                 listToNode(node.right, listNode)
 
-
+        # 迭代 list转二叉树
         lenOutList = len(outList)
         outNode = TreeNode(outList[0])
         if lenOutList > 1:
@@ -261,6 +263,24 @@ class SolutionEasy():
             listToNode(outNode.right, outList)
         print(outNode)
         return outNode
+
+    # list逆序
+    def reverseString(self, s: list) -> None:
+        print("func reverseString")
+        # print("    Sloution1:")
+        # print("        Runtime: 184 ms")
+        # print("        Memory Usage: 17.9 MB")
+        # j = -1
+        # for i in range(len(s) // 2):
+        #     s[i], s[j] = s[j], s[i]
+        #     j -= 1
+
+        # print("    Sloution2:")
+        # print("        Runtime: 196 ms, faster than 21.96% of Python3 online submissions for Reverse String.")
+        # print("        Memory Usage: 17.7 MB, less than 11.40% of Python3 online submissions for Reverse String.")
+        s.reverse()
+        print(s)
+
 
     def run(self):
 
@@ -274,7 +294,8 @@ class SolutionEasy():
         # self.subdomainVisits(["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"])
         # self.transpose([[1,2,3],[4,5,6]])
         # self.middleNode(self.listNode)
-        self.increasingBST(self.t1)
+        # self.increasingBST(self.t1)
+        self.reverseString(["h","e","l","l","o"])
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
