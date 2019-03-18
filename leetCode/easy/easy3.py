@@ -282,8 +282,39 @@ class SolutionEasy():
 
         print(s)
 
+    #
+    def shortestToChar(self, S: str, C: str) -> list:
+
+        print("func shortestToChar")
+        # print("    Sloution1:")
+        # print("        Runtime: 52 ms, faster than 74.08% of Python3 online submissions for Shortest Distance to a Character.")
+        # print("        Memory Usage: 13.3 MB, less than 5.56% of Python3 online submissions for Shortest Distance to a Character.")
+        matchList = []
+        # 遍历确定C位置
+        for i in range(len(S)):
+            if S[i] == C:
+                matchList.append(i)
+        # print(matchList)
+
+        outList = []
+        # 对比第一个
+        for i in range(0, matchList[0] + 1):
+            outList.append(matchList[0] - i)
+
+        # 对比中段
+        j = 1
+        for i in range(matchList[0] + 1, matchList[-1] + 1):
+            if matchList[j] < i:
+                j += 1
+            outList.append(min(matchList[j] - i, i - matchList[j - 1]))
 
 
+        # 对比最后一个
+        for i in range( matchList[-1] + 1, len(S)):
+            outList.append(i - matchList[-1])
+
+        print(outList)
+        return outList
 
     def run(self):
 
@@ -298,7 +329,8 @@ class SolutionEasy():
         # self.transpose([[1,2,3],[4,5,6]])
         # self.middleNode(self.listNode)
         # self.increasingBST(self.t1)
-        self.reverseString(["h","e","l","l","o"])
+        # self.reverseString(["h","e","l","l","o"])
+        self.shortestToChar("loveleetcode", "e")
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")

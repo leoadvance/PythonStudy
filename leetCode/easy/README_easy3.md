@@ -49,3 +49,6 @@
 题目需求list逆序显示
 要点：
     1. 利用list[::-1].
+    
+* [# _821. Shortest Distance to a Character (shortestToChar)](https://leetcode.com/problems/shortest-distance-to-a-character/)  
+题目核心求特定字符在字符串位置。
