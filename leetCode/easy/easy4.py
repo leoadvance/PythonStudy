@@ -119,12 +119,26 @@ class SolutionEasy():
         print(operator.eq(outlist1, outlist2))
         return operator.eq(outlist1, outlist2)
 
+    # 二进制取反
+    def findComplement(self, num: int) -> int:
+        print("func findComplement")
+        # print("    Sloution1:")
+        # print("        Runtime: 48 ms, faster than 24.92% of Python3 online submissions for Number Complement.")
+        # print("        Memory Usage: 13.2 MB, less than 5.55% of Python3 online submissions for Number Complement.")
+        # 通过异或取反，并过滤"0b"
+        temp = bin(num ^ 0xFFFFFFFF)[2:]
+
+        # 找到字符串中"0"以后的字段，再通过int转换成10进制
+        print(int(temp[temp.index("0"):], 2))
+        return(int(temp[temp.index("0"):], 2))
+
     def run(self):
 
         startTime = time.time()
 
         # self.numberOfLines([4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10], "bbbcccdddaaa")
-        self.leafSimilar(self.t1, self.t2)
+        # self.leafSimilar(self.t1, self.t2)
+        self.findComplement(5)
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
