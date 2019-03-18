@@ -126,11 +126,28 @@ class SolutionEasy():
         # print("        Runtime: 48 ms, faster than 24.92% of Python3 online submissions for Number Complement.")
         # print("        Memory Usage: 13.2 MB, less than 5.55% of Python3 online submissions for Number Complement.")
         # 通过异或取反，并过滤"0b"
-        temp = bin(num ^ 0xFFFFFFFF)[2:]
+        # temp = bin(num ^ 0xFFFFFFFF)[2:]
+        #
+        # # 找到字符串中"0"以后的字段，再通过int转换成10进制
+        # print(int(temp[temp.index("0"):], 2))
+        # return(int(temp[temp.index("0"):], 2))
 
-        # 找到字符串中"0"以后的字段，再通过int转换成10进制
-        print(int(temp[temp.index("0"):], 2))
-        return(int(temp[temp.index("0"):], 2))
+        # print("    Sloution2:")
+        # print("        Runtime: 36 ms, faster than 85.67% of Python3 online submissions for Number Complement.")
+        # print("        Memory Usage: 13.1 MB, less than 5.55% of Python3 online submissions for Number Complement.")
+
+        # 10进制转str二进制
+        temp = bin(num)[2:]
+        out = ""
+
+        # 遍历取反
+        for s in temp:
+            if s == "0":
+                out += "1"
+            else:
+                out += "0"
+        # print(int(out,2))
+        return(int(out,2))
 
     def run(self):
 
