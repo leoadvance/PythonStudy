@@ -316,35 +316,6 @@ class SolutionEasy():
         print(outList)
         return outList
 
-    # 数据求余
-    def numberOfLines(self, widths: list, S: str) -> list:
-        print("func numberOfLines")
-        # print("    Sloution1:")
-        # print("        Runtime: 36 ms, faster than 73.24% of Python3 online submissions for Number of Lines To Write String.")
-        # print("        Memory Usage: 13.1 MB, less than 7.14% of Python3 online submissions for Number of Lines To Write String.")
-        # listOut = [0,0]
-        # if S:
-        #     listOut[0] = 1
-        # for char in S:
-        #     listOut[1] += widths[ord(char) - 97]
-        #     if listOut[1] > 100:
-        #         listOut[1] = widths[ord(char) - 97]
-        #         listOut[0] += 1
-        # print(listOut)
-        # return listOut
-
-        # print("    Sloution2:")
-        # print("        Runtime: 48 ms, faster than 23.86% of Python3 online submissions for Number of Lines To Write String.")
-        # print("        Memory Usage: 13.2 MB, less than 7.14% of Python3 online submissions for Number of Lines To Write String.")
-        line = 1
-        count = 0
-        for char in S:
-            count += widths[ord(char) - 97]
-            if count > 100:
-                count = widths[ord(char) - 97]
-                line += 1
-        print([line, count])
-        return [line, count]
 
 
     def run(self):
@@ -362,7 +333,6 @@ class SolutionEasy():
         # self.increasingBST(self.t1)
         # self.reverseString(["h","e","l","l","o"])
         # self.shortestToChar("loveleetcode", "e")
-        self.numberOfLines([4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10], "bbbcccdddaaa")
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
