@@ -2,6 +2,7 @@
 import re
 import time
 import collections
+import operator
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -23,15 +24,27 @@ class Node:
 class SolutionEasy():
 
     def __init__(self):
-        self.t1 = TreeNode(5)
-        self.t1.left = TreeNode(3)
-        self.t1.right = TreeNode(6)
-        self.t1.left.left = TreeNode(2)
-        self.t1.left.right = TreeNode(4)
-        self.t1.left.left.left = TreeNode(1)
-        self.t1.right.right = TreeNode(8)
-        self.t1.right.right.left = TreeNode(7)
-        self.t1.right.right.right = TreeNode(9)
+        self.t1 = TreeNode(3)
+        self.t1.left = TreeNode(5)
+        self.t1.right = TreeNode(1)
+        self.t1.left.left = TreeNode(6)
+        self.t1.left.right = TreeNode(2)
+        self.t1.left.right.left = TreeNode(7)
+        self.t1.left.right.right = TreeNode(4)
+        self.t1.right.right = TreeNode(1)
+        self.t1.right.right.left = TreeNode(9)
+        self.t1.right.right.right = TreeNode(8)
+
+        self.t2 = TreeNode(3)
+        self.t2.left = TreeNode(5)
+        self.t2.right = TreeNode(1)
+        self.t2.left.left = TreeNode(6)
+        self.t2.left.right = TreeNode(2)
+        self.t2.left.right.left = TreeNode(7)
+        self.t2.left.right.right = TreeNode(4)
+        self.t2.right.right = TreeNode(1)
+        self.t2.right.right.left = TreeNode(9)
+        self.t2.right.right.right = TreeNode(8)
 
         self.node1 = Node(1, [3,2,4])
         self.node1.children[0] = Node(3, [5,6])
@@ -84,12 +97,34 @@ class SolutionEasy():
         print([line, count])
         return [line, count]
 
+    # 二叉树比较
+    def leafSimilar(self, root1: TreeNode, root2: TreeNode) -> bool:
+        print("func leafSimilar")
+        # print("    Sloution1:")
+        # print("        Runtime: 40 ms, faster than 56.81% of Python3 online submissions for Leaf-Similar Trees.")
+        # print("        Memory Usage: 13.2 MB, less than 5.32% of Python3 online submissions for Leaf-Similar Trees.")
+        outlist1 = []
+        outlist2 = []
+
+        # 迭代提取出要比较的list
+        def loopNode(node:TreeNode, outlist):
+            if node:
+                if node.left == None and node.right == None :
+                    outlist.append(node.val)
+                    return
+                loopNode(node.left,  outlist)
+                loopNode(node.right, outlist)
+        loopNode(root1, outlist1)
+        loopNode(root2, outlist2)
+        print(operator.eq(outlist1, outlist2))
+        return operator.eq(outlist1, outlist2)
 
     def run(self):
 
         startTime = time.time()
 
-        self.numberOfLines([4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10], "bbbcccdddaaa")
+        # self.numberOfLines([4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10], "bbbcccdddaaa")
+        self.leafSimilar(self.t1, self.t2)
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
