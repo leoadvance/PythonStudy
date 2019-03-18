@@ -43,3 +43,9 @@
 题目需求后半部分listnode
 要点：
     1. 利用快慢指针。快指针移动是慢指针两倍。
+    
+  
+* [# _344. Reverse String (reverseString)](https://leetcode.com/problems/reverse-string/)  
+题目需求list逆序显示
+要点：
+    1. 利用list[::-1].

@@ -279,7 +279,10 @@ class SolutionEasy():
         # print("        Runtime: 196 ms, faster than 21.96% of Python3 online submissions for Reverse String.")
         # print("        Memory Usage: 17.7 MB, less than 11.40% of Python3 online submissions for Reverse String.")
         s.reverse()
+
         print(s)
+
+
 
 
     def run(self):
