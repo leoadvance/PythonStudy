@@ -172,6 +172,20 @@ class SolutionEasy():
         print(outList)
         return outList
 
+    def numSpecialEquivGroups(self, A: list) -> int:
+        print("func numSpecialEquivGroups")
+        # print("    Sloution1:")
+        # print("        Runtime: 52 ms, faster than 50.95% of Python3 online submissions for Groups of Special-Equivalent Strings.")
+        # print("        Memory Usage: 13.6 MB, less than 6.38% of Python3 online submissions for Groups of Special-Equivalent Strings.")
+        # 遍历字符串，记录26个字母在奇偶位置出现次数
+        def count(A):
+            ans = [0] * 52
+            for i, letter in enumerate(A):
+                ans[ord(letter) - ord('a') + 26 * (i%2)] += 1
+            return tuple(ans)
+        # 利用字典key不重复特性统计不同组合情况
+        return len({count(word) for word in A})
+
     def run(self):
 
         startTime = time.time()
@@ -179,7 +193,8 @@ class SolutionEasy():
         # self.numberOfLines([4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10], "bbbcccdddaaa")
         # self.leafSimilar(self.t1, self.t2)
         # self.findComplement(5)
-        self.findWords(["Hello", "Alaska", "Dad", "Peace"])
+        # self.findWords(["Hello", "Alaska", "Dad", "Peace"])
+        self.numSpecialEquivGroups(["abcd","cdab","adcb","cbad"])
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
