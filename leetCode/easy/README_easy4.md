@@ -11,7 +11,8 @@
     1. 遍历提取终端数据到list.
     2. 利用operator.eq()进行list内容一致性对比。
     
-* [# 500. Keyboard Row (findWords)](https://leetcode.com/problems/keyboard-row/)  
-题目需求判断输入的单词是否在键盘同一行。
+* [# 893. Groups of Special-Equivalent Strings (numSpecialEquivGroups)](https://leetcode.com/problems/groups-of-special-equivalent-strings/)  
+题目需求字符串按奇偶排序后判断相同字符串数量。
 要点：
-    1. 建立tuple判断字符是否在字符串。
+    1. 利用sorted()和字符串的slice特性分割字符串。
+    2. 利用set()唯一性去重复。

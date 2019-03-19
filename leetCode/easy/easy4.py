@@ -178,13 +178,30 @@ class SolutionEasy():
         # print("        Runtime: 52 ms, faster than 50.95% of Python3 online submissions for Groups of Special-Equivalent Strings.")
         # print("        Memory Usage: 13.6 MB, less than 6.38% of Python3 online submissions for Groups of Special-Equivalent Strings.")
         # 遍历字符串，记录26个字母在奇偶位置出现次数
-        def count(A):
-            ans = [0] * 52
-            for i, letter in enumerate(A):
-                ans[ord(letter) - ord('a') + 26 * (i%2)] += 1
-            return tuple(ans)
-        # 利用字典key不重复特性统计不同组合情况
-        return len({count(word) for word in A})
+        # def count(A):
+        #     ans = [0] * 52
+        #     for i, letter in enumerate(A):
+        #         ans[ord(letter) - ord('a') + 26 * (i%2)] += 1
+        #     return tuple(ans)
+        # # 利用字典key不重复特性统计不同组合情况
+        # return len({count(word) for word in A})
+
+        # print("    Sloution2:")
+        # print("        Runtime: 44 ms, faster than 81.30% of Python3 online submissions for Groups of Special-Equivalent Strings.")
+        # print("        Memory Usage: 13.2 MB, less than 6.38% of Python3 online submissions for Groups of Special-Equivalent Strings.")
+        # 遍历字符串，记录26个字母在奇偶位置出现次数
+        outData = set()
+        for string in A:
+            # 利用sorted和字符串slice功能分离奇偶字符串
+            even = sorted(string[::2])
+            odd  = sorted(string[1::2])
+            # print(even,odd)
+
+            # 利用set唯一性添加元素
+            outData.add("".join(even) + "".join(odd))
+        print(outData)
+        return len(outData)
+
 
     def run(self):
 
