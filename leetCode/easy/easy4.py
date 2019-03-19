@@ -149,13 +149,37 @@ class SolutionEasy():
         # print(int(out,2))
         return(int(out,2))
 
+    def findWords(self, words: list) -> list:
+        print("func findWords")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 61.81% of Python3 online submissions for Keyboard Row.")
+        # print("        Memory Usage: 13.2 MB, less than 6.58% of Python3 online submissions for Keyboard Row.")
+        tupleTemp = ("qwertyuiopQWERTYUIOP","asdfghjklASDFGHJKL", "zxcvbnmZXCVBNM")
+        outList = []
+        for strdata in words:
+            sign = True
+            # 获取首字符在tuple中位置
+            for i in range(len(tupleTemp)):
+                if strdata[0] in tupleTemp[i]:
+                    break
+            for char in strdata[1:]:
+                # 发现不在同一行字符 退出循环
+                if char not in tupleTemp[i]:
+                    sign = False
+                    break
+            if sign:
+                outList.append(strdata)
+        print(outList)
+        return outList
+
     def run(self):
 
         startTime = time.time()
 
         # self.numberOfLines([4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10], "bbbcccdddaaa")
         # self.leafSimilar(self.t1, self.t2)
-        self.findComplement(5)
+        # self.findComplement(5)
+        self.findWords(["Hello", "Alaska", "Dad", "Peace"])
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
