@@ -7,6 +7,7 @@ import leetCode.easy.easy1
 import leetCode.easy.easy2
 import leetCode.easy.easy3
 import leetCode.easy.easy4
+import pyGame.snake.snake as snakeGame
 
 if __name__ == "__main__":
     print("python study!")
@@ -14,5 +15,6 @@ if __name__ == "__main__":
     # varStudy = VariableClass()
     # varStudy.run()
 
-    leetCode = leetCode.easy.easy4.SolutionEasy()
-    leetCode.run()
+    # leetCode = leetCode.easy.easy4.SolutionEasy()
+    pygameSnkae =snakeGame.snake("pyGameSnake")
+    pygameSnkae.run()
