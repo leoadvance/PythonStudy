@@ -28,4 +28,8 @@
     1. 利用collection.Counter和split分离字符串。
     2. 利用Counter直接相加，统计输出不重复的字符串。
 
-
+* [# 682. Baseball Game (calPoints)](https://leetcode.com/problems/baseball-game/)  
+题目需求根据一定规则对字符串相加减求和
+要点：
+    1. 利用int()把str转成整数。再利用sum求和。
+    2. 利用list.pop()删除列表元素。

@@ -245,6 +245,30 @@ class SolutionEasy():
         print(outlist)
         return outlist
 
+    def calPoints(self, ops: list) -> int:
+        print("func calPoints")
+        # print("    Sloution1:")
+        # print("        Runtime: 40 ms, faster than 57.63% of Python3 online submissions for Baseball Game.")
+        # print("        Memory Usage: 13.1 MB, less than 5.15% of Python3 online submissions for Baseball Game.")
+        # 遍历并按要求转换
+        tempList = []
+        for s in ops:
+            # 如果是C 删除最后一个元素
+            if s == "C":
+                tempList.pop()
+
+            # 是D有效数据翻倍
+            elif s == "D":
+                tempList.append(tempList[-1] * 2)
+            # 遇到➕ 最后两个有效数据相加
+            elif s == "+":
+                tempList.append(tempList[-1] + tempList[-2])
+            # 字符转数字
+            else:
+                tempList.append(int(s))
+        print(tempList, sum(tempList))
+        return sum(tempList)
+
     def run(self):
 
         startTime = time.time()
@@ -255,6 +279,7 @@ class SolutionEasy():
         # self.findWords(["Hello", "Alaska", "Dad", "Peace"])
         # self.numSpecialEquivGroups(["abcd","cdab","adcb","cbad"])
         # self.uncommonFromSentences("this apple is sweet", "this apple is sour")
+        self.calPoints(["5","-2","4","C","D","9","+","+"])
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")

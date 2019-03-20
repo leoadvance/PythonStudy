@@ -15,6 +15,7 @@ if __name__ == "__main__":
     # varStudy = VariableClass()
     # varStudy.run()
 
-    # leetCode = leetCode.easy.easy4.SolutionEasy()
+    leetCode = leetCode.easy.easy4.SolutionEasy()
+    leetCode.run()
     pygameSnkae =snakeGame.snake("pyGameSnake")
     pygameSnkae.run()
