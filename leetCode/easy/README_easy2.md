@@ -6,9 +6,7 @@
     1. 用zip进行list横纵轴交换。
     2. cpoy复制list，sort排序。
 
-* [# 617. Merge Two Binary Trees(mergeTrees)](https://leetcode.com/problems/merge-two-binary-trees/)  
-题目需求是二叉树合并
-要点，学会迭代的使用和二叉树的建立。
+
 
 * [# 852. Peak Index in a Mountain Array(peakIndexInMountainArray)](https://leetcode.com/problems/peak-index-in-a-mountain-array/)  
 题目本质是求解list数组最大值出现的位置。（陷进，list内不仅可以装int型，也能装float型）。  
@@ -32,12 +30,6 @@
     1. 不能直接暴力遍历，效率过低。
     2. 先算出原始list偶数和，后续每次只对增量做操作。 
 
-* [# 965. Univalued Binary Tree(isUnivalTree)](https://leetcode.com/problems/univalued-binary-tree/)  
-题目需求是二叉树遍历看是否有不同数值。
-
-* [# 700. Search in a Binary Search Tree(searchBST)](https://leetcode.com/problems/search-in-a-binary-search-tree/)  
-题目需求遍历二叉树返回指定值。  
-要点：可以利用该题二叉树左边值小于右边的特性减少循环次数。
 
 * [# 922. Sort Array By Parity II(sortArrayByParityII)](https://leetcode.com/problems/sort-array-by-parity-ii/)  
 题目需求list奇偶排序没有特别的。（学到了可以直接[0] * len(x)创建list）  
