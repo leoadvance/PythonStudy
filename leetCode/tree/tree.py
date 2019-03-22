@@ -116,6 +116,10 @@ class Solution():
 
     # 层序遍历&取平均
     def averageOfLevels(self, root: TreeNode) -> list:
+        print("func averageOfLevels")
+        # print("    Sloution1:")
+        # print("        Runtime: 64 ms")
+        # print("        Memory Usage: 15.5 MB")
         templist  = []
         outlist   = []
         levelRead = 0
