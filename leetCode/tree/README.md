@@ -16,3 +16,9 @@
 题目需求返回二叉树每层平均值  
 要点：
     1. 利用堆栈方式层序遍历二叉树。并求平均值
+
+
+* [# 104. Maximum Depth of Binary Tree (maxDepth)](https://leetcode.com/problems/maximum-depth-of-binary-tree/)  
+题目求二叉树最大深度
+要点：
+    1. 利用堆栈方式层序遍历二叉树求深度。  

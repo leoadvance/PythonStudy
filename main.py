@@ -18,6 +18,6 @@ if __name__ == "__main__":
     leetCodeTree = leetCodeTree.Solution()
     leetCodeTree.run()
     leetCode = leetCode.easy.easy4.SolutionEasy()
-    leetCode.run()
+    # leetCode.run()
     pygameSnkae =snakeGame.snake("pyGameSnake")
     pygameSnkae.run()

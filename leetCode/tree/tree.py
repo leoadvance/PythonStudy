@@ -153,13 +153,37 @@ class Solution():
         return outlist
         pass
 
+    # 遍历求最大深度
+    def maxDepth(self, root: TreeNode) -> int:
+        # print("func maxDepth")
+        # print("    Sloution1:")
+        # print("        Runtime: 52 ms, faster than 54.12% of Python3 online submissions for Maximum Depth of Binary Tree.")
+        # print("        Memory Usage: 14.4 MB, less than 82.75% of Python3 online submissions for Maximum Depth of Binary Tree.")
+        if root:
+            maxlevel = 1
+            tempList = [[root, maxlevel]]
+            # print(tempList)
+            while tempList:
+                node, level = tempList.pop(0)
+                maxlevel = max(maxlevel, level)
+                if node.left:
+                    tempList.append([node.left,level + 1])
+                if node.right:
+                    tempList.append([node.right, level + 1])
+
+            # print(maxlevel)
+            return maxlevel
+        else:
+            return 0
+
     def run(self):
 
         startTime = time.time()
         # self.mergeTrees(self.t1, self.t2)
         # self.isUnivalTree(self.t1)
         # print(self.searchBST(self.t1, 3))
-        self.averageOfLevels(self.t1)
+        # self.averageOfLevels(self.t1)
+        self.maxDepth(self.t1)
         endTime = time.time()
         print("class leetCode tree run time: ", (str(endTime - startTime))[:8], "s")
 
