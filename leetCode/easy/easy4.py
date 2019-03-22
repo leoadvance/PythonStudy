@@ -269,6 +269,36 @@ class SolutionEasy():
         print(tempList, sum(tempList))
         return sum(tempList)
 
+    # 判断周长
+    def islandPerimeter(self, grid) -> int:
+        print("func calPoints")
+        # print("    Sloution1:")
+        # print("        Runtime: 380 ms, faster than 34.42% of Python3 online submissions for Island Perimeter.")
+        # print("        Memory Usage: 13.4 MB, less than 6.11% of Python3 online submissions for Island Perimeter.")
+        tempTuple = ((-1,0), (1,0), (0, -1), (0, 1))
+        # 声明空二维数组
+        templist = [[0] * (len(grid[0]) + 2) for i in range(len(grid) + 2)]
+        print(templist)
+
+        # 旧数组合并到新数组
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                templist[i + 1][j + 1] = grid[i][j]
+        sum = 0
+        for i in range(1, len(templist) - 1):
+            for j in range(1, len(templist[0]) -1):
+                # 是否陆地
+                if (templist[i][j] > 0):
+                    sum += 4
+
+                    # 判断前后左右是否有陆地 有则相邻边减一
+                    for a,b in tempTuple:
+                        if templist[i + a][j + b] > 0:
+                            sum -= 1
+        print(templist, sum)
+        return sum
+        pass
+
     def run(self):
 
         startTime = time.time()
@@ -279,7 +309,8 @@ class SolutionEasy():
         # self.findWords(["Hello", "Alaska", "Dad", "Peace"])
         # self.numSpecialEquivGroups(["abcd","cdab","adcb","cbad"])
         # self.uncommonFromSentences("this apple is sweet", "this apple is sour")
-        self.calPoints(["5","-2","4","C","D","9","+","+"])
+        # self.calPoints(["5","-2","4","C","D","9","+","+"])
+        self.islandPerimeter([[1,0,0]])
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")

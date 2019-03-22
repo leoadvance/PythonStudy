@@ -33,3 +33,7 @@
 要点：
     1. 利用int()把str转成整数。再利用sum求和。
     2. 利用list.pop()删除列表元素。
+
+* [# 463. Island Perimeter (islandPerimeter)](https://leetcode.com/problems/island-perimeter/)  
+题目需求判断二维数组内数字1相邻1的个数。
+暴力遍历求解。
