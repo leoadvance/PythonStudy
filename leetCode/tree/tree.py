@@ -16,9 +16,15 @@ class Solution():
         self.t1 = TreeNode(3)
         self.t1.left  = TreeNode(9)
         self.t1.right = TreeNode(20)
+        self.t1.left.left = TreeNode(8)
+        self.t1.left.right = TreeNode(5)
         self.t1.right.left = TreeNode(15)
         self.t1.right.right = TreeNode(7)
-
+        '''
+            3
+        9       20
+      8   5    15  7   
+        '''
 
         self.t2 = TreeNode(1)
         self.t2.left  = TreeNode(1)
@@ -31,6 +37,26 @@ class Solution():
 
     def __del__(self):
         print("class leetCode tree delete!")
+
+    # 堆栈方式先序遍历
+    def fronttack(self, root: TreeNode):
+        print("先序遍历")
+        # 空二叉树直接返回
+        if not root:
+            return
+        outlist = []
+        nood = root
+        # 先续遍历
+        while outlist or nood:
+            # 循环遍历左分支
+            while nood:
+                print(nood.val)
+                outlist.append(nood)
+                nood = nood.left
+
+            # 开始每层右分支遍历
+            nood = outlist.pop()
+            nood = nood.right
 
     # 二叉树迭代
     def mergeTrees(self, t1:TreeNode, t2:TreeNode) -> TreeNode:
@@ -176,6 +202,11 @@ class Solution():
         else:
             return 0
 
+    def trimBST(self, root: TreeNode, L: int, R: int) -> TreeNode:
+
+
+        pass
+
     def run(self):
 
         startTime = time.time()
@@ -183,7 +214,9 @@ class Solution():
         # self.isUnivalTree(self.t1)
         # print(self.searchBST(self.t1, 3))
         # self.averageOfLevels(self.t1)
-        self.maxDepth(self.t1)
+        # self.maxDepth(self.t1)
+        self.trimBST(self.t1,1,3)
+        self.fronttack(self.t1)
         endTime = time.time()
         print("class leetCode tree run time: ", (str(endTime - startTime))[:8], "s")
 
