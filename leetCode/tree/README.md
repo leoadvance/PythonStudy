@@ -22,3 +22,9 @@
 题目求二叉树最大深度
 要点：
     1. 利用堆栈方式层序遍历二叉树求深度。  
+    
+    
+* [# 669. Trim a Binary Search Tree (trimBST)](https://leetcode.com/problems/trim-a-binary-search-tree/)  
+题目需求，删除二叉树中指定节点。
+要点：
+    1. 递归解决。跳过要删除的节点，直接链接到下一层。      

@@ -14,12 +14,13 @@ class Solution():
 
     def __init__(self):
         self.t1 = TreeNode(3)
-        self.t1.left  = TreeNode(9)
-        self.t1.right = TreeNode(20)
-        self.t1.left.left = TreeNode(8)
-        self.t1.left.right = TreeNode(5)
-        self.t1.right.left = TreeNode(15)
-        self.t1.right.right = TreeNode(7)
+        self.t1.left  = TreeNode(0)
+        self.t1.right = TreeNode(4)
+        # self.t1.left.left = TreeNode(8)
+        self.t1.left.right = TreeNode(2)
+        self.t1.left.right.left = TreeNode(1)
+        # self.t1.right.left = TreeNode(15)
+        # self.t1.right.right = TreeNode(7)
         '''
             3
         9       20
@@ -203,9 +204,24 @@ class Solution():
             return 0
 
     def trimBST(self, root: TreeNode, L: int, R: int) -> TreeNode:
-
-
-        pass
+        # print("func trimBST")
+        # print("    Sloution1:")
+        # print("        Runtime: 60 ms, faster than 73.22% of Python3 online submissions for Trim a Binary Search Tree.")
+        # print("        Memory Usage: 17.3 MB, less than 5.36% of Python3 online submissions for Trim a Binary Search Tree.")
+        def loopnode(node):
+            if node:
+                # 删除非L和R区间数据
+                if node.val < L:
+                    return loopnode(node.right)
+                elif node.val > R:
+                    return loopnode(node.left)
+                else:
+                    # 遍历二叉树
+                    node.left  = loopnode(node.left)
+                    node.right = loopnode(node.right)
+                    return node
+        # print(loopnode(root))
+        return loopnode(root)
 
     def run(self):
 
@@ -216,7 +232,7 @@ class Solution():
         # self.averageOfLevels(self.t1)
         # self.maxDepth(self.t1)
         self.trimBST(self.t1,1,3)
-        self.fronttack(self.t1)
+        # self.fronttack(self.t1)
         endTime = time.time()
         print("class leetCode tree run time: ", (str(endTime - startTime))[:8], "s")
 
