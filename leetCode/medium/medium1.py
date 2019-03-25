@@ -42,24 +42,41 @@ class SolutionMedium():
         # print("        Memory Usage: 19.6 MB, less than 100.00% of Python3 online submissions for Best Sightseeing Pair.")
         # 偶数不可能被n个1整除 5也不会
         # iList = A + i  jList = A - J
-        iList = [A[i] + i for i in range(len(A) - 1)]
-        jList = [A[j] - j for j in range(1, len(A))]
-        print(A)
-        print(iList)
-        print(jList)
+        # iList = [A[i] + i for i in range(len(A) - 1)]
+        # jList = [A[j] - j for j in range(1, len(A))]
+        # print(A)
+        # print(iList)
+        # print(jList)
+        #
+        # # 遍历 逆序遍历jList各个位置最大值
+        # i = -1
+        # maxjlist  = -100000
+        # maxResult = -100000
+        # for data in jList[::-1]:
+        #     maxjlist  = max(maxjlist, data)
+        #     maxResult = max(maxResult, maxjlist + iList[i])
+        #     print("maxjlist", maxjlist," iList[i]", iList[i])
+        #     i -= 1
+        #     # print(data)
+        #
+        # print(maxResult)
+        # return maxResult
 
-        # 遍历 逆序遍历jList各个位置最大值
-        i = -1
-        maxjlist  = -100000
-        maxResult = -100000
-        for data in jList[::-1]:
-            maxjlist  = max(maxjlist, data)
-            maxResult = max(maxResult, maxjlist + iList[i])
-            print("maxjlist", maxjlist," iList[i]", iList[i])
-            i -= 1
-            # print(data)
+        # print("    Sloution2:")
+        # print("        Runtime: 188 ms, faster than 45.55% of Python3 online submissions for Best Sightseeing Pair.")
+        # print("        Memory Usage: 16.8 MB, less than 100.00% of Python3 online submissions for Best Sightseeing Pair.")
+        maxiList  = A[0]
+        maxResult = -1000000
+        for i in range(1, len(A)):
 
-        print(maxResult)
+            # 更新maxiList + A[i] - i 最大值
+            maxResult = max(maxResult, maxiList + A[i] - i)
+
+            # 更新A[i] + i最大值
+            maxiList  = max(maxiList, A[i] + i)
+            # print("maxiList", maxiList, " maxResult", maxResult)
+
+        # print(maxResult)
         return maxResult
 
     def run(self):
