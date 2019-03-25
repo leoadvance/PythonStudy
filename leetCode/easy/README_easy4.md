@@ -37,3 +37,9 @@
 * [# 463. Island Perimeter (islandPerimeter)](https://leetcode.com/problems/island-perimeter/)  
 题目需求判断二维数组内数字1相邻1的个数。
 暴力遍历求解。
+
+* [# 1020. Partition Array Into Three Parts With Equal Sum (canThreePartsEqualSum)](https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/)  
+题目需求list内是否可以分成3组和相等的数
+思路：
+    1. 如果能正好分三组，每组和必然是总和三分之一。
+    2. 遍历统计满足和等于三分之一的数据组数。

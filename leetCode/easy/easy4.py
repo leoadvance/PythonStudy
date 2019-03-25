@@ -299,6 +299,33 @@ class SolutionEasy():
         return sum
         pass
 
+    # 求list内是否可以分成3组和相等的数
+    def canThreePartsEqualSum(self, A: list) -> bool:
+
+        # 和相等 说明每个都是总和的三分之一
+        tempSign = sum(A) / 3
+        # print(tempSign)
+        tempSum = 0
+        tempCount = 0
+
+        # 遍历，统计和等于三分之一总和的次数
+        for i in range(len(A)):
+            tempSum += A[i]
+
+            # 得到第一个平均值
+            if tempSum == tempSign:
+                tempSum = 0
+                tempCount += 1
+
+        if tempCount == 3 and tempSum == 0:
+            print(True)
+            return True
+        else:
+            print(False)
+            return False
+
+        pass
+
     def run(self):
 
         startTime = time.time()

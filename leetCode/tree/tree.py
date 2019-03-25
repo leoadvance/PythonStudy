@@ -223,28 +223,6 @@ class Solution():
         # print(loopnode(root))
         return loopnode(root)
 
-    def canThreePartsEqualSum(self, A: list) -> bool:
-        tempSign = sum(A) / 3
-        # print(tempSign)
-        tempSum = 0
-        tempCount = 0
-        for i in range(len(A)):
-            tempSum += A[i]
-
-            # 得到第一个平均值
-            if tempSum == tempSign:
-                tempSum = 0
-                tempCount += 1
-
-        if tempCount == 3 and tempSum == 0:
-            print(True)
-            return True
-        else:
-            print(False)
-            return False
-
-        pass
-
 
 
 
