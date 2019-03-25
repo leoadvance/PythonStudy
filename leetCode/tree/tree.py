@@ -247,38 +247,7 @@ class Solution():
 
 
 
-    def maxScoreSightseeingPair(self, A: list) -> int:
-        iList = []
-        jList = []
-        for i in range(len(A) - 1):
-            iList.append(A[i] + i)
-        for j in range(1, len(A)):
-            jList.append(A[j] - j)
-        tempMax = max(jList)
-        maxList = []
-        i = 1
-        maxList.append(tempMax)
-        for data in jList[:-1]:
-            if data < tempMax:
-                maxList.append(tempMax)
-            else:
-                # print(i, tempMax)
-                tempMax = max(jList[i:])
-                print(tempMax, jList[i:])
-                maxList.append(tempMax)
 
-            # print(jList[i:])
-            i += 1
-        maxList.append(jList[-1])
-        maxData = iList[0] + maxList[0]
-        for i in range(1, len(iList)):
-            maxData = max(iList[i] + maxList[i], maxData)
-        print(iList)
-        print(jList)
-        print(maxList)
-        print(maxData)
-        return maxData
-        pass
 
 
     def run(self):
@@ -292,7 +261,6 @@ class Solution():
         # self.trimBST(self.t1,1,3)
         # self.fronttack(self.t1)
         # self.canThreePartsEqualSum([0,2,1,-6,6,7,9,-1,2,0,1])
-        # self.maxScoreSightseeingPair([3,7,2,3])
         endTime = time.time()
 
         print("class leetCode tree run time: ", (str(endTime - startTime))[:8], "s")

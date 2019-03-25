@@ -34,11 +34,39 @@ class SolutionMedium():
 
         return -1
 
+    # 求两list数据两两相加最小值
+    def maxScoreSightseeingPair(self, A: list) -> int:
+        # print("func maxScoreSightseeingPair")
+        # print("    Sloution1:")
+        # print("        Runtime: 208 ms, faster than 32.53% of Python3 online submissions for Best Sightseeing Pair.")
+        # print("        Memory Usage: 19.6 MB, less than 100.00% of Python3 online submissions for Best Sightseeing Pair.")
+        # 偶数不可能被n个1整除 5也不会
+        # iList = A + i  jList = A - J
+        iList = [A[i] + i for i in range(len(A) - 1)]
+        jList = [A[j] - j for j in range(1, len(A))]
+        print(A)
+        print(iList)
+        print(jList)
+
+        # 遍历 逆序遍历jList各个位置最大值
+        i = -1
+        maxjlist  = -100000
+        maxResult = -100000
+        for data in jList[::-1]:
+            maxjlist  = max(maxjlist, data)
+            maxResult = max(maxResult, maxjlist + iList[i])
+            print("maxjlist", maxjlist," iList[i]", iList[i])
+            i -= 1
+            # print(data)
+
+        print(maxResult)
+        return maxResult
 
     def run(self):
 
         startTime = time.time()
-        self.smallestRepunitDivByK(7)
+        # self.smallestRepunitDivByK(7)
+        self.maxScoreSightseeingPair([1,1,1])
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")
 
