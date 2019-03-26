@@ -351,6 +351,24 @@ class SolutionEasy():
         print(maxLen,dataStrings)
         return maxLen
 
+    def fizzBuzz(self, n: int) -> list:
+        print("func binaryGap")
+        # print("    fizzBuzz:")
+        # print("        Runtime: 56 ms, faster than 62.22% of Python3 online submissions for Fizz Buzz.")
+        # print("        Memory Usage: 14.1 MB, less than 5.17% of Python3 online submissions for Fizz Buzz.")
+        outList = []
+        for i in range(1, n + 1):
+            if i % 15 == 0:
+                outList.append("FizzBuzz")
+            elif i % 3 == 0:
+                outList.append("Fizz")
+            elif i % 5 == 0:
+                outList.append("Buzz")
+            else:
+                outList.append(str(i))
+        print(outList)
+        return  outList
+
     def run(self):
 
         startTime = time.time()
@@ -363,7 +381,8 @@ class SolutionEasy():
         # self.uncommonFromSentences("this apple is sweet", "this apple is sour")
         # self.calPoints(["5","-2","4","C","D","9","+","+"])
         # self.islandPerimeter([[1,0,0]])
-        self.binaryGap(2)
+        # self.binaryGap(2)
+        self.fizzBuzz(15)
 
         endTime = time.time()
 

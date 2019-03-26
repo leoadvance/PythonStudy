@@ -50,3 +50,9 @@
 要点：
     1. 注意二进制仅仅含有1个1的情况（2的n次方）
     2. 遍历判断    
+    
+* [# 412. Fizz Buzz (fizzBuzz)](https://leetcode.com/problems/fizz-buzz/)  
+题目需求判断数据是否被3，5，15整除
+要点：
+    1. 注意覆盖N+1
+         
