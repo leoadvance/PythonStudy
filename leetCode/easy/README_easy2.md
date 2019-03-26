@@ -7,7 +7,6 @@
     2. cpoy复制list，sort排序。
 
 
-
 * [# 852. Peak Index in a Mountain Array(peakIndexInMountainArray)](https://leetcode.com/problems/peak-index-in-a-mountain-array/)  
 题目本质是求解list数组最大值出现的位置。（陷进，list内不仅可以装int型，也能装float型）。  
 要点：
@@ -40,3 +39,9 @@
 要点：
     1. 学习a, b = c ,d使用。
     2. 注意fib(0)时返回值。
+    
+* [# 937. Reorder Log Files (reorderLogFiles)](https://leetcode.com/problems/reorder-log-files/)  
+题目需求，按要求对list内部字符串排序  
+要点：
+    1. 利用split(" ", 1)把字符串分成两份。
+    2. 利用sorted和key对字符串排序。

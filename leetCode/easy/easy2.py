@@ -288,6 +288,38 @@ class SolutionEasy():
         # print(b)
         return b
 
+    def reorderLogFiles(self, logs: list) -> list:
+        # print("func reorderLogFiles")
+        # print("    Sloution1:")
+        # print("        Runtime: 60 ms, faster than 22.10% of Python3 online submissions for Reorder Log Files.")
+        # print("        Memory Usage: 13 MB, less than 6.17% of Python3 online submissions for Reorder Log Files.")
+        # 提取空格之后的字符串
+        def takeSecond(strings:str):
+            # print(strings)
+            sign, log = strings.split(" ",1)
+            return log
+
+        numList  = []
+        charList = []
+
+        # 区分出标识后面第一个字符是数字还是字母，并添加到不同list
+        for strings in logs:
+            for i in range(len(strings)):
+                if strings[i] == " ":
+                    # 数字信号
+                    if ord(strings[i + 1]) <= ord("9"):
+                        numList.append(strings)
+                    else:
+                        charList.append(strings)
+                    break
+        # print(sorted(charList, key = takeSecond) + numList)
+
+        # 利用sorted key功能，对剔除标识后的字符串排序
+        return sorted(charList, key = takeSecond) + numList
+
+
+
+
     def run(self):
 
         startTime = time.time()
@@ -301,7 +333,9 @@ class SolutionEasy():
         # self.commonChars(["bella","label","roller"])
         # self.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
         # self.sortArrayByParityII([4,2,5,7])
-        self.fib(2)
+        # self.fib(2)
+        self.reorderLogFiles(["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"])
+
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
