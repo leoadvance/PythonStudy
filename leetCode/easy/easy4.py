@@ -326,6 +326,31 @@ class SolutionEasy():
 
         pass
 
+    # 找出二进制中两个1之间最远距离
+    def binaryGap(self, N: int) -> int:
+        print("func binaryGap")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 99.25% of Python3 online submissions for Binary Gap.")
+        # print("        Memory Usage: 13.1 MB, less than 6.67% of Python3 online submissions for Binary Gap.")
+        # int转2进制
+        dataStrings = bin(N)[3:]
+        maxLen = 1
+        currentLen = 0
+        oneCount = 1
+        # 遍历 相邻1间隔
+        for strData in dataStrings:
+            currentLen += 1
+
+            if strData == "1":
+                oneCount += 1
+                if currentLen != 0:
+                    maxLen = max(maxLen, currentLen)
+                    currentLen = 0
+        if (oneCount == 1):
+            maxLen = 0
+        print(maxLen,dataStrings)
+        return maxLen
+
     def run(self):
 
         startTime = time.time()
@@ -337,7 +362,9 @@ class SolutionEasy():
         # self.numSpecialEquivGroups(["abcd","cdab","adcb","cbad"])
         # self.uncommonFromSentences("this apple is sweet", "this apple is sour")
         # self.calPoints(["5","-2","4","C","D","9","+","+"])
-        self.islandPerimeter([[1,0,0]])
+        # self.islandPerimeter([[1,0,0]])
+        self.binaryGap(2)
+
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")

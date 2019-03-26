@@ -79,6 +79,10 @@ class SolutionMedium():
         # print(maxResult)
         return maxResult
 
+    def queryString(self, S: str, N: int) -> bool:
+        pass
+
+
     def run(self):
 
         startTime = time.time()
