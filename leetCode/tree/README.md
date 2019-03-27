@@ -27,4 +27,11 @@
 * [# 669. Trim a Binary Search Tree (trimBST)](https://leetcode.com/problems/trim-a-binary-search-tree/)  
 题目需求，删除二叉树中指定节点。
 要点：
-    1. 递归解决。跳过要删除的节点，直接链接到下一层。      
+    1. 递归解决。跳过要删除的节点，直接链接到下一层。     
+     
+     
+* [# 429. N-ary Tree Level Order Traversal (levelOrder)](https://leetcode.com/problems/n-ary-tree-level-order-traversal/)  
+题目需求层序遍历多叉树并输出
+要点：
+    1. 堆栈遍历。
+    2. list.append([xxx])可以用于扩展多维list         

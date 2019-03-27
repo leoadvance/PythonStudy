@@ -238,10 +238,10 @@ class Solution():
 
     # 多叉树层序遍历 用堆栈方式解决
     def levelOrder(self, root: Node) -> list:
-        # print("func levelOrder")
-        # print("    Sloution1:")
-        # print("        Runtime: 104 ms, faster than 47.03% of Python3 online submissions for N-ary Tree Level Order Traversal.")
-        # print("        Memory Usage: 17.8 MB, less than 5.47% of Python3 online submissions for N-ary Tree Level Order Traversal.")
+        print("func levelOrder")
+        print("    Sloution1:")
+        print("        Runtime: 104 ms, faster than 47.03% of Python3 online submissions for N-ary Tree Level Order Traversal.")
+        print("        Memory Usage: 17.8 MB, less than 5.47% of Python3 online submissions for N-ary Tree Level Order Traversal.")
         if root:
             outList = [[]]
             # print(outList)
@@ -264,6 +264,8 @@ class Solution():
             outList = []
         # print(outList)
         return outList
+
+
 
     def run(self):
 
