@@ -317,7 +317,29 @@ class SolutionEasy():
         # 利用sorted key功能，对剔除标识后的字符串排序
         return sorted(charList, key = takeSecond) + numList
 
+    def nextGreaterElement(self, nums1: list, nums2: list) -> list:
+        # print("func nextGreaterElement")
+        # print("    Sloution1:")
+        # print("        Runtime: 44 ms, faster than 77.59% of Python3 online submissions for Next Greater Element I.")
+        # print("        Memory Usage: 13.2 MB, less than 5.26% of Python3 online submissions for Next Greater Element I.")
+        if not nums1 or not nums2:
+            return []
+        # 最后一个字符右边没有更大数值 返回-1
+        dictTemp = {nums2[-1]: -1}
+        # print(dictTemp)
+        # 遍历 nums2 找出每个index右边最大的数
+        for i in range(len(nums2) - 1):
+            dictTemp[nums2[i]] = -1
+            for j in range(i + 1, len(nums2)):
+                if nums2[i] < nums2[j]:
+                    dictTemp[nums2[i]] = nums2[j]
+                    break
+        # print(dictTemp)
 
+        # 建立list 遍历dict 每个nums1对应的val即是符合要求数据
+        outList = [dictTemp[i] for i in nums1]
+        print(outList)
+        return(outList)
 
 
     def run(self):
@@ -334,8 +356,8 @@ class SolutionEasy():
         # self.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
         # self.sortArrayByParityII([4,2,5,7])
         # self.fib(2)
-        self.reorderLogFiles(["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"])
-
+        # self.reorderLogFiles(["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"])
+        self.nextGreaterElement([4,1,2],[1,3,4,2])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 

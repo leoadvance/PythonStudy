@@ -45,3 +45,9 @@
 要点：
     1. 利用split(" ", 1)把字符串分成两份。
     2. 利用sorted和key对字符串排序。
+    
+* [# 496. Next Greater Element I (nextGreaterElement)](https://leetcode.com/problems/next-greater-element-i/)  
+题目求Alist在Blist里每个右边出现的第一个比自身大的数 
+要点：
+    1. 注意规避传入list为空的情况。
+    2. 利用dict查询速度快以及key的唯一性。    
