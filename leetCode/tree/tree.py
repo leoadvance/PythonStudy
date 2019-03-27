@@ -9,6 +9,11 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+# 多叉树
+class Node:
+    def __init__(self, val, children):
+        self.val = val
+        self.children = children
 
 class Solution():
 
@@ -32,7 +37,15 @@ class Solution():
         self.t2.right = TreeNode(3)
         self.t2.left.right = TreeNode(4)
         self.t2.right.right = TreeNode(7)
-        #
+
+        self.node1 = Node(1, [3, 2, 4])
+        self.node1.children[0] = Node(3, [5, 6])
+        self.node1.children[0].children[0] = Node(5, [])
+        self.node1.children[0].children[1] = Node(6, [])
+        self.node1.children[1] = Node(2, [])
+        self.node1.children[2] = Node(4, [])
+
+
 
         print("class leetCode tree init!")
 
@@ -223,10 +236,34 @@ class Solution():
         # print(loopnode(root))
         return loopnode(root)
 
+    # 多叉树层序遍历 用堆栈方式解决
+    def levelOrder(self, root: Node) -> list:
+        # print("func levelOrder")
+        # print("    Sloution1:")
+        # print("        Runtime: 104 ms, faster than 47.03% of Python3 online submissions for N-ary Tree Level Order Traversal.")
+        # print("        Memory Usage: 17.8 MB, less than 5.47% of Python3 online submissions for N-ary Tree Level Order Traversal.")
+        if root:
+            outList = [[]]
+            # print(outList)
+            layer = 0
+            maxLayer = 0
+            tempList = [[root,layer]]
 
-
-
-
+            # 使用堆栈层序遍历
+            while tempList:
+                node, layer = tempList.pop(0)
+                # 每次进入新的一层新增list
+                if layer > maxLayer:
+                    maxLayer = layer
+                    outList.append([node.val])
+                else:
+                    outList[layer].append(node.val)
+                for data in node.children:
+                    tempList.append([data, layer + 1])
+        else:
+            outList = []
+        # print(outList)
+        return outList
 
     def run(self):
 
@@ -239,6 +276,8 @@ class Solution():
         # self.trimBST(self.t1,1,3)
         # self.fronttack(self.t1)
         # self.canThreePartsEqualSum([0,2,1,-6,6,7,9,-1,2,0,1])
+        self.levelOrder(self.node1)
+
         endTime = time.time()
 
         print("class leetCode tree run time: ", (str(endTime - startTime))[:8], "s")
