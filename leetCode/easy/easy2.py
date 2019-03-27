@@ -341,6 +341,28 @@ class SolutionEasy():
         print(outList)
         return(outList)
 
+    # 根据要求变换矩阵
+    def matrixReshape(self, nums, r: int, c: int):
+        # print("func matrixReshape")
+        # print("    Sloution1:")
+        # print("        Runtime: 96 ms, faster than 53.10% of Python3 online submissions for Reshape the Matrix.")
+        # print("        Memory Usage: 14.4 MB, less than 5.66% of Python3 online submissions for Reshape the Matrix.")
+        # 针对不满足要求的rc 直接输出原始list
+        if (len(nums) * len(nums[0])) != r * c:
+            return nums
+
+        outList = []
+        tempList = []
+        for i  in range(len(nums)):
+            for j in range(len(nums[0])):
+                tempList.append(nums[i][j])
+                # 遇到C的整倍数时切换到下个list
+                if (i * len(nums[0]) + j + 1) % c == 0:
+                    outList.append(tempList)
+                    tempList = []
+
+        print(outList)
+        return outList
 
     def run(self):
 
@@ -357,7 +379,8 @@ class SolutionEasy():
         # self.sortArrayByParityII([4,2,5,7])
         # self.fib(2)
         # self.reorderLogFiles(["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"])
-        self.nextGreaterElement([4,1,2],[1,3,4,2])
+        # self.nextGreaterElement([4,1,2],[1,3,4,2])
+        self.matrixReshape([[1,2],[3,4],[5,6],[7,8],[9,10],[11,12]], 3,4)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 

@@ -51,3 +51,8 @@
 要点：
     1. 注意规避传入list为空的情况。
     2. 利用dict查询速度快以及key的唯一性。    
+    
+* [# 566. Reshape the Matrix (matrixReshape)](https://leetcode.com/problems/reshape-the-matrix/)  
+题目需求矩阵变换
+要点：
+    1. 遍历+求余       
