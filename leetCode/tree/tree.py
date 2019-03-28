@@ -265,7 +265,52 @@ class Solution():
         # print(outList)
         return outList
 
+        # 多叉树遍历
 
+    def postorder(self, root: Node) -> list:
+        print("func postorder")
+        # print("    Sloution1:")
+        # print("        Runtime: 100 ms, faster than 46.61% of Python3 online submissions for N-ary Tree Postorder Traversal.")
+        # print("        Memory Usage: 17.8 MB, less than 6.03% of Python3 online submissions for N-ary Tree Postorder ")
+        outList = []
+        if root == None:
+            return outList
+
+        def loopNode(nood: Node):
+            # print("nood.children", nood.children)
+            for data in nood.children:
+                # print("data", data, "nood.val", nood.val)
+                loopNode(data)
+            outList.append(nood.val)
+            # print("outList", outList)
+
+        loopNode(root)
+        # print(outList)
+        return outList
+
+        # 多叉树遍历逆序
+
+    def preorder(self, root: Node) -> list:
+        print("func preorder")
+        # print("    Sloution1:")
+        # print("        Runtime: 104 ms, faster than 25.06% of Python3 online submissions for N-ary Tree Preorder Traversal.")
+        # print("        Memory Usage: 17.8 MB, less than 5.26% of Python3 online submissions for N-ary Tree Preorder Traversal. ")
+        outList = []
+
+        def loopNode(nood: Node):
+
+            if nood:
+                outList.append(nood.val)
+                # print("nood.children", nood.children)
+                for data in nood.children:
+                    # print("data", data, "nood.val", nood.val)
+                    loopNode(data)
+
+            # print("outList", outList)
+
+        loopNode(root)
+        print(outList)
+        return outList
 
     def run(self):
 

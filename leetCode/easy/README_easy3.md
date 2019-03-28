@@ -1,15 +1,5 @@
 ## 部分Easy题目
 
-* [# 590. N-ary Tree Postorder Traversal (postorder)](https://leetcode.com/problems/n-ary-tree-postorder-traversal/)  
-题目需求多叉树遍历  
-要点：
-    1. 无。
-
-* [# 589. N-ary Tree Preorder Traversal (preorder)](https://leetcode.com/problems/n-ary-tree-preorder-traversal/)  
-题目需求逆序多叉树遍历  
-要点：
-    1. 无。
-
 
 * [# 883. Projection Area of 3D Shapes (projectionArea)](https://leetcode.com/problems/projection-area-of-3d-shapes/)  
 题目比较唬人，引入一堆干扰问题，真实需求是三点，1.求list内部非零元素个数。2. 求每组数据最大值。3. 横纵坐标变换后再求一次。
@@ -52,3 +42,11 @@
     
 * [# _821. Shortest Distance to a Character (shortestToChar)](https://leetcode.com/problems/shortest-distance-to-a-character/)  
 题目核心求特定字符在字符串位置。
+
+* [# _762. Prime Number of Set Bits in Binary Representation (countPrimeSetBits)](https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/)  
+题目求给定区间内数字的二进制下1的位数是素数个数。  
+要点：
+    1. 数据不会大于1百万，即24bit，所以穷举出24内素数个数做字典。
+    2. 利用bin转换十进制为二进制。
+    3. 利用count数出1的个数并和字典比对。
+    4. 字典可以只有key，没有value。
