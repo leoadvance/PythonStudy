@@ -333,7 +333,34 @@ class Solution():
                     tempList.append(node.right)
         print(root)
         return root
+    
+    # 遍历多叉树最大深度
+    def maxDepth(self, root: Node) -> int:
+        print("func maxDepth")
+        # print("    Sloution1:")
+        # print("        Runtime: 104 ms, faster than 14.93% of Python3 online submissions for Maximum Depth of N-ary Tree.")
+        # print("        Memory Usage: 17.6 MB, less than 5.30% of Python3 online submissions for Maximum Depth of N-ary Tree.")
+        Maxdeep = 0
 
+        if not root:
+            return 0
+        def loop(node:Node, realdeep:int):
+            # nonlocal 表明使用外层变量
+            nonlocal Maxdeep
+            # 每一次loop进入更深以及
+            realdeep += 1
+            Maxdeep = max(realdeep, Maxdeep)
+            # for循环内是同级deep
+            for sub in node.children:
+                # 循环遍历每个分支
+                loop(sub, realdeep)
+
+            # 退出当前层级
+            return
+            # return deep
+        loop(root, Maxdeep)
+        print("Maxdeep =", Maxdeep)
+        return Maxdeep
 
     def run(self):
 

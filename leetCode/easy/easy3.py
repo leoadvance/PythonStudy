@@ -75,33 +75,7 @@ class SolutionEasy():
         print(sum)
         return sum
 
-    # 遍历多叉树最大深度
-    def maxDepth(self, root: Node) -> int:
-        print("func maxDepth")
-        # print("    Sloution1:")
-        # print("        Runtime: 104 ms, faster than 14.93% of Python3 online submissions for Maximum Depth of N-ary Tree.")
-        # print("        Memory Usage: 17.6 MB, less than 5.30% of Python3 online submissions for Maximum Depth of N-ary Tree.")
-        Maxdeep = 0
 
-        if not root:
-            return 0
-        def loop(node:Node, realdeep:int):
-            # nonlocal 表明使用外层变量
-            nonlocal Maxdeep
-            # 每一次loop进入更深以及
-            realdeep += 1
-            Maxdeep = max(realdeep, Maxdeep)
-            # for循环内是同级deep
-            for sub in node.children:
-                # 循环遍历每个分支
-                loop(sub, realdeep)
-
-            # 退出当前层级
-            return
-            # return deep
-        loop(root, Maxdeep)
-        print("Maxdeep =", Maxdeep)
-        return Maxdeep
 
     # 求list最大最小差值
     def smallestRangeI(self, A: list, K: int) -> int:
@@ -326,6 +300,30 @@ class SolutionEasy():
         print(True)
         return True
 
+    # 按要求修改字符串
+    def toGoatLatin(self, S: str) -> str:
+        print("func toGoatLatin")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 81.19% of Python3 online submissions for Goat Latin.")
+        # print("        Memory Usage: 13.3 MB, less than 5.88% of Python3 online submissions for Goat Latin.")
+        # 元音查找字典
+        voweldict = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}
+        addStr = "maa"
+        outStr = ""
+
+        #根据空格切分字符串
+        for strData in S.split(" "):
+            # 元音字母
+            if strData[0] in voweldict:
+                outStr += strData + addStr
+            else:
+                outStr += strData[1:] + strData[0] + addStr
+            addStr += "a"
+            outStr += " "
+
+        print(outStr[:-1])
+        return outStr[:-1]
+
     def run(self):
 
         startTime = time.time()
@@ -342,7 +340,8 @@ class SolutionEasy():
         # self.reverseString(["h","e","l","l","o"])
         # self.shortestToChar("loveleetcode", "e")
         # self.countPrimeSetBits(6,10)
-        self.hasAlternatingBits(7)
+        # self.hasAlternatingBits(7)
+        self.toGoatLatin("I speak Goat Latin")
 
         endTime = time.time()
 

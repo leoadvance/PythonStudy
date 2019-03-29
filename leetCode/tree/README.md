@@ -52,3 +52,8 @@
 要点：
     1. 利用堆栈层序遍历+左右分支交互。
     2. 利用迭代也能解决，但堆栈更通用。
+    
+* [# 559. Maximum Depth of N-ary Tree (maxDepth)](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)  
+题目求多叉树最大深度。迭代求解。
+要点：
+    1. 通过关键字nonlocal可以使用外层变量。    

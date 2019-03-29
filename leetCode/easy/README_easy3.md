@@ -6,10 +6,7 @@
 要点：
     1. 利用zip(*x)完成矩阵变换。
     
-* [# 559. Maximum Depth of N-ary Tree (maxDepth)](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)  
-题目求多叉树最大深度。迭代求解。
-要点：
-    1. 通过关键字nonlocal可以使用外层变量。
+
     
 * [# 908. Smallest Range I (smallestRangeI)](https://leetcode.com/problems/smallest-range-i/)  
 题目求list内最大值和最小值差值。引入参数k作为调节量。
@@ -54,3 +51,9 @@
 * [# _693. Binary Number with Alternating Bits (hasAlternatingBits)](https://leetcode.com/problems/binary-number-with-alternating-bits/)  
 题目求给某整数的二进制数下是否有连续的0或者1.  
 方法：利用bin求出二进制后遍历。    
+
+* [# _824. Goat Latin (toGoatLatin)](https://leetcode.com/problems/goat-latin/)  
+题目需求，判读字符串中每个单词首字母元辅音，并按要求修改。  
+方法：
+    1. 利用solit切割字符串。
+    2. 利用字典匹配查找。
