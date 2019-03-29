@@ -46,3 +46,9 @@
 题目需求逆序多叉树遍历  
 要点：
     1. 无。
+
+* [# 226. Invert Binary Tree (invertTree)](https://leetcode.com/problems/invert-binary-tree/)  
+题目需求二叉树翻转。  
+要点：
+    1. 利用堆栈层序遍历+左右分支交互。
+    2. 利用迭代也能解决，但堆栈更通用。

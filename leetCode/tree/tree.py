@@ -19,13 +19,13 @@ class Solution():
 
     def __init__(self):
         self.t1 = TreeNode(3)
-        self.t1.left  = TreeNode(0)
-        self.t1.right = TreeNode(4)
-        # self.t1.left.left = TreeNode(8)
-        self.t1.left.right = TreeNode(2)
-        self.t1.left.right.left = TreeNode(1)
-        # self.t1.right.left = TreeNode(15)
-        # self.t1.right.right = TreeNode(7)
+        self.t1.left  = TreeNode(9)
+        self.t1.right = TreeNode(20)
+        self.t1.left.left = TreeNode(8)
+        self.t1.left.right = TreeNode(5)
+        # self.t1.left.right.left = TreeNode(1)
+        self.t1.right.left = TreeNode(15)
+        self.t1.right.right = TreeNode(7)
         '''
             3
         9       20
@@ -312,6 +312,29 @@ class Solution():
         print(outList)
         return outList
 
+    # 交互二叉树的左右分支
+    def invertTree(self, root: TreeNode) -> TreeNode:
+        print("func invertTree")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 77.91% of Python3 online submissions for Invert Binary Tree.")
+        # print("        Memory Usage: 13.2 MB, less than 5.74% of Python3 online submissions for Invert Binary Tree.")
+        # 利用层序遍历
+        tempList = [root]
+
+        while tempList:
+            node = tempList.pop(0)
+            if node:
+                print(node.val)
+                # 交互左右分支
+                node.right, node.left = node.left, node.right
+                if node.left:
+                    tempList.append(node.left)
+                if node.right:
+                    tempList.append(node.right)
+        print(root)
+        return root
+
+
     def run(self):
 
         startTime = time.time()
@@ -323,7 +346,8 @@ class Solution():
         # self.trimBST(self.t1,1,3)
         # self.fronttack(self.t1)
         # self.canThreePartsEqualSum([0,2,1,-6,6,7,9,-1,2,0,1])
-        self.levelOrder(self.node1)
+        # self.levelOrder(self.node1)
+        self.invertTree(self.t1)
 
         endTime = time.time()
 
