@@ -310,7 +310,21 @@ class SolutionEasy():
 
         # print(primeNum)
         return primeNum
+    # 判断二进制下是否有连续字符
+    def hasAlternatingBits(self, n: int) -> bool:
+        print("func hasAlternatingBits")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 96.70% of Python3 online submissions for Binary Number with Alternating Bits.")
+        # print("        Memory Usage: 13.2 MB, less than 6.67% of Python3 online submissions for Binary Number with Alternating Bits.")
+        binData = bin(n)
 
+        for i in range(1, len(binData)):
+            if binData[i] == binData[i - 1]:
+                print(False)
+                return False
+
+        print(True)
+        return True
 
     def run(self):
 
@@ -327,7 +341,9 @@ class SolutionEasy():
         # self.increasingBST(self.t1)
         # self.reverseString(["h","e","l","l","o"])
         # self.shortestToChar("loveleetcode", "e")
-        self.countPrimeSetBits(6,10)
+        # self.countPrimeSetBits(6,10)
+        self.hasAlternatingBits(7)
+
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")

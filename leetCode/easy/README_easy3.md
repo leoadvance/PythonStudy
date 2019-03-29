@@ -50,3 +50,7 @@
     2. 利用bin转换十进制为二进制。
     3. 利用count数出1的个数并和字典比对。
     4. 字典可以只有key，没有value。
+    
+* [# _693. Binary Number with Alternating Bits (hasAlternatingBits)](https://leetcode.com/problems/binary-number-with-alternating-bits/)  
+题目求给某整数的二进制数下是否有连续的0或者1.  
+方法：利用bin求出二进制后遍历。    
