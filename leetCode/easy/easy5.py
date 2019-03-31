@@ -65,27 +65,6 @@ class SolutionEasy():
         # print(outList)
         return outList
 
-    #
-    def baseNeg2(self, N: int) -> str:
-
-        # 4的整倍数 直接取二进制
-        strs = bin(N)[2:]
-
-        totalLan = len(strs)
-        i = 0
-        while i < totalLan:
-            # -2的奇数次方 是负数
-            if i % 2 == 1 and strs[0 - i - 1] == "1":
-                N += 2 ** (i + 1)
-                strs = bin(N)[2:]
-                totalLan = len(strs)
-            i += 1
-            # print(i , strs)
-        # else:
-
-        print(strs)
-        return strs
-
     # 求list里每个数字下一个最大值
     def nextLargerNodes(self, head: ListNode) -> list:
 
@@ -116,8 +95,8 @@ class SolutionEasy():
 
         # self.largestPerimeter([3,6,2])
         # self.prefixesDivBy5([0,1,1,1,1,1])
-        # self.baseNeg2(13)
-        self.nextLargerNodes(self.list)
+
+        # self.nextLargerNodes(self.list)
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")

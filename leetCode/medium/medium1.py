@@ -79,6 +79,25 @@ class SolutionMedium():
         # print(maxResult)
         return maxResult
 
+
+    # 十进制数转换成基于-2的二进制数
+    def baseNeg2(self, N: int) -> str:
+        print("func largestPerimeter")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 100.00% of Python3 online submissions for Convert to Base -2.")
+        # print("        Memory Usage: 13.2 MB, less than 100.00% of Python3 online submissions for Convert to Base -2.")
+        # N < 10^9 所以数据不会大于2^33
+        sign = [1 << i for i in range(1, 33, 2)]
+        # print(sign)
+
+        for mark in sign:
+            # 如果N中对应的mark位置位，则用 2^(n - 1) = (-2)^n + (-2)^(n-1) 如 2 = 4 - 2
+            if N & mark:
+                N += mark << 1
+        # print(bin(N)[2:])
+        return bin(N)[2:]
+
+
     def queryString(self, S: str, N: int) -> bool:
         pass
 
@@ -87,7 +106,8 @@ class SolutionMedium():
 
         startTime = time.time()
         # self.smallestRepunitDivByK(7)
-        self.maxScoreSightseeingPair([1,1,1])
+        # self.maxScoreSightseeingPair([1,1,1])
+        self.baseNeg2(13)
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")
 
