@@ -2,9 +2,23 @@
 import re
 import time
 
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 class SolutionMedium():
 
     def __init__(self):
+        self.list = ListNode(1)
+        self.list.next = ListNode(7)
+        self.list.next.next = ListNode(5)
+        self.list.next.next.next = ListNode(1)
+        self.list.next.next.next.next = ListNode(9)
+        self.list.next.next.next.next.next = ListNode(2)
+        self.list.next.next.next.next.next.next = ListNode(5)
+        self.list.next.next.next.next.next.next.next = ListNode(1)
         print("class leetCode SolutionMedium1 init!")
 
     def __del__(self):
@@ -97,6 +111,38 @@ class SolutionMedium():
         # print(bin(N)[2:])
         return bin(N)[2:]
 
+    # 求list里每个数字下一个最大值
+    def nextLargerNodes(self, head: ListNode) -> list:
+        print("func nextLargerNodes")
+        # print("    Sloution1:")
+        # print("        Runtime: 412 ms, faster than 87.32% of Python3 online submissions for Next Greater Node In Linked List.")
+        # print("        Memory Usage: 17.7 MB, less than 100.00% of Python3 online submissions for Next Greater Node In Linked List.")
+        # listNode转list
+        queue = []
+        while head:
+            queue.append(head.val)
+            head = head.next
+        # print(queue)
+
+
+        res = [0 for i in range(len(queue))]
+        stack = []
+
+        # 逆向遍历list
+        for i in range(len(queue) - 1, -1, -1):
+
+            # 从右往左删除堆栈中比当前数字小的数字，剩下的就是第一个比当前数字大的数字
+            while stack and queue[i] >= queue[stack[-1]]:
+                stack.pop()
+            # 保存该（大的）数据到输出列表
+            if stack:
+                res[i] = queue[stack[-1]]
+
+            # 添加最新数据到堆栈
+            stack.append(i)
+
+        return res
+        pass
 
     def queryString(self, S: str, N: int) -> bool:
         pass
@@ -107,7 +153,9 @@ class SolutionMedium():
         startTime = time.time()
         # self.smallestRepunitDivByK(7)
         # self.maxScoreSightseeingPair([1,1,1])
-        self.baseNeg2(13)
+        # self.baseNeg2(13)
+        self.nextLargerNodes(self.list)
+
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")
 

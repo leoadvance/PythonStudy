@@ -5,22 +5,11 @@ import collections
 import operator
 
 
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
 
 class SolutionEasy():
 
     def __init__(self):
-        self.list = ListNode(1)
-        self.list.next = ListNode(7)
-        self.list.next.next = ListNode(5)
-        self.list.next.next.next = ListNode(1)
-        self.list.next.next.next.next = ListNode(9)
-        self.list.next.next.next.next.next = ListNode(2)
-        self.list.next.next.next.next.next.next = ListNode(5)
-        self.list.next.next.next.next.next.next.next = ListNode(1)
+
         print("class leetCode SolutionEasy init!")
 
 
@@ -65,28 +54,7 @@ class SolutionEasy():
         # print(outList)
         return outList
 
-    # 求list里每个数字下一个最大值
-    def nextLargerNodes(self, head: ListNode) -> list:
 
-        # listNode转list
-        templist = []
-        while head:
-            templist.append(head.val)
-            head = head.next
-        print(templist)
-        # 遍历 求解每个数组右边最大值位置 最后一位右边无最大值
-        outList = []
-        for i in range(len(templist)):
-            outList.append(0)
-            for j in range(i + 1, len(templist)):
-                if templist[j] > templist[i]:
-                    outList[i] = templist[j]
-                    break
-
-        # print(dictTemp)
-        print(outList)
-        return outList
-        pass
 
 
     def run(self):
@@ -96,7 +64,7 @@ class SolutionEasy():
         # self.largestPerimeter([3,6,2])
         # self.prefixesDivBy5([0,1,1,1,1,1])
 
-        # self.nextLargerNodes(self.list)
+        #
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
