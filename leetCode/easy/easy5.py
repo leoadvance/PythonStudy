@@ -45,7 +45,7 @@ class SolutionEasy():
         sum = 0
         for data in A:
             # 利用除法特性 直接用余数迭代
-            sum = ((sum <<1 ) + data) % 5
+            sum = ((sum << 1 ) + data) % 5
             if sum == 0:
                 outList.append(True)
             else:
@@ -54,8 +54,32 @@ class SolutionEasy():
         # print(outList)
         return outList
 
+    # 交换数组中某元素 使其和相等
+    def fairCandySwap(self, A: list, B: list) -> list:
+        print("func fairCandySwap")
+        # print("    Sloution1:")
+        # print("        Runtime: 2568 ms, faster than 19.20% of Python3 online submissions for Fair Candy Swap.")
+        # print("        Memory Usage: 14.4 MB, less than 51.52% of Python3 online submissions for Fair Candy Swap.")
 
+        # # 算出差值
+        # Delta = (sum(A) - sum(B)) >> 1
+        #
+        # for data in A:
+        #     if (data - Delta) in B:
+        #         print([data, data - Delta])
+        #         return [data, data - Delta]
 
+        # print("    Sloution2:")
+        # print("        Runtime: 80 ms, faster than 54.31% of Python3 online submissions for Fair Candy Swap.")
+        # print("        Memory Usage: 15.4 MB, less than 5.05% of Python3 online submissions for Fair Candy Swap.")
+
+        # 算出差值
+        Delta = (sum(A) - sum(B)) >> 1
+        B = set(B)
+        for data in A:
+            if (data - Delta) in B:
+                print([data, data - Delta])
+                return [data, data - Delta]
 
     def run(self):
 
@@ -64,7 +88,7 @@ class SolutionEasy():
         # self.largestPerimeter([3,6,2])
         # self.prefixesDivBy5([0,1,1,1,1,1])
 
-        #
+        self.fairCandySwap([2], [1,3])
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")

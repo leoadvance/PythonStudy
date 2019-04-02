@@ -27,10 +27,10 @@ if __name__ == "__main__":
     # leetCode = leetCodeEasy3.SolutionEasy()
     # leetCode.run()
 
-    # leetCode = leetCodeEasy5.SolutionEasy()
-    # leetCode.run()
+    leetCode = leetCodeEasy5.SolutionEasy()
+    leetCode.run()
 
-    leetCodeMedium = leetCodeMedium.SolutionMedium()
-    leetCodeMedium.run()
+    # leetCodeMedium = leetCodeMedium.SolutionMedium()
+    # leetCodeMedium.run()
     # pygameSnkae =snakeGame.snake("pyGameSnake")
     # pygameSnkae.run()
