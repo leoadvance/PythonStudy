@@ -14,9 +14,7 @@
 要点：
     1. 利用2 = 4 + (-2), 8 = 16 + (-8), _2^(n - 1) = (-2)^n + (-2)^(n-1)_.求解，N为偶数。
 
-* [# 1019. Next Greater Node In Linked List (nextLargerNodes)](https://leetcode.com/problems/next-greater-node-in-linked-list/)  
-题目求list里每个数字右边比自己大的第一个数字。  
-要点：
-    1. 利用堆栈逆向遍历list。
-    2. 每次循环，删除堆栈中比当前数字小的数。剩下待比较数据本身和比自身大的数字。
+* [807. Max Increase to Keep City Skyline (maxIncreaseKeepingSkyline)](https://leetcode.com/problems/max-increase-to-keep-city-skyline/)  
+题目求二维list里每个位置所处行列最大值中较小的数。   
+要点：无，遍历求解。
         

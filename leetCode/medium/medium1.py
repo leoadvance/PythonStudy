@@ -147,6 +147,32 @@ class SolutionMedium():
     def queryString(self, S: str, N: int) -> bool:
         pass
 
+    # 行列最大值
+    def maxIncreaseKeepingSkyline(self, grid: list) -> int:
+        print("func maxIncreaseKeepingSkyline")
+        # print("    Sloution1:")
+        # print("        Runtime: 48 ms, faster than 82.85% of Python3 online submissions for Max Increase to Keep City Skyline.")
+        # print("        Memory Usage: 12.9 MB, less than 5.55% of Python3 online submissions for Max Increase to Keep City Skyline.")
+        # 获取行列最大值
+        maxRow    = [max(grid[i]) for i in range(len(grid))]
+        maxColumn = []
+        totalCount = 0
+        for j in range(len(grid)):
+            maxTemp = 0
+            for i in range(len(grid[0])):
+                maxTemp = max(maxTemp, grid[i][j])
+            maxColumn.append(maxTemp)
+
+        # print(maxColumn)
+        # print(maxRow)
+
+        # 遍历 取该点行列最大值的较小值，并与原始值求查 并累计
+        for i in range(len(grid[0])):
+            for j in range(len(grid)):
+                totalCount += min(maxRow[i],maxColumn[j]) - grid[i][j]
+        # print(totalCount)
+        return totalCount
+        pass
 
     def run(self):
 
@@ -154,7 +180,8 @@ class SolutionMedium():
         # self.smallestRepunitDivByK(7)
         # self.maxScoreSightseeingPair([1,1,1])
         # self.baseNeg2(13)
-        self.nextLargerNodes(self.list)
+        # self.nextLargerNodes(self.list)
+        self.maxIncreaseKeepingSkyline([[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]])
 
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")
