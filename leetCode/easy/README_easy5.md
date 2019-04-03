@@ -17,3 +17,6 @@
 要点：
     1. 判断数组里是否包含某数据时先把list转换为set().
     2. 先求两数组和的差值的一半。遍历数组A，找到数据+差值=B数组中数据的数。
+    
+* [# 521. Longest Uncommon Subsequence I (findLUSlength)](https://leetcode.com/problems/longest-uncommon-subsequence-i/)  
+特别无聊的题目，不知道出题人想考什么。

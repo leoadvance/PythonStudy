@@ -81,6 +81,15 @@ class SolutionEasy():
                 print([data, data - Delta])
                 return [data, data - Delta]
 
+    # 判断a序列中最长不包含在B系列中的数据长度
+    def findLUSlength(self, a: str, b: str) -> int:
+
+        # 特别无聊的题目 不知道出题人想要干嘛
+        if a == b:
+            return -1
+        return max(len(a), len(b))
+        pass
+
     def run(self):
 
         startTime = time.time()
@@ -88,7 +97,8 @@ class SolutionEasy():
         # self.largestPerimeter([3,6,2])
         # self.prefixesDivBy5([0,1,1,1,1,1])
 
-        self.fairCandySwap([2], [1,3])
+        # self.fairCandySwap([2], [1,3])
+        self.findLUSlength("aba", "cdc")
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")
