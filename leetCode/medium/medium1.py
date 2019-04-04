@@ -1,7 +1,7 @@
 # coding=utf-8
 import re
 import time
-
+import collections
 
 class ListNode:
     def __init__(self, x):
@@ -174,6 +174,29 @@ class SolutionMedium():
         return totalCount
         pass
 
+    # 按要求变换list
+    def deckRevealedIncreasing(self, deck: list) -> list:
+        print("func deckRevealedIncreasing")
+        # print("    Sloution1:")
+        # print("        Runtime: 44 ms, faster than 90.66% of Python3 online submissions for Reveal Cards In Increasing Order.")
+        # print("        Memory Usage: 13.4 MB, less than 5.80% of Python3 online submissions for Reveal Cards In Increasing Order.")
+        # 获取行列最大值
+        # 采用双向链表处理
+        outList = collections.deque()
+
+        # 先升序准备好要遍历数列
+        deck.sort()
+        outList.append(deck[-1])
+
+        # 根据翻牌规格 每次把数组最后一个数放到最前 并添加list数据到链表第一位
+        for data in deck[-2::-1]:
+            outList.appendleft(outList.pop())
+            outList.appendleft(data)
+            # print(data)
+        print(outList)
+        return list(outList)
+        pass
+
     def run(self):
 
         startTime = time.time()
@@ -181,7 +204,8 @@ class SolutionMedium():
         # self.maxScoreSightseeingPair([1,1,1])
         # self.baseNeg2(13)
         # self.nextLargerNodes(self.list)
-        self.maxIncreaseKeepingSkyline([[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]])
+        # self.maxIncreaseKeepingSkyline([[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]])
+        self.deckRevealedIncreasing([17,13,11,2,3,5,7])
 
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")

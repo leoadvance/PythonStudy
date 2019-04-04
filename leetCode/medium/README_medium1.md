@@ -17,4 +17,10 @@
 * [807. Max Increase to Keep City Skyline (maxIncreaseKeepingSkyline)](https://leetcode.com/problems/max-increase-to-keep-city-skyline/)  
 题目求二维list里每个位置所处行列最大值中较小的数。   
 要点：无，遍历求解。
-        
+ 
+
+* [950. Reveal Cards In Increasing Order (deckRevealedIncreasing)](https://leetcode.com/problems/reveal-cards-in-increasing-order/)  
+题目目的，按要求变换list数字顺序。    
+要点：
+    1. 利用colletions.deque()减少pop和左侧插入数据时间。
+                
