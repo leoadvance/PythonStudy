@@ -204,10 +204,32 @@ class SolutionMedium():
         # print("        Runtime: 324 ms, faster than 97.40% of Python3 online submissions for K Closest Points to Origin.")
         # print("        Memory Usage: 13.4 MB, less than 5.80% of Python3 online submissions for Reveal Cards In Increasing Order.")
         # 对list按key排序  利用lambda对数组元素求平方和
-        points.sort(key = lambda p: p[0] * p[0] + p[1] * p[1])
-        print(points[:K])
+        # points.sort(key = lambda p: p[0] * p[0] + p[1] * p[1])
+        #
+        # print(points)
+        #
+        # return points[:K]
 
-        return points[:K]
+        # print("    Sloution2:")
+        # print("        Runtime: 388 ms, faster than 52.92% of Python3 online submissions for K Closest Points to Origin.")
+        # print("        Memory Usage: 17.6 MB, less than 5.20% of Python3 online submissions for K Closest Points to Origin.")
+        # 记录point序号和平方和值
+        tempList = []
+        for i in range(len(points)):
+            tempList.append([i, points[i][0] ** 2 + points[i][1] ** 2])
+        # print(tempList)
+
+        # 按平方和值大小排序
+        tempList.sort(key = lambda p: p[1])
+        # print(tempList)
+
+        # 利用序号输出平方和小的数对应的point值
+        outList = []
+        for i in range(K):
+            outList.append(points[tempList[i][0]])
+        # print(outList)
+        return outList
+
 
     def run(self):
 
