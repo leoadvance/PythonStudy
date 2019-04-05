@@ -23,4 +23,10 @@
 题目目的，按要求变换list数字顺序。    
 要点：
     1. 利用colletions.deque()减少pop和左侧插入数据时间。
-                
+ 
+ 
+* [973. K Closest Points to Origin (kClosest)](https://leetcode.com/problems/k-closest-points-to-origin/)  
+题目目的，求二维list内每个数据平方和并排序。    
+要点：
+    1. 利用sort 按关键字key排序。
+    2. 利用lambda遍历数组计算平方和。                

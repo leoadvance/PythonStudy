@@ -197,6 +197,18 @@ class SolutionMedium():
         return list(outList)
         pass
 
+    # 筛选距离原点最近的k个点
+    def kClosest(self, points: list, K: int) -> list:
+        print("func kClosest")
+        # print("    Sloution1:")
+        # print("        Runtime: 324 ms, faster than 97.40% of Python3 online submissions for K Closest Points to Origin.")
+        # print("        Memory Usage: 13.4 MB, less than 5.80% of Python3 online submissions for Reveal Cards In Increasing Order.")
+        # 对list按key排序  利用lambda对数组元素求平方和
+        points.sort(key = lambda p: p[0] * p[0] + p[1] * p[1])
+        print(points[:K])
+
+        return points[:K]
+
     def run(self):
 
         startTime = time.time()
@@ -205,7 +217,8 @@ class SolutionMedium():
         # self.baseNeg2(13)
         # self.nextLargerNodes(self.list)
         # self.maxIncreaseKeepingSkyline([[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]])
-        self.deckRevealedIncreasing([17,13,11,2,3,5,7])
+        # self.deckRevealedIncreasing([17,13,11,2,3,5,7])
+        self.kClosest([[3,3],[5,-1],[-2,4]], 2)
 
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")
