@@ -29,4 +29,10 @@
 题目目的，求二维list内每个数据平方和并排序。    
 要点：
     1. 利用sort 按关键字key排序。
-    2. 利用lambda遍历数组计算平方和。                
+    2. 利用lambda遍历数组计算平方和。
+    
+* [921. Minimum Add to Make Parentheses Valid (minAddToMakeValid)](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)  
+题目目的，判断不成对的括号数量。    
+要点：
+    1. 出现左括号加一，右括号减一。
+    2. 如果有额外的又括号，不能直接减一，额外记录并计入总数。                    

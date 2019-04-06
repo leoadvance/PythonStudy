@@ -230,6 +230,29 @@ class SolutionMedium():
         # print(outList)
         return outList
 
+    # 括号匹配
+    def minAddToMakeValid(self, S: str) -> int:
+        print("func minAddToMakeValid")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 94.62% of Python3 online submissions for Minimum Add to Make Parentheses Valid.)
+        # print("        Memory Usage: 13 MB, less than 5.17% of Python3 online submissions for Minimum Add to Make Parentheses Valid.")
+        rightSign = 0
+        sumAdd = 0
+
+        # 如有未配对的左括号，则每个右括号促成一对配对 否则记录为额外需要配对数
+        for str_ in S:
+            if str_ == ")":
+                if sumAdd <= 0:
+                    rightSign += 1
+                else:
+                    sumAdd -= 1
+            else:
+                sumAdd += 1
+        print(sumAdd + rightSign)
+
+        return sumAdd + rightSign
+
+        pass
 
     def run(self):
 
@@ -240,7 +263,8 @@ class SolutionMedium():
         # self.nextLargerNodes(self.list)
         # self.maxIncreaseKeepingSkyline([[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]])
         # self.deckRevealedIncreasing([17,13,11,2,3,5,7])
-        self.kClosest([[3,3],[5,-1],[-2,4]], 2)
+        # self.kClosest([[3,3],[5,-1],[-2,4]], 2)
+        self.minAddToMakeValid("()))((")
 
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")
