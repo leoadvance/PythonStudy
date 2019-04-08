@@ -90,6 +90,87 @@ class SolutionEasy():
         return max(len(a), len(b))
         pass
 
+    # 删除最外层括号
+    def removeOuterParentheses(self, S: str) -> str:
+        out = ""
+        sign = 0
+        for data in S:
+            if data == "(":
+                if sign != 0:
+                    out += data
+                sign += 1
+            # ")"
+            else:
+                if sign > 1:
+                    out += data
+                sign -= 1
+        print(out)
+        return out
+        pass
+
+    #
+    def camelMatch(self, queries: list, pattern: str) -> list:
+        patternList = []
+        outList = []
+        # 从大写字符开始
+        temp = ""
+        for i in range(len(pattern)):
+            if ord(pattern[i]) < ord("a"):
+                temp = pattern[i]
+                break
+        i += 1
+        for data in pattern[i:]:
+            if ord(data) < ord("a"):
+                if temp:
+                    patternList.append(collections.Counter(temp))
+                temp = data
+
+            else:
+                temp += data
+        # 拆分成不同大写开始的段
+        patternList.append(collections.Counter(temp))
+        # print(patternList)
+
+        # 遍历
+        for strs in queries:
+            tempList = []
+            # 从大写字符开始
+            for i in range(len(strs)):
+                if ord(strs[i]) < ord("a"):
+                    temp = strs[i]
+                    break
+            i += 1
+            for data in strs[i:]:
+                if ord(data) < ord("a"):
+                    if temp:
+                        tempList.append(collections.Counter(temp))
+                    temp = data
+
+                else:
+                    temp += data
+
+            tempList.append(collections.Counter(temp))
+            # 分段不等一定不等
+            if len(tempList) != len(patternList):
+                outList.append(False)
+            else:
+                sign = 0
+                for i in range(len(tempList)):
+                    for key, val in patternList[i].items():
+                        if val > tempList[i][key]:
+                            outList.append(False)
+                            sign = 1
+                            break
+                    if sign == 1:
+                        break
+                if sign == 0:
+                    outList.append(True)
+        #     print(tempList)
+        # print(outList)
+        return outList
+
+
+
     def run(self):
 
         startTime = time.time()
@@ -98,7 +179,11 @@ class SolutionEasy():
         # self.prefixesDivBy5([0,1,1,1,1,1])
 
         # self.fairCandySwap([2], [1,3])
-        self.findLUSlength("aba", "cdc")
+        # self.findLUSlength("aba", "cdc")
+        # self.removeOuterParentheses("()()")
+        # self.camelMatch(["mifeqvzphnrv","mieqxvrvhnrv","mhieqovhnryv","mieqekvhnrpv","miueqrvfhnrv","mieqpvhzntrv","gmimeqvphnrv","mieqvhqyunrv"],"mieqvhnrv")
+
+
         endTime = time.time()
 
         print("run time: ", (str(endTime - startTime))[:8], "s")

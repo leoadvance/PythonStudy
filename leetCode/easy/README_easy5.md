@@ -20,3 +20,8 @@
     
 * [# 521. Longest Uncommon Subsequence I (findLUSlength)](https://leetcode.com/problems/longest-uncommon-subsequence-i/)  
 特别无聊的题目，不知道出题人想考什么。
+
+* [# 5016. Remove Outermost Parentheses (removeOuterParentheses)](https://leetcode.com/problems/remove-outermost-parentheses/)  
+题目要求，清除字符串最外层括号，并输出剩余内容。  
+要点：
+    1. 无
