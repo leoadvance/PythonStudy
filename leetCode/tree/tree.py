@@ -18,18 +18,18 @@ class Node:
 class Solution():
 
     def __init__(self):
-        self.t1 = TreeNode(3)
-        self.t1.left  = TreeNode(9)
-        self.t1.right = TreeNode(20)
-        self.t1.left.left = TreeNode(8)
-        self.t1.left.right = TreeNode(5)
+        self.t1 = TreeNode(1)
+        self.t1.left  = TreeNode(0)
+        self.t1.right = TreeNode(1)
+        self.t1.left.left = TreeNode(0)
+        self.t1.left.right = TreeNode(1)
         # self.t1.left.right.left = TreeNode(1)
-        self.t1.right.left = TreeNode(15)
-        self.t1.right.right = TreeNode(7)
+        self.t1.right.left = TreeNode(0)
+        self.t1.right.right = TreeNode(1)
         '''
             3
-        9       20
-      8   5    15  7   
+        9       2
+      8   5    4  7   
         '''
 
         self.t2 = TreeNode(1)
@@ -362,6 +362,40 @@ class Solution():
         print("Maxdeep =", Maxdeep)
         return Maxdeep
 
+
+    # 二叉树每条分支求和
+    def sumRootToLeaf(self, root: TreeNode) -> int:
+        """
+
+        :param root: 待处理的二叉树
+        :return: 每条分支和的和
+        """
+        templist = []
+        fatherSum = 0
+        templist.append([root, 0])
+
+        # 使用堆栈进行层序遍历
+        while templist:
+            # 取出节点和父系节点和
+            node, sum = templist.pop(0)
+            sum <<= 1
+            sum += node.val
+            # print(node.val, sum)
+
+            # 判断已经到分支末行，进行累加
+            if node.left == None and node.right == None:
+                fatherSum += sum
+
+            # print(node.val,level)
+            if node.left:
+                templist.append([node.left, sum])
+
+            if node.right:
+                templist.append([node.right, sum])
+
+        print(fatherSum % (10**9 + 7))
+        return fatherSum % (10**9 + 7)
+        pass
     def run(self):
 
         startTime = time.time()
@@ -374,7 +408,9 @@ class Solution():
         # self.fronttack(self.t1)
         # self.canThreePartsEqualSum([0,2,1,-6,6,7,9,-1,2,0,1])
         # self.levelOrder(self.node1)
-        self.invertTree(self.t1)
+        # self.invertTree(self.t1)
+
+        self.sumRootToLeaf(self.t1)
 
         endTime = time.time()
 

@@ -18,8 +18,8 @@ if __name__ == "__main__":
     # varStudy = VariableClass()
     # varStudy.run()
 
-    # leetCodeTree = leetCodeTree.Solution()
-    # leetCodeTree.run()
+    leetCodeTree = leetCodeTree.Solution()
+    leetCodeTree.run()
 
     # leetCode = leetCodeEasy2.SolutionEasy()
     # leetCode.run()
@@ -29,9 +29,9 @@ if __name__ == "__main__":
 
     # leetCode = leetCodeEasy5.SolutionEasy()
     # leetCode.run()
-
-    leetCodeMedium = leetCodeMedium.SolutionMedium()
-    leetCodeMedium.run()
+    #
+    # leetCodeMedium = leetCodeMedium.SolutionMedium()
+    # leetCodeMedium.run()
 
     # pygameSnkae =snakeGame.snake("pyGameSnake")
     # pygameSnkae.run()

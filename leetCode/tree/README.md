@@ -56,4 +56,10 @@
 * [# 559. Maximum Depth of N-ary Tree (maxDepth)](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)  
 题目求多叉树最大深度。迭代求解。
 要点：
-    1. 通过关键字nonlocal可以使用外层变量。    
+    1. 通过关键字nonlocal可以使用外层变量。 
+    
+* [# 1022. Sum of Root To Leaf Binary Numbers (sumRootToLeaf)](https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/)  
+题目求二叉树每条分支（二进制形式）的和。  
+要点：
+    1. 利用堆栈进行程序遍历。
+    2. 当前节点（和）数据入栈，传递到下一层。         
