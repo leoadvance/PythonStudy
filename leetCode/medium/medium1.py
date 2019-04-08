@@ -254,6 +254,28 @@ class SolutionMedium():
 
         pass
 
+    # 复数计算
+    def complexNumberMultiply(self, a: str, b: str) -> str:
+        print("func complexNumberMultiply")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 69.44% of Python3 online submissions for Complex Number Multiplication..)
+        # print("        Memory Usage: 13 MB, less than 5.72% of Python3 online submissions for Complex Number Multiplication.")
+        # 通过加号拆分复数
+        listA    = a.split("+")
+        listA[1] = listA[1][:-1]
+        listB = b.split("+")
+        listB[1] = listB[1][:-1]
+        a = complex(int(listA[0]), int(listA[1]))
+        b = complex(int(listB[0]), int(listB[1]))
+        # print(listA, listB)
+        ab = a * b
+
+        # 提取实部和虚部并转换成str
+        outStr = str(int(ab.real)) + "+" + str(int(ab.imag)) + "i"
+
+        print(outStr)
+        return outStr
+
     def run(self):
 
         startTime = time.time()
@@ -264,7 +286,9 @@ class SolutionMedium():
         # self.maxIncreaseKeepingSkyline([[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]])
         # self.deckRevealedIncreasing([17,13,11,2,3,5,7])
         # self.kClosest([[3,3],[5,-1],[-2,4]], 2)
-        self.minAddToMakeValid("()))((")
+        # self.minAddToMakeValid("()))((")
+
+        self.complexNumberMultiply("1+1i", "1+-2i")
 
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")

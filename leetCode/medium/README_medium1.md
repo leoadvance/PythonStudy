@@ -35,4 +35,10 @@
 题目目的，判断不成对的括号数量。    
 要点：
     1. 出现左括号加一，右括号减一。
-    2. 如果有额外的又括号，不能直接减一，额外记录并计入总数。                    
+    2. 如果有额外的又括号，不能直接减一，额外记录并计入总数。   
+    
+* [537. Complex Number Multiplication (complexNumberMultiply)](https://leetcode.com/problems/complex-number-multiplication/)  
+题目需求，复数乘法。    
+要点：
+    1. 利用split分割字符串提取复数的实部和虚部。
+    2. 利用complex进行复数计算。                            
