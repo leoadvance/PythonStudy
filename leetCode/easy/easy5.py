@@ -169,6 +169,39 @@ class SolutionEasy():
         # print(outList)
         return outList
 
+    # 字符倒序
+    def reverseOnlyLetters(self, S: str) -> str:
+        print("func reverseOnlyLetters")
+        # print("    Sloution1:")
+        # print("        Runtime: 36 ms, faster than 91.24% of Python3 online submissions for Reverse Only Letters.")
+        # print("        Memory Usage: 13.2 MB, less than 5.56% of Python3 online submissions for Reverse Only Letters.")
+        # str转list
+        listS = list(S)
+        outList = [0 for i in range(len(S))]
+        # print(listS)
+        j = len(S) - 1
+        i = 0
+        # 从头尾两端遍历
+        while(i <= j):
+
+            # 遇到非字母则跳过进行下一个数据交换
+            if S[i].isalpha() == False:
+                outList[i] = S[i]
+                i += 1
+                continue
+
+            if S[j].isalpha() == False:
+                outList[j] = S[j]
+                j -= 1
+                continue
+
+            outList[i], outList[j] = S[j], S[i]
+            i += 1
+            j -= 1
+        outStr = "".join(outList)
+        print(outStr)
+        return outStr
+
 
 
     def run(self):
@@ -182,7 +215,7 @@ class SolutionEasy():
         # self.findLUSlength("aba", "cdc")
         # self.removeOuterParentheses("()()")
         # self.camelMatch(["mifeqvzphnrv","mieqxvrvhnrv","mhieqovhnryv","mieqekvhnrpv","miueqrvfhnrv","mieqpvhzntrv","gmimeqvphnrv","mieqvhqyunrv"],"mieqvhnrv")
-
+        self.reverseOnlyLetters("Test1ng-Leet=code-Q!")
 
         endTime = time.time()
 
