@@ -2,6 +2,7 @@
 import re
 import time
 import collections
+from typing import List
 
 class ListNode:
     def __init__(self, x):
@@ -276,6 +277,31 @@ class SolutionMedium():
         print(outStr)
         return outStr
 
+    # 顺时针旋转输出数组
+    def spiralMatrixIII(self, R: int, C: int, r0: int, c0: int) -> List[List[int]]:
+        tempLists = []
+        for j in range(R):
+            tempList = []
+            for i in range(C):
+                tempList.append([j,i])
+            tempLists.append(tempList)
+
+        print(tempLists)
+        print(tempLists[1][2])
+
+        outList = [r0,c0]
+        # 通过列表长度判断是否进行循环
+        i = 1
+        c0 += 1
+        while len(outList) < R * C:
+            # 每个周期步进顺序 1 1 2 2 3 3 4 4 5 5 6 6
+            # 向右
+            outList.append(tempLists[r0][min(c0, C):min(c0 + i, C)])
+            # 向下
+            # 向左
+            # 向上
+        pass
+
     def run(self):
 
         startTime = time.time()
@@ -287,8 +313,8 @@ class SolutionMedium():
         # self.deckRevealedIncreasing([17,13,11,2,3,5,7])
         # self.kClosest([[3,3],[5,-1],[-2,4]], 2)
         # self.minAddToMakeValid("()))((")
-
-        self.complexNumberMultiply("1+1i", "1+-2i")
+        # self.complexNumberMultiply("1+1i", "1+-2i")
+        self.spiralMatrixIII(5, 6, 1, 4 )
 
         endTime = time.time()
         print("leetCode SolutionMedium1 run time: ", (str(endTime - startTime))[:8], "s")
