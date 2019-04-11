@@ -289,17 +289,17 @@ class SolutionMedium():
         print(tempLists)
         print(tempLists[1][2])
 
-        outList = [r0,c0]
-        # 通过列表长度判断是否进行循环
-        i = 1
-        c0 += 1
-        while len(outList) < R * C:
-            # 每个周期步进顺序 1 1 2 2 3 3 4 4 5 5 6 6
-            # 向右
-            outList.append(tempLists[r0][min(c0, C):min(c0 + i, C)])
-            # 向下
-            # 向左
-            # 向上
+        # outList = [r0,c0]
+        # # 通过列表长度判断是否进行循环
+        # i = 1
+        # c0 += 1
+        # while len(outList) < R * C:
+        #     # 每个周期步进顺序 1 1 2 2 3 3 4 4 5 5 6 6
+        #     # 向右
+        #     outList.append(tempLists[r0][min(c0, C):min(c0 + i, C)])
+        #     # 向下
+        #     # 向左
+        #     # 向上
         pass
 
     def run(self):

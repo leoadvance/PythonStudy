@@ -30,4 +30,8 @@
 题目要求，对字符串内字母前后顺序交换，非字母保持不变。  
 要点：
     1. str转成list进行处理。最终list再转str。
-    
+ 
+* [# 860. Lemonade Change (lemonadeChange)](https://leetcode.com/problems/lemonade-change/)  
+题目要求判断能否准确找零  
+要点：
+    1. 分别设置两个变量记录当前5元和10元数量。以此判断能否找零。  

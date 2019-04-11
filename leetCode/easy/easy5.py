@@ -3,7 +3,7 @@ import re
 import time
 import collections
 import operator
-
+from typing import List
 
 
 class SolutionEasy():
@@ -202,7 +202,36 @@ class SolutionEasy():
         print(outStr)
         return outStr
 
+    def lemonadeChange(self, bills: List[int]) -> bool:
+        print("func lemonadeChange")
+        # print("    Sloution1:")
+        # print("        Runtime: 48 ms, faster than 88.01% of Python3 online submissions for Lemonade Change.")
+        # print("        Memory Usage: 13.2 MB, less than 6.15% of Python3 online submissions for Lemonade Change.")
+        change5 = 0
+        change10 = 0
+        for data in bills:
+            if data == 5:
+                change5 += 1
+            if data == 10:
+                if change5 > 0:
+                    change5 -= 1
+                    change10 += 1
+                else:
+                    print(False)
+                    return False
+            if data == 20:
+                if  change5 > 0 and change10 > 0:
+                    change10 -= 1
+                    change5 -= 1
+                elif change5 > 2:
+                    change5 -= 3
 
+                else:
+                    print(False)
+                    return False
+
+        print(True)
+        return True
 
     def run(self):
 
@@ -215,7 +244,8 @@ class SolutionEasy():
         # self.findLUSlength("aba", "cdc")
         # self.removeOuterParentheses("()()")
         # self.camelMatch(["mifeqvzphnrv","mieqxvrvhnrv","mhieqovhnryv","mieqekvhnrpv","miueqrvfhnrv","mieqpvhzntrv","gmimeqvphnrv","mieqvhqyunrv"],"mieqvhnrv")
-        self.reverseOnlyLetters("Test1ng-Leet=code-Q!")
+        # self.reverseOnlyLetters("Test1ng-Leet=code-Q!")
+        self.lemonadeChange([5,5,10,10,20])
 
         endTime = time.time()
 
