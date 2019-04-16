@@ -233,6 +233,33 @@ class SolutionEasy():
         print(True)
         return True
 
+    def isMonotonic(self, A: List[int]) -> bool:
+
+        print("func isMonotonic")
+        # print("    Sloution1:")
+        # print("        Runtime: 84 ms, faster than 96.13% of Python3 online submissions for Monotonic Array.")
+        # print("        Memory Usage: 17.3 MB, less than 5.11% of Python3 online submissions for Monotonic Array.")
+        total = 2
+
+        # 递减判断
+        for i in range(1, len(A)):
+            if A[i - 1] < A[i]:
+                total -= 1
+                break
+        # 递增判断
+        for i in range(1, len(A)):
+            if A[i - 1] > A[i]:
+                total -= 1
+                break
+
+        if total >= 1:
+            print(True)
+            return True
+        else:
+            print(False)
+            return False
+
+        pass
     def run(self):
 
         startTime = time.time()
@@ -245,7 +272,9 @@ class SolutionEasy():
         # self.removeOuterParentheses("()()")
         # self.camelMatch(["mifeqvzphnrv","mieqxvrvhnrv","mhieqovhnryv","mieqekvhnrpv","miueqrvfhnrv","mieqpvhzntrv","gmimeqvphnrv","mieqvhqyunrv"],"mieqvhnrv")
         # self.reverseOnlyLetters("Test1ng-Leet=code-Q!")
-        self.lemonadeChange([5,5,10,10,20])
+        # self.lemonadeChange([5,5,10,10,20])
+
+        self.isMonotonic([6,5,4,4])
 
         endTime = time.time()
 

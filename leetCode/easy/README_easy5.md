@@ -34,4 +34,9 @@
 * [# 860. Lemonade Change (lemonadeChange)](https://leetcode.com/problems/lemonade-change/)  
 题目要求判断能否准确找零  
 要点：
-    1. 分别设置两个变量记录当前5元和10元数量。以此判断能否找零。  
+    1. 分别设置两个变量记录当前5元和10元数量。以此判断能否找零。 
+    
+* [# 896. Monotonic Array (isMonotonic)](https://leetcode.com/problems/monotonic-array/)  
+题目要求判断list是否为递增或者递减 
+要点：
+    1. 遍历数组，看是否满足递增或者递减之一。     
