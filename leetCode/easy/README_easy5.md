@@ -39,4 +39,9 @@
 * [# 896. Monotonic Array (isMonotonic)](https://leetcode.com/problems/monotonic-array/)  
 题目要求判断list是否为递增或者递减 
 要点：
-    1. 遍历数组，看是否满足递增或者递减之一。     
+    1. 遍历数组，看是否满足递增或者递减之一。 
+    
+* [# 122. Best Time to Buy and Sell Stock II (maxProfit)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)  
+题目判断list内数组最大差值。
+要点：
+    1. 遍历数组，找到右边比左边大的数字相减求和。。             

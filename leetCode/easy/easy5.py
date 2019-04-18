@@ -260,6 +260,47 @@ class SolutionEasy():
             return False
 
         pass
+
+    # 判断波峰波谷
+    def maxProfit(self, prices: List[int]) -> int:
+        print("func maxProfit")
+        # print("    Sloution1:")
+        # print("        Runtime: 56 ms, faster than 17.77% of Python3 online submissions for Best Time to Buy and Sell Stock II.")
+        # print("        Memory Usage: 14.1 MB, less than 5.06% of Python3 online submissions for Best Time to Buy and Sell Stock II.")
+        # haveStock = 0
+        # sum = 0
+        # for i in range(len(prices) - 1):
+        #     # 没有股票 准备买入
+        #     if haveStock == 0:
+        #         # 波谷买入
+        #         if prices[i + 1] > prices[i]:
+        #             currentPrice = prices[i]
+        #             haveStock    = 1
+        #     else:
+        #         # 波峰卖出
+        #         if prices[i + 1] < prices[i]:
+        #             sum += prices[i] - currentPrice
+        #             haveStock = 0
+        # # 最后一次卖出
+        # if haveStock == 1:
+        #     sum += prices[-1] - currentPrice
+        #
+        # print(sum)
+        # return sum
+        print("    Sloution2:")
+        # print("        Runtime: 40 ms, faster than 98.98% of Python3 online submissions for Best Time to Buy and Sell Stock II.")
+        # print("        Memory Usage: 14.1 MB, less than 5.06% of Python3 online submissions for Best Time to Buy and Sell Stock II.")
+        sum = 0
+        for i in range(1, len(prices)):
+            # 低买高卖
+            if prices[i] > prices[i-1]:
+                sum += prices[i] - prices[i-1]
+
+        print(sum)
+        return sum
+
+        pass
+
     def run(self):
 
         startTime = time.time()
@@ -273,8 +314,8 @@ class SolutionEasy():
         # self.camelMatch(["mifeqvzphnrv","mieqxvrvhnrv","mhieqovhnryv","mieqekvhnrpv","miueqrvfhnrv","mieqpvhzntrv","gmimeqvphnrv","mieqvhqyunrv"],"mieqvhnrv")
         # self.reverseOnlyLetters("Test1ng-Leet=code-Q!")
         # self.lemonadeChange([5,5,10,10,20])
-
-        self.isMonotonic([6,5,4,4])
+        # self.isMonotonic([6,5,4,4])
+        self.maxProfit([7,1,5,3,6,4])
 
         endTime = time.time()
 
