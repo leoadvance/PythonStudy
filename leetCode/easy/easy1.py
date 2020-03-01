@@ -387,6 +387,25 @@ class SolutionEasy():
         outList.reverse()
         return outList
 
+    def freqAlphabets(self, s: str) -> str:
+        i = -1
+        sOut = ""
+        while(i >= 0 - len(s)):
+            if s[i] == '#':
+                idata = int(s[i - 2: i]) - 10
+                sOut += chr(ord('j') +idata)
+                # print(sOut)
+                i -= 3
+            else:
+                idata = int(s[i]) - 1
+                sOut += chr(ord('a') + idata)
+                # print(sOut)
+                i -= 1
+
+        sOut = sOut[::-1]
+        print(sOut)
+        return sOut
+
     def run(self):
 
         startTime = time.time()
@@ -401,7 +420,8 @@ class SolutionEasy():
         # self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
         # self.diStringMatch("IDID")
         # self.maximum69Number(9669)
-        self.replaceElements([17,18,5,4,6,1])
+        # self.replaceElements([17,18,5,4,6,1])
+        self.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#")
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
