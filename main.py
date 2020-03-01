@@ -3,7 +3,7 @@
 from varStudy import *
 
 # 相对路径导入私有库
-import leetCode.easy.easy1
+import leetCode.easy.easy1 as leetCodeEasy1
 import leetCode.easy.easy2 as leetCodeEasy2
 import leetCode.easy.easy3 as leetCodeEasy3
 import leetCode.easy.easy4 as leetCodeEasy4
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # leetCode = leetCodeEasy3.SolutionEasy()
     # leetCode.run()
 
-    leetCode = leetCodeEasy5.SolutionEasy()
+    leetCode = leetCodeEasy1.SolutionEasy()
     leetCode.run()
 
     # leetCodeMedium = leetCodeMedium.SolutionMedium()

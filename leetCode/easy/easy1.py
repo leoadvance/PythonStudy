@@ -1,6 +1,7 @@
 # coding=utf-8
 import re
 import time
+from typing import List
 
 class SolutionEasy():
 
@@ -363,6 +364,28 @@ class SolutionEasy():
         print(listReturn)
         return listReturn
 
+    def maximum69Number(self, num: int) -> int:
+        maxNum = num
+        numStr = str(num)
+        for i in range(len(numStr)):
+            if numStr[i] == '6':
+                maxNum += 3 * pow( 10, len(numStr) - i - 1)
+                break
+        # print(maxNum)
+        return maxNum
+
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        outList = [-1]
+
+        # 倒序遍历
+        for i in range(len(arr) - 1, 0, -1):
+            if arr[i] > outList[-1]:
+                outList.append(arr[i])
+            else:
+                outList.append(outList[-1])
+
+        outList.reverse()
+        return outList
 
     def run(self):
 
@@ -376,7 +399,9 @@ class SolutionEasy():
         # self.sortedSquares([-4,-1,0,3,10])
         # self.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
         # self.numRookCaptures([[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]])
-        self.diStringMatch("IDID")
+        # self.diStringMatch("IDID")
+        # self.maximum69Number(9669)
+        self.replaceElements([17,18,5,4,6,1])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
