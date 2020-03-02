@@ -406,6 +406,20 @@ class SolutionEasy():
         print(sOut)
         return sOut
 
+    def numberOfSteps(self, num: int) -> int:
+        stepOut = 0
+        while num:
+            print(num)
+            if num % 2 == 0:
+                # 这里必须要整除
+                num //= 2
+            else:
+                num -= 1
+            stepOut += 1
+        print(stepOut)
+        return stepOut
+
+
     def run(self):
 
         startTime = time.time()
@@ -421,7 +435,8 @@ class SolutionEasy():
         # self.diStringMatch("IDID")
         # self.maximum69Number(9669)
         # self.replaceElements([17,18,5,4,6,1])
-        self.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#")
+        # self.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#")
+        self.numberOfSteps(17)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
