@@ -419,6 +419,19 @@ class SolutionEasy():
         print(stepOut)
         return stepOut
 
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        outList = nums.copy()
+        nums.sort(reverse = False)
+        # 一定有0个数比最小值小
+        dictTemp = {nums[0]:0}
+
+        for i in range(len(nums) - 1):
+            if nums[i] != nums[i + 1]:
+                dictTemp[nums[i + 1]] = i + 1
+        for i in range(len(nums)):
+            outList[i] = dictTemp[outList[i]]
+        print(outList)
+        return outList
 
     def run(self):
 
@@ -436,7 +449,8 @@ class SolutionEasy():
         # self.maximum69Number(9669)
         # self.replaceElements([17,18,5,4,6,1])
         # self.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#")
-        self.numberOfSteps(17)
+        # self.numberOfSteps(17)
+        self.smallerNumbersThanCurrent([7,7,7,7])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
