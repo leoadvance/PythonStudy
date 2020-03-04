@@ -444,6 +444,13 @@ class SolutionEasy():
         print(sOut)
         return sOut
 
+    def decompressRLElist(self, nums: List[int]) -> List[int]:
+        intList = []
+        for i in range(0,len(nums),2):
+            intList += [nums[i + 1]] * nums[i]
+
+        return intList
+
     def run(self):
 
         startTime = time.time()
@@ -462,7 +469,8 @@ class SolutionEasy():
         # self.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#")
         # self.numberOfSteps(17)
         # self.smallerNumbersThanCurrent([7,7,7,7])
-        self.defangIPaddr("255.100.50.0")
+        # self.defangIPaddr("255.100.50.0")
+        self.decompressRLElist([1,2,3,4])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
