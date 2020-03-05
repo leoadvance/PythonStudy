@@ -451,6 +451,25 @@ class SolutionEasy():
 
         return intList
 
+    def sumZero(self, n: int) -> List[int]:
+        outList = []
+        if n == 1:
+            return [0]
+        # 偶数
+        elif n % 2 == 0:
+            n /= 2
+            for i in range(1, n + 1):
+                outList.append(i)
+                outList.append(-i)
+        else:
+            n //= 2
+            outList.append(0)
+            for i in range(1, n + 1):
+                outList.append(i)
+                outList.append(-i)
+        print(outList)
+        return outList
+
     def run(self):
 
         startTime = time.time()
@@ -470,7 +489,8 @@ class SolutionEasy():
         # self.numberOfSteps(17)
         # self.smallerNumbersThanCurrent([7,7,7,7])
         # self.defangIPaddr("255.100.50.0")
-        self.decompressRLElist([1,2,3,4])
+        # self.decompressRLElist([1,2,3,4])
+        self.sumZero(5)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
