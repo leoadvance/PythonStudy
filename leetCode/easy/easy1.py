@@ -3,9 +3,20 @@ import re
 import time
 from typing import List
 
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 class SolutionEasy():
 
     def __init__(self):
+        # self.listNode = ListNode(1)
+        # self.listNode.next = ListNode(2)
+        # self.listNode.next.next = ListNode(3)
+        # self.listNode.next.next.next = ListNode(4)
+        # self.listNode.next.next.next.next = ListNode(5)
+        self.listNode = self.creatListNode([1,2,3,4,5])
         print("class leetCode SolutionEasy1 init!")
 
     def __del__(self):
@@ -77,6 +88,18 @@ class SolutionEasy():
                 result += s
         return result
 
+    # 构造链表函数
+    def creatListNode(self,nums:list):
+        i = 1
+        head = ListNode(nums[0])
+        tmp = None
+        cur = head
+        while i < len(nums):
+            tmp = ListNode(nums[i])
+            cur.next = tmp
+            cur = cur.next
+            i += 1
+        return head
     # 字符过滤
     def numUniqueEmails(self, emails:list) -> int:
         print("func numUniqueEmails")
@@ -470,6 +493,22 @@ class SolutionEasy():
         print(outList)
         return outList
 
+    def reverseList(self, head: ListNode) -> ListNode:
+        if head == None or head.next == None:  # 边界条件
+            return head
+        cur = head  # 循环变量
+        tmp = None  # 保存数据的临时变量
+        newhead = None  # 新的翻转单链表的表头
+        while cur:
+            # 断开连表头并取出首位
+            tmp = cur.next
+            cur.next = newhead  # 逆序挂表
+            newhead = cur  # 更新 新链表的表头
+            cur = tmp   # 取出之前保存的"第二位"以后数据
+
+        return newhead
+
+
     def run(self):
 
         startTime = time.time()
@@ -490,7 +529,8 @@ class SolutionEasy():
         # self.smallerNumbersThanCurrent([7,7,7,7])
         # self.defangIPaddr("255.100.50.0")
         # self.decompressRLElist([1,2,3,4])
-        self.sumZero(5)
+        # self.sumZero(5)
+        self.reverseList(self.listNode)
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
