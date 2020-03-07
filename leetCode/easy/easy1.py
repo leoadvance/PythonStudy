@@ -1,6 +1,7 @@
 # coding=utf-8
 import re
 import time
+import collections
 from typing import List
 
 class ListNode:
@@ -508,6 +509,17 @@ class SolutionEasy():
 
         return newhead
 
+    def majorityElement(self, nums: List[int]) -> int:
+
+        if len(nums) == 1:
+            return nums[0]
+        tempCounter = collections.Counter(nums)
+        # print(tempCounter)
+        for k,v in tempCounter.items():
+            if v > len(nums) / 2:
+                # print(k)
+                return k
+
 
     def run(self):
 
@@ -530,7 +542,8 @@ class SolutionEasy():
         # self.defangIPaddr("255.100.50.0")
         # self.decompressRLElist([1,2,3,4])
         # self.sumZero(5)
-        self.reverseList(self.listNode)
+        # self.reverseList(self.listNode)
+        self.majorityElement([2,1,2,2,2,3])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
