@@ -520,6 +520,21 @@ class SolutionEasy():
                 # print(k)
                 return k
 
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        tempDict = {}
+        outList = []
+        for i in range(1, len(nums) + 1):
+            tempDict[i] = i
+        nums = set(nums)
+        # print(nums)
+        for i in nums:
+            tempDict.pop(i)
+        for k in tempDict.keys():
+            outList.append(k)
+
+        print(outList)
+        return outList
+
 
     def run(self):
 
@@ -543,7 +558,8 @@ class SolutionEasy():
         # self.decompressRLElist([1,2,3,4])
         # self.sumZero(5)
         # self.reverseList(self.listNode)
-        self.majorityElement([2,1,2,2,2,3])
+        # self.majorityElement([2,1,2,2,2,3])
+        self.findDisappearedNumbers([4,3,2,7,8,2,3,1])
         endTime = time.time()
         print("run time: ", (str(endTime - startTime))[:8], "s")
 
